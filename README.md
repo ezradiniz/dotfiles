@@ -4,7 +4,7 @@
 
 My dotfiles
 
-I used code from [amix](https://github.com/vimrc) for Vim configuration, also for Tmux configuration, i used code from [KensoDev](https://github.com/KensoDev/dotfiles)  and [bryanl](https://gist.github.com/bryanl/721200). 
+I used code from [amix](https://github.com/amix/vimrc) for Vim configuration, also for Tmux configuration, i used code from [KensoDev](https://github.com/KensoDev/dotfiles)  and [bryanl](https://gist.github.com/bryanl/721200). 
 For this reason, this project of course available to copy & modify under the original MIT license terms. 
 
 ### Prerequisites                                                                       
