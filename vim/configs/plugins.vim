@@ -45,10 +45,10 @@ let g:user_zen_mode='a'
 
 
 """"""""""""""""""""""""""""""
-" => snipMate (11)
+" => snipMate (~)
 """"""""""""""""""""""""""""""
-imap 11 <esc>a<Plug>snipMateNextOrTrigger
-smap 11 <Plug>snipMateNextOrTrigger
+imap ~ <esc>a<Plug>snipMateNextOrTrigger
+smap ~ <Plug>snipMateNextOrTrigger
 
 """"""""""""""""""""""""""""""
 " => Vim grep
