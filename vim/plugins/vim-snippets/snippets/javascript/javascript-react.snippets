@@ -48,6 +48,29 @@ snippet rcc
 			);
 		}
 	}
+snippet rca
+	import React from 'react';	
+
+	class ${1:ClassName} extends React.Component {
+		
+		state = {};		
+
+		render() {
+			return (
+				<div></div>
+			);
+		}
+	}
+	
+	export default $1;
+snippet rfa
+	import React from 'react';	
+
+	const ${1:Name} = ({ ${2:props} }) => (
+		<div></div>
+	);
+	
+	export default $1;
 snippet rdr
 	ReactDOM.render(${1}, ${2})
 snippet ercc
