@@ -10,6 +10,7 @@ For this reason, this project of course available to copy & modify under the ori
 ### Prerequisites                                                                       
  - Vim
  - Tmux
+ - ZSH + [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
                                                                                    
 ### How to install ?                                                                    
 1. git clone --depth=1 https://github.com/ezradiniz/dotfiles

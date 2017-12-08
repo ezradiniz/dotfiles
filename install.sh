@@ -11,4 +11,7 @@ cp vim/vimrc ~/.vimrc
 echo "Loading Tmux configuration ..."
 cp tmux/tmux.conf ~/.tmux.conf
 
+echo "Loading Zsh configuration ..."
+cp zsh/zshrc ~/.zshrc
+
 echo "Installed dotfiles sucessfully !"
