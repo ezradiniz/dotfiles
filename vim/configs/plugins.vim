@@ -101,7 +101,7 @@ let g:syntastic_always_populate_loc_list = 1
 
 " Python
 let g:syntastic_python_checkers=['python']
-let g:syntastic_python_pyint_exec = '/usr/bin/pylint'
+"let g:syntastic_python_pyint_exec = '/usr/bin/pylint'
 " Python Semantic Completion                       
 "let g:ycm_python_binary_path = '/usr/bin/python3.6'
 
@@ -132,11 +132,6 @@ let g:jsx_ext_required = 0
 let g:javascript_enable_domhtmlcss = 1
 let g:used_javascript_libs = 'underscore,react,chai'
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => YCM
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COMPLETOR
@@ -162,8 +157,3 @@ vmap s <Plug>(easymotion-bd-t)
 " => Airline_theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='cool'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim-move
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:move_key_modifier = 'C'
