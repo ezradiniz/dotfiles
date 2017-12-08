@@ -13,7 +13,7 @@ For this reason, this project of course available to copy & modify under the ori
  - ZSH + [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
                                                                                    
 ### How to install ?                                                                    
-1. git clone --depth=1 https://github.com/ezradiniz/dotfiles
+1. git clone --depth=1 https://github.com/ezradiniz/dotfiles.git
 2. cd dotfiles
 3. sh install.sh
                                                                                        
