@@ -14,13 +14,10 @@ cp tmux/tmux.conf ~/.tmux.conf
 echo "Loading Zsh configuration ..."
 cp zsh/zshrc ~/.zshrc
 
+echo "Setting files ..."
 # Configure tern
-cd ~/.vim_config/plugins/tern_for_vim
-npm install tern
-
-# Configure completor for js
-cd ~/.vim_config/plugins/completor.vim
-make js
-cd ~/
+npm install tern --prefix ~/.vim_config/plugins/tern_for_vim
+# Configure completor
+make js -C ~/.vim_config/plugins/completor.vim
 
 echo "Installed dotfiles sucessfully !"
