@@ -102,8 +102,6 @@ let g:syntastic_always_populate_loc_list = 1
 " Python
 let g:syntastic_python_checkers=['python']
 "let g:syntastic_python_pyint_exec = '/usr/bin/pylint'
-" Python Semantic Completion                       
-"let g:ycm_python_binary_path = '/usr/bin/python3.6'
 
 " Javascript
 let g:syntastic_javascript_checkers = ['eslint']
