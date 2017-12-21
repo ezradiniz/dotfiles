@@ -61,6 +61,13 @@ snippet rca
 			);
 		}
 	}
+
+	$1.propTypes = {
+	};
+	
+	function mapStateToProps(state) {
+		return {};
+	}
 	
 	export default $1;
 snippet rfa
@@ -69,7 +76,14 @@ snippet rfa
 	const ${1:Name} = ({ ${2:props} }) => (
 		<div></div>
 	);
+
+	$1.propTypes = {
+	};
 	
+	function mapStateToProps(state) {
+		return {};
+	}
+
 	export default $1;
 snippet rdr
 	ReactDOM.render(${1}, ${2})
