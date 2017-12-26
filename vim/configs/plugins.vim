@@ -146,9 +146,9 @@ let g:completor_node_binary = '/usr/bin/nodejs'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Easymotion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap s <Plug>(easymotion-s)
-omap s <Plug>(easymotion-bd-t)
-vmap s <Plug>(easymotion-bd-t)
+nmap f <Plug>(easymotion-s)
+omap f <Plug>(easymotion-bd-t)
+vmap f <Plug>(easymotion-bd-t)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

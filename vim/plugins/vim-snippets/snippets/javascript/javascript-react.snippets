@@ -35,7 +35,7 @@ snippet dp
 snippet st
 	state = {
 		${1}: ${2},
-	}
+	};
 snippet pt
 	static propTypes = {
 		${1}: React.PropTypes.${2:type},
@@ -48,8 +48,15 @@ snippet rcc
 			);
 		}
 	}
+snippet mstp
+	function mapStateToProps(state) {
+		return {
+			${1:s}		
+		};	
+	}
 snippet rca
-	import React from 'react';	
+	import React from 'react';
+	import PropTypes from 'prop-types';
 
 	class ${1:ClassName} extends React.Component {
 		
@@ -65,13 +72,10 @@ snippet rca
 	$1.propTypes = {
 	};
 	
-	function mapStateToProps(state) {
-		return {};
-	}
-	
 	export default $1;
 snippet rfa
-	import React from 'react';	
+	import React from 'react';
+	import PropTypes from 'prop-types';	
 
 	const ${1:Name} = ({ ${2:props} }) => (
 		<div></div>
@@ -80,10 +84,6 @@ snippet rfa
 	$1.propTypes = {
 	};
 	
-	function mapStateToProps(state) {
-		return {};
-	}
-
 	export default $1;
 snippet rdr
 	ReactDOM.render(${1}, ${2})
