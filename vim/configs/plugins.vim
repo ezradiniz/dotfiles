@@ -141,7 +141,7 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
 let g:completor_python_binary = '/usr/bin/python3.6'
 let g:completor_clang_binary = '/usr/bin/clang'
 let g:completor_node_binary = '/usr/bin/nodejs'
-
+let g:completor_gocode_binary = '/home/ezra/go/bin/gocode'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Easymotion
