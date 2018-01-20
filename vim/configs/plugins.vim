@@ -144,14 +144,6 @@ let g:completor_node_binary = '/usr/bin/nodejs'
 let g:completor_gocode_binary = '/home/ezra/go/bin/gocode'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Easymotion
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap f <Plug>(easymotion-s)
-omap f <Plug>(easymotion-bd-t)
-vmap f <Plug>(easymotion-bd-t)
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline_theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='term'
