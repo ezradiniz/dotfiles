@@ -101,6 +101,9 @@ set ttimeoutlen=1
 " Add a bit extra margin to the left
 "set foldcolumn=1
 
+" Enable clipboard from vim to global clipboard
+set clipboard=unnamedplus
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
