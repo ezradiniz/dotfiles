@@ -148,8 +148,3 @@ let g:completor_gocode_binary = '/home/ezra/go/bin/gocode'
 " => Airline_theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='term'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-notes
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:notes_smart_quotes = 0
