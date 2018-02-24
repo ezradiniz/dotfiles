@@ -90,7 +90,8 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
-
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['golint', 'errcheck']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic (syntax checker)
@@ -106,9 +107,6 @@ let g:syntastic_python_checkers=['python']
 " Javascript
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'yarn run lint --' 
-
-" Go
-let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
