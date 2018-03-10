@@ -1,7 +1,5 @@
 # dotfiles
 
-----------
-
 My dotfiles
 
 I used code from [amix](https://github.com/amix/vimrc) for Vim configuration. For Tmux configuration, i used code from [KensoDev](https://github.com/KensoDev) and [bryanl](https://gist.github.com/bryanl/721200). 

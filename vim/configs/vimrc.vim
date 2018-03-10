@@ -50,7 +50,7 @@ set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -97,7 +97,7 @@ set ttimeoutlen=1
 "set foldcolumn=1
 
 " Enable clipboard from vim to global clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
