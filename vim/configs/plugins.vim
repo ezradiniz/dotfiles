@@ -145,4 +145,4 @@ let g:completor_gocode_binary = '/home/ezra/go/bin/gocode'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline_theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='term'
+let g:airline_theme='wombat'
