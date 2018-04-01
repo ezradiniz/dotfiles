@@ -112,9 +112,9 @@ endif
 
 " Colorscheme
 set background=dark
-colorscheme peaksea
-autocmd  User GoyoLeave nested set background=dark
-autocmd  User GoyoLeave nested colorscheme peaksea
+colorscheme jellybeans
+"autocmd  User GoyoLeave nested set background=dark
+"autocmd  User GoyoLeave nested colorscheme peaksea
 
 " Set extra options when running in GUI mode
 if has("gui_running")
