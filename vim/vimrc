@@ -1,6 +1,7 @@
 set runtimepath+=~/.vim_config
 
 source ~/.vim_config/configs/load.vim
+source ~/.vim_config/configs/vim-plug.vim
 source ~/.vim_config/configs/vimrc.vim
 source ~/.vim_config/configs/plugins.vim
 

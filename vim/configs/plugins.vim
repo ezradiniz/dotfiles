@@ -34,7 +34,7 @@ map <leader>j :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+let g:ctrlp_custom_ignore = 'env\|dist\|node_modules\|^\.DS_Store\|^\.vscode\|^\.git\|^\.coffee'
 
 
 """"""""""""""""""""""""""""""
@@ -91,7 +91,8 @@ nnoremap <silent> <leader>z :Goyo<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['golint', 'errcheck']
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_deadline = "10s"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic (syntax checker)
@@ -108,6 +109,9 @@ let g:syntastic_python_checkers=['python']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'yarn run lint --' 
 
+" Typescript
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
@@ -127,8 +131,24 @@ nnoremap <F4> :NumbersOnOff<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:jsx_ext_required = 0
 let g:javascript_enable_domhtmlcss = 1
-let g:used_javascript_libs = 'underscore,react,chai'
+let g:used_javascript_libs = 'underscore,react,chai,lodash'
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim-jsx-typescript
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.jsx
+"" light blues
+hi xmlEndTag guifg=#2974a1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => typescript-vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+setlocal indentkeys+=0.
+let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
+autocmd FileType typescript :set makeprg=tsc
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => COMPLETOR
@@ -141,6 +161,7 @@ let g:completor_python_binary = '/usr/bin/python3.6'
 let g:completor_clang_binary = '/usr/bin/clang'
 let g:completor_node_binary = '/usr/bin/nodejs'
 let g:completor_gocode_binary = '/home/ezra/go/bin/gocode'
+let g:completor_tsserver_binary = '/home/ezra/.nvm/versions/node/v9.11.1/lib/node_modules/typescript/bin/tsserver'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline_theme

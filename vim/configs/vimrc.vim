@@ -112,7 +112,7 @@ endif
 
 " Colorscheme
 set background=dark
-colorscheme jellybeans
+colorscheme peaksea
 "autocmd  User GoyoLeave nested set background=dark
 "autocmd  User GoyoLeave nested colorscheme peaksea
 
@@ -157,6 +157,10 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" disable end of a file
+set fileformats+=dos
+set binary
+set noeol
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -197,7 +201,8 @@ map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>ty :tabnext<cr>
+map <leader>tr :tabprev<cr>
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -249,8 +254,8 @@ fun! CleanExtraSpaces()
 endfun
 
 if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+  autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+  autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 endif
 
 
