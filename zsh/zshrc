@@ -65,6 +65,7 @@ export LC_ALL=en_US.UTF-8
 plugins=(
   git
   npm
+  pyenv
   dotenv
   web-search
 )

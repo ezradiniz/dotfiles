@@ -13,6 +13,7 @@ cp tmux/tmux.conf ~/.tmux.conf
 
 echo "Loading Zsh configuration ..."
 cp zsh/zshrc ~/.zshrc
+cp zsh/zshenv ~/.zshenv
 
 echo "Setting files ..."
 # Configure tern
