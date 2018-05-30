@@ -111,8 +111,10 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 " Colorscheme
-set background=dark
-colorscheme peaksea
+"set background=dark
+let g:dracula_italic = 1
+colorscheme dracula
+highlight Normal ctermbg=None
 "autocmd  User GoyoLeave nested set background=dark
 "autocmd  User GoyoLeave nested colorscheme peaksea
 
