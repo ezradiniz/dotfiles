@@ -34,7 +34,7 @@ map <leader>j :CtrlP<cr>
 map <c-b> :CtrlPBuffer<cr>
 
 let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = '__init__.py\|env\|dist\|node_modules\|^\.DS_Store\|^\.vscode\|^\.git\|^\.coffee'
+let g:ctrlp_custom_ignore = '__init__.py\|env\|dist\|build\|node_modules\|^\.DS_Store\|^\.vscode\|^\.git\|^\.coffee'
 
 
 """"""""""""""""""""""""""""""

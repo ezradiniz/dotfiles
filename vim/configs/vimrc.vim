@@ -543,8 +543,3 @@ if exists('$TMUX')
         set term=screen-256color 
     endif
 endif
-
-""""""""""""""""""""""""""""""
-" => Twig section
-""""""""""""""""""""""""""""""
-autocmd BufRead *.twig set syntax=html filetype=html
