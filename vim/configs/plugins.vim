@@ -158,3 +158,10 @@ let g:completor_tsserver_binary = '/home/ezra/.nvm/versions/node/v9.11.1/lib/nod
 " => Airline_theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='wombat'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-prettier
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:prettier#autoformat = 0
+let g:prettier#exec_cmd_async = 1
+let g:prettier#quickfix_enabled = 0
