@@ -165,7 +165,7 @@ set binary
 set noeol
 
 " List
-set listchars=eol:$,tab:>-,trail:.,extends:>,precedes:<
+set listchars=eol:¬,tab:>-,trail:.,extends:>,precedes:<
 set list
 
 """"""""""""""""""""""""""""""
