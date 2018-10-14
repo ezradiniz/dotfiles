@@ -234,6 +234,7 @@ set background=dark
 
 " Required as some plugins will overwrite
 call s:h('Normal', s:fg, s:Background())
+call s:h('CtrlPMatch', s:bg, s:purple)
 call s:h('StatusLine', s:none, s:bglighter, [s:attrs.bold])
 call s:h('StatusLineNC', s:none, s:bglight)
 call s:h('WildMenu', s:bg, s:purple, [s:attrs.bold])

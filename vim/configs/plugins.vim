@@ -157,7 +157,7 @@ let g:completor_tsserver_binary = '/home/ezra/.nvm/versions/node/v9.11.1/lib/nod
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline_theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='wombat'
+let g:airline_theme='dracula'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-prettier
