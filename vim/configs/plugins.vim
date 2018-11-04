@@ -102,6 +102,7 @@ let g:syntastic_javascript_eslint_exe = 'yarn run lint --'
 
 " Typescript
 let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_use_vimproc=1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
