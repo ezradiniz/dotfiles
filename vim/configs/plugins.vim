@@ -38,13 +38,6 @@ let g:ctrlp_custom_ignore = '__init__.py\|env\|dist\|build\|node_modules\|^\.DS_
 
 
 """"""""""""""""""""""""""""""
-" => ZenCoding
-""""""""""""""""""""""""""""""
-" Enable all functions in all modes
-let g:user_zen_mode='a'
-
-
-""""""""""""""""""""""""""""""
 " => snipMate (~)
 """"""""""""""""""""""""""""""
 imap ~ <esc>a<Plug>snipMateNextOrTrigger
@@ -83,7 +76,12 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_autosave = 1
 let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_deadline = "10s"
+let g:go_metalinter_deadline = "5s"
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_operators = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic (syntax checker)
@@ -166,3 +164,5 @@ let g:airline_theme='dracula'
 let g:prettier#autoformat = 0
 let g:prettier#exec_cmd_async = 1
 let g:prettier#quickfix_enabled = 0
+let g:prettier#config#tab_width = 4
+let g:prettier#config#semi = 'false'
