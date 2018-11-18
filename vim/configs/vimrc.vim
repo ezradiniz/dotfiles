@@ -534,12 +534,10 @@ au FileType javascript inoremap <buffer> $f //--- PH<esc>FP2xi
 
 
 """"""""""""""""""""""""""""""
-" => Shell section
+" => Enable true color
 """"""""""""""""""""""""""""""
-if exists('$TMUX') 
-    if has('nvim')
-        set termguicolors
-    else
-        set term=screen-256color 
-    endif
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
