@@ -84,25 +84,9 @@ let g:go_highlight_fields = 1
 let g:go_highlight_operators = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Syntastic (syntax checker)
+" => ale (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_always_populate_loc_list = 1
-
-" Python
-let g:syntastic_python_checkers=['python']
-"let g:syntastic_python_pyint_exec = '/usr/bin/pylint'
-
-" Javascript
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'yarn run lint --' 
-
-" Typescript
-let g:tsuquyomi_disable_quickfix = 1
-let g:tsuquyomi_use_vimproc=1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
-
+let g:ale_completion_enabled = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -146,13 +130,6 @@ autocmd QuickFixCmdPost    l* nested lwindow
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
-
-let g:completor_python_binary = '/usr/bin/python3.6'
-let g:completor_clang_binary = '/usr/bin/clang'
-let g:completor_node_binary = '/usr/bin/nodejs'
-let g:completor_gocode_binary = '/home/ezra/go/bin/gocode'
-let g:completor_tsserver_binary = '/home/ezra/.nvm/versions/node/v9.11.1/lib/node_modules/typescript/bin/tsserver'
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Airline_theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

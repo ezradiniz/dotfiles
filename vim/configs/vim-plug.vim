@@ -7,8 +7,8 @@ call plug#begin(s:vim_config.'/plugins/plugged')
 """""""""""""""""""""""""""""
 " Plugs
 """""""""""""""""""""""""""""
+Plug 'w0rp/ale'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'maralla/completor-typescript'
 Plug 'prettier/vim-prettier', {
     \ 'do': 'npm install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
