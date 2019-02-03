@@ -12,5 +12,6 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'prettier/vim-prettier', {
     \ 'do': 'npm install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
+Plug 'ryanoasis/vim-devicons'
 """"""""""""""""""""""""""""
 call plug#end()
