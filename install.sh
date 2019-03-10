@@ -15,10 +15,4 @@ echo "Loading Zsh configuration ..."
 cp zsh/zshrc ~/.zshrc
 cp zsh/zshenv ~/.zshenv
 
-echo "Setting files ..."
-# Configure tern
-npm install tern --prefix ~/.vim_config/plugins/tern_for_vim
-# Configure completor
-make js -C ~/.vim_config/plugins/completor.vim
-
 echo "Installed dotfiles sucessfully !"

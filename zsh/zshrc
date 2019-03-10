@@ -69,14 +69,16 @@ export LC_ALL=en_US.UTF-8
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  docker-compose
+  dotenv
   git
   npm
   pyenv
+  tmux
   virtualenv
-  dotenv
   web-search
-  zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
