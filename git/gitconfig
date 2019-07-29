@@ -1,0 +1,29 @@
+[user]
+	email = linux.esdras@gmail.com
+	name = ezradiniz
+[core]
+	editor = vim
+[color]
+	ui = auto
+[color "diff"]
+	indentHeuristic = true
+	algorithm = histogram
+	meta = yellow bold
+	frag = magenta bold
+	new = green bold
+[push]
+	default = current
+[status]
+	color = true
+	submodulesummary = true
+	showUntrackedFiles = all
+[apply]
+	whitespace = fix
+[http]
+	postBuffer = 52428800
+[mergetool]
+	prompt = false
+	keepBackup = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
