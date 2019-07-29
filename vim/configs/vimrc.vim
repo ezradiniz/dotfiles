@@ -8,6 +8,15 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"My settings
+
+" Search down into subfolders
+" Provides tab-completion for all file related tasks
+set path+=**
+
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -44,13 +53,16 @@ set langmenu=en
 set wildmenu
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,node_modules/**
 
 "Always show current position
 set ruler
 
 " Height of the command bar
 set cmdheight=1
+
+" always show signcolumns
+set signcolumn=yes
 
 " A buffer becomes hidden when it is abandoned
 set hid
@@ -93,6 +105,7 @@ set noesckeys
 set ttimeout
 set ttimeoutlen=1
 
+
 " Add a bit extra margin to the left
 "set foldcolumn=1
 
@@ -103,31 +116,21 @@ set ttimeoutlen=1
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-" Colorscheme
-"set background=dark
-let g:dracula_italic = 1
-colorscheme dracula
-highlight Normal ctermbg=None
-"autocmd  User GoyoLeave nested set background=dark
-"autocmd  User GoyoLeave nested colorscheme peaksea
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
+set background=dark
+set termguicolors
+let g:sierra_Midnight=1
+colorscheme sierra
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
+set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -137,6 +140,7 @@ set ffs=unix,dos,mac
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
+" w
 set nobackup
 set nowb
 set noswapfile
@@ -145,19 +149,17 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
-
 " Linebreak on 500 characters
 set lbr
 set tw=500
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+"set ai "Auto indent
+"set si "Smart indent
+"set wrap "Wrap lines
+set nowrap
+set tw=80
+set linebreak
+let &showbreak='▷ '
 
 " disable end of a file
 set fileformats+=dos
@@ -165,7 +167,7 @@ set binary
 set noeol
 
 " List
-set listchars=eol:¬,tab:>-,trail:.,extends:>,precedes:<
+set listchars=eol:¬,tab:␉·,trail:.,extends:>,precedes:<
 set list
 
 """"""""""""""""""""""""""""""
@@ -285,10 +287,10 @@ map <leader>s? z=
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scribble
-map <leader>q :e ~/vim_config/buffer<cr>
+map <leader>q :e ~/.vim_config/buffer<cr>
 
 " Quickly open a markdown buffer for scribble
-map <leader>x :e ~/vim_config/buffer.md<cr>
+map <leader>x :e ~/.vim_config/buffer.md<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
@@ -302,7 +304,7 @@ map <leader>pp :setlocal paste!<cr>
 if has("mac") || has("macunix")
     set gfn=Hack:h14,Source\ Code\ Pro:h15,Menlo:h15
 elseif has("linux")
-    set gfn=Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
+    set gfn=Hack\ 14,Hack\ Nerd\ Font\ Mono\ Regular\ 11,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11,Nerd\ Font\ 11
 elseif has("unix")
     set gfn=Monospace\ 11
 endif
@@ -366,18 +368,12 @@ iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Omni complete functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Ack searching and cope displaying
 "    requires ack.vim - it's much better than vimgrep/grep
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use the the_silver_searcher if possible (much faster than Ack)
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep --smart-case'
+  let g:ackprg = 'ag --vimgrep --smart-case --hidden'
 endif
 
 " When you press gv you Ack after the selected text
@@ -496,42 +492,6 @@ function! s:MkNonExDir(file, buf)
     endif
 endfunction
 
-""""""""""""""""""""""""""""""
-" => Python section
-""""""""""""""""""""""""""""""
-let python_highlight_all = 1
-au FileType python syn keyword pythonDecorator True None False self
-
-au BufNewFile,BufRead *.jinja set syntax=htmljinja
-au BufNewFile,BufRead *.mako set ft=mako
-
-au FileType python map <buffer> F :set foldmethod=indent<cr>
-
-au FileType python inoremap <buffer> $r return 
-au FileType python inoremap <buffer> $i import 
-au FileType python inoremap <buffer> $p print 
-au FileType python inoremap <buffer> $f #--- <esc>a
-au FileType python map <buffer> <leader>1 /class 
-au FileType python map <buffer> <leader>2 /def 
-au FileType python map <buffer> <leader>C ?class 
-au FileType python map <buffer> <leader>D ?def 
-au FileType python set cindent
-au FileType python set cinkeys-=0#
-au FileType python set indentkeys-=0#
-
-
-""""""""""""""""""""""""""""""
-" => JavaScript section
-"""""""""""""""""""""""""""""""
-au FileType javascript setl fen
-au FileType javascript setl nocindent
-
-au FileType javascript imap <c-t> $log();<esc>hi
-au FileType javascript imap <c-a> alert();<esc>hi
-
-au FileType javascript inoremap <buffer> $r return 
-au FileType javascript inoremap <buffer> $f //--- PH<esc>FP2xi
-
 
 """"""""""""""""""""""""""""""
 " => Enable true color
@@ -541,7 +501,14 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-
+"if exists('$TMUX') 
+  "if has('nvim')
+    "set termguicolors
+  "else
+    "set term=screen-256color 
+  "endif
+"endif
+"
 
 """"""""""""""""""""""""""""""
 " => visual-at.vim

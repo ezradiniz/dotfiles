@@ -9,6 +9,6 @@ set smarttab
 set shiftwidth=2
 set softtabstop=2
 
-autocmd FileType typescript setlocal shiftwidth=4 softtabstop=4
+autocmd FileType typescript setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType python setlocal shiftwidth=4 softtabstop=4
-autocmd FileType go setlocal shiftwidth=4 softtabstop=4
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
