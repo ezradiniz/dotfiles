@@ -65,7 +65,7 @@ set cmdheight=1
 set signcolumn=yes
 
 " A buffer becomes hidden when it is abandoned
-set hid
+set hidden
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
