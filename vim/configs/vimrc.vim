@@ -105,6 +105,9 @@ set noesckeys
 set ttimeout
 set ttimeoutlen=1
 
+" Indicates a fast terminal connection
+set ttyfast
+
 
 " Add a bit extra margin to the left
 "set foldcolumn=1
@@ -518,4 +521,4 @@ xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 function! ExecuteMacroOverVisualRange()
   echo "@".getcmdline()
   execute ":'<,'>normal @".nr2char(getchar())
-endfunction
+ndfunction
