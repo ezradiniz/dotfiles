@@ -42,6 +42,12 @@ command W w !sudo tee % > /dev/null
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
