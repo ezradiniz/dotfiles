@@ -8,6 +8,7 @@ echo "Loading the Vim configuration ..."
 cp -r vim/ ~/.vim_config
 cp vim/vimrc ~/.vimrc
 rm ~/.vim_config/vimrc
+$(cd ~/.vim_config/ && ./plugin-setup.sh --install)
 
 echo "Loading Tmux configuration ..."
 cp tmux/tmux.conf ~/.tmux.conf
