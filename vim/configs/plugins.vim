@@ -134,6 +134,7 @@ let g:ale_list_window_size = 15
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+nnoremap <leader>dd : GitGutterLineHighlightsToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Numbers line
