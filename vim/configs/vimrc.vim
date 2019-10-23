@@ -114,6 +114,8 @@ set ttimeoutlen=1
 " Indicates a fast terminal connection
 set ttyfast
 
+" Show column
+set colorcolumn=80
 
 " Add a bit extra margin to the left
 "set foldcolumn=1
