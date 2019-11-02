@@ -8,7 +8,6 @@ echo "Loading the Vim configuration ..."
 cp -r vim/ ~/.vim_config
 cp vim/vimrc ~/.vimrc
 rm ~/.vim_config/vimrc
-$(cd ~/.vim_config/ && ./plugin-setup.sh --install)
 
 echo "Loading Tmux configuration ..."
 cp tmux/tmux.conf ~/.tmux.conf
@@ -24,5 +23,8 @@ echo "Loading Utils configuration ..."
 for file in utils/*.sh; do
   bash "$file" -F || break
 done
+
+echo "Loading i3 configuration"
+cp -r i3 ~/.config/
 
 echo "Installed dotfiles sucessfully !"
