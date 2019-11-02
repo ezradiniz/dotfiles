@@ -32,15 +32,6 @@ map <leader>f :MRU<CR>
 
 
 """"""""""""""""""""""""""""""
-" => YankStack
-""""""""""""""""""""""""""""""
-let g:yankstack_yank_keys = ['y', 'd']
-
-nmap <c-p> <Plug>yankstack_substitute_older_paste
-nmap <c-n> <Plug>yankstack_substitute_newer_paste
-
-
-""""""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 0
@@ -143,36 +134,6 @@ nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR> 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim-JSX
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:jsx_ext_required = 0
-let g:javascript_enable_domhtmlcss = 1
-let g:used_javascript_libs = 'underscore,react,chai,lodash'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim-jsx-typescript
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.jsx
-" light blues
-" light blues
-hi xmlTagName guifg=#59ACE5
-hi xmlTag guifg=#59ACE5
-"
-" " dark blues
-hi xmlEndTag guifg=#2974a1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => typescript-vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-setlocal indentkeys+=0.
-let g:typescript_opfirst='\%([<>=,?^%|*/&]\|\([-:+]\)\1\@!\|!=\|in\%(stanceof\)\=\>\)'
-autocmd FileType typescript :set makeprg=tsc
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-
-autocmd FileType json syntax match Comment +\/\/.\+$+
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Coc-vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use tab for trigger completion with characters ahead and navigate.
@@ -191,12 +152,6 @@ endfunction
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-function! SetupCommandAbbrs(from, to)
-  exec 'cnoreabbrev <expr> '.a:from
-        \ .' ((getcmdtype() ==# ":" && getcmdline() ==# "'.a:from.'")'
-        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
-endfunction
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -209,8 +164,20 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " Use C to open coc config
+function! SetupCommandAbbrs(from, to)
+  exec 'cnoreabbrev <expr> '.a:from
+        \ .' ((getcmdtype() ==# ":" && getcmdline() ==# "'.a:from.'")'
+        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
+endfunction
 call SetupCommandAbbrs('C', 'CocConfig')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`

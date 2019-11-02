@@ -117,12 +117,6 @@ set ttyfast
 " Show column
 set colorcolumn=80
 
-" Add a bit extra margin to the left
-"set foldcolumn=1
-
-" Enable clipboard from vim to global clipboard
-"set clipboard=unnamedplus
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -136,8 +130,10 @@ endif
 
 set background=dark
 set termguicolors
-let g:sierra_Midnight=1
-colorscheme sierra
+let g:badwolf_tabline = 0
+let g:badwolf_darkgutter = 1
+let g:badwolf_css_props_highlight = 1
+colorscheme badwolf
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -346,33 +342,6 @@ endtry
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Command mode related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Smart mappings on the command line
-cno $h e ~/
-cno $d e ~/Desktop/
-cno $j e ./
-cno $c e <C-\>eCurrentFileDir("e")<cr>
-
-" $q is super useful when browsing on the command line
-" it deletes everything until the last slash 
-cno $q <C-\>eDeleteTillSlash()<cr>
-
-" Bash like keys for the command line
-cnoremap <C-A>		<Home>
-cnoremap <C-E>		<End>
-cnoremap <C-K>		<C-U>
-
-cnoremap <C-P> <Up>
-cnoremap <C-N> <Down>
-
-" Map ½ to something useful
-map ½ $
-cmap ½ $
-imap ½ $
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General abbreviations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
@@ -412,35 +381,9 @@ map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-func! DeleteTillSlash()
-    let g:cmd = getcmdline()
-
-    if has("win16") || has("win32")
-        let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
-    else
-        let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*", "\\1", "")
-    endif
-
-    if g:cmd == g:cmd_edited
-        if has("win16") || has("win32")
-            let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
-        else
-            let g:cmd_edited = substitute(g:cmd, "\\(.*\[/\]\\).*/", "\\1", "")
-        endif
-    endif   
-
-    return g:cmd_edited
-endfunc
-
-func! CurrentFileDir(cmd)
-    return a:cmd . " " . expand("%:p:h") . "/"
-endfunc
-
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -512,14 +455,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-"if exists('$TMUX') 
-  "if has('nvim')
-    "set termguicolors
-  "else
-    "set term=screen-256color 
-  "endif
-"endif
-"
 
 """"""""""""""""""""""""""""""
 " => visual-at.vim
@@ -529,4 +464,4 @@ xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 function! ExecuteMacroOverVisualRange()
   echo "@".getcmdline()
   execute ":'<,'>normal @".nr2char(getchar())
-ndfunction
+endfunction
