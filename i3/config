@@ -13,7 +13,7 @@ set $lockcmd i3lock
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Monospace 8
+font pango:Hack Nerd Font 8
 
 # HiDPI for sway
 # output eDP-1 scale 1
@@ -159,8 +159,8 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle # mamixer set Master 100
 # screen brightness controls
 #bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Screenshots
 # Screenshot fullscreen
@@ -212,14 +212,14 @@ bindsym $mod+r mode "resize"
 
 # i3status bar config
 bar {
-	font pango:Monospace 10
-	status_command $barcmd --config ~/.config/i3/status.conf
+        font pango:Hack Nerd Font 10
+        status_command $barcmd --config ~/.config/i3/status.conf
 }
 
 # auto run commands
 # set background
 # use the same background as slim (login manager)
-exec --no-startup-id feh --bg-fill ${HOME}/Pictures/detroit.jpg
+exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wxp.jpg
 
 # Sway backgroud
 #output "*" background ${HOME}/Pictures/bh.jpg fill
@@ -239,4 +239,4 @@ exec --no-startup-id setxkbmap -layout us
 exec --no-startup-id nm-applet
 
 # run the merge for good colors
-exec xrdb -merge $HOME/.Xresources
+exec --no-startup-id xrdb -merge $HOME/.Xresources
