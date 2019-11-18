@@ -115,7 +115,7 @@ source $ZSH/oh-my-zsh.sh
 #source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 #source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
-export TERM=xterm-256color-italic
+export TERM=xterm-256color
 [[ $TMUX != "" ]] && export TERM="screen-256color" 
 
 #export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
