@@ -110,9 +110,10 @@ let g:go_highlight_function_calls = 1
 " => ale (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {}
-"let g:ale_dockerfile_hadolint_use_docker = 'yes'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_list_window_size = 15
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
 
 :call extend(g:ale_linters, {
     \"go": ['golint', 'go vet'], })
