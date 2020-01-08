@@ -121,6 +121,10 @@ let g:ale_lint_on_enter = 0
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
 
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(ale_previous)
+nmap <silent> ]g <Plug>(ale_next)
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -162,10 +166,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
