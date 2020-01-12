@@ -43,5 +43,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tpope/vim-dispatch'
 """"""""""""""""""""""""""""
 call plug#end()
