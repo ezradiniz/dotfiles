@@ -7,7 +7,7 @@ call plug#begin(s:vim_config.'/plugins')
 """""""""""""""""""""""""""""
 " Plugs
 """""""""""""""""""""""""""""
-Plug 'sjl/badwolf'
+Plug 'w0ng/vim-hybrid'
 Plug 'w0rp/ale'
 Plug 'ryanoasis/vim-devicons'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

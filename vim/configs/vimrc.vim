@@ -123,17 +123,17 @@ set colorcolumn=80
 " Enable syntax highlighting
 syntax enable
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
 set background=dark
-set termguicolors
-let g:badwolf_tabline = 0
-let g:badwolf_darkgutter = 1
-let g:badwolf_css_props_highlight = 1
-colorscheme badwolf
+colorscheme hybrid 
+
+""""""""""""""""""""""""""""""
+" => Enable true color
+""""""""""""""""""""""""""""""
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -445,16 +445,6 @@ function! s:MkNonExDir(file, buf)
       endif
     endif
 endfunction
-
-
-""""""""""""""""""""""""""""""
-" => Enable true color
-""""""""""""""""""""""""""""""
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
 
 """"""""""""""""""""""""""""""
 " => visual-at.vim
