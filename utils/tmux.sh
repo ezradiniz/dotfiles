@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo apt install tmux
+sudo apt install -y tmux
