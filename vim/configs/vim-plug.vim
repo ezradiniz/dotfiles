@@ -8,6 +8,8 @@ call plug#begin(s:vim_config.'/plugins')
 " Plugs
 """""""""""""""""""""""""""""
 Plug 'w0ng/vim-hybrid'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-dispatch'
 Plug 'w0rp/ale'
 Plug 'ryanoasis/vim-devicons'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -17,7 +19,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mileszs/ack.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Raimondi/delimitMate'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'cohama/lexima.vim'
 Plug 'vim-scripts/mru.vim'
@@ -43,6 +44,5 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tpope/vim-dispatch'
 """"""""""""""""""""""""""""
 call plug#end()

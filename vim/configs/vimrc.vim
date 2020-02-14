@@ -143,7 +143,6 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 set ffs=unix,dos,mac
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
@@ -174,7 +173,7 @@ set binary
 set noeol
 
 " List
-set listchars=eol:¬,tab:␉·,trail:.,extends:>,precedes:<
+set listchars=eol:~,tab:␉·,trail:.,extends:>,precedes:<
 set list
 
 """"""""""""""""""""""""""""""

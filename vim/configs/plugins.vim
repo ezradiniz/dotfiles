@@ -1,4 +1,9 @@
 """"""""""""""""""""""""""""""
+" => vim-fugitive
+""""""""""""""""""""""""""""""
+let g:fugitive_pty = 0
+
+""""""""""""""""""""""""""""""
 " => multiple-cursors
 """"""""""""""""""""""""""""""
 let g:multi_cursor_use_default_mapping=0
@@ -128,7 +133,7 @@ nmap <silent> ]g <Plug>(ale_next)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gitgutter_enabled=0
+let g:gitgutter_enabled=1
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 nnoremap <leader>dd : GitGutterLineHighlightsToggle<cr>
 
