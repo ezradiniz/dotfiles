@@ -261,7 +261,7 @@ fun! CleanExtraSpaces()
 endfun
 
 if has("autocmd")
-  autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+  autocmd BufWritePre *.ts,*.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
   autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 endif
 
