@@ -13,8 +13,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'w0rp/ale'
 Plug 'ryanoasis/vim-devicons'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mileszs/ack.vim'
 Plug 'jlanzarotta/bufexplorer'
@@ -44,5 +42,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'sheerun/vim-polyglot'
 """"""""""""""""""""""""""""
 call plug#end()
