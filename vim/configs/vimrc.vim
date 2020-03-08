@@ -18,7 +18,7 @@ set path+=**
 command! MakeTags !ctags -R .
 
 " Sets how many lines of history VIM has to remember
-set history=500
+set history=1000
 
 " Enable filetype plugins
 filetype plugin on
@@ -50,6 +50,9 @@ set updatetime=300
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
+
+" Cursorline
+set cursorline
 
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en' 
@@ -109,7 +112,7 @@ set tm=500
 " Remove delay
 set noesckeys
 set ttimeout
-set ttimeoutlen=1
+set ttimeoutlen=0
 
 " Indicates a fast terminal connection
 set ttyfast
@@ -123,17 +126,14 @@ set colorcolumn=80
 " Enable syntax highlighting
 syntax enable
 
-set background=dark
-colorscheme hybrid 
-
 """"""""""""""""""""""""""""""
 " => Enable true color
 """"""""""""""""""""""""""""""
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+" Enable 256 colors palette in Terminal
+set t_Co=256
+
+set background=dark
+colorscheme hybrid 
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -142,7 +142,14 @@ set guifont=DroidSansMono\ Nerd\ Font\ 11
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" Enable true color 启用终端24位色
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
@@ -150,7 +157,6 @@ set ffs=unix,dos,mac
 set nobackup
 set nowb
 set noswapfile
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -171,7 +177,7 @@ set noeol
 
 " List
 set listchars=eol:~,tab:␉·,trail:.,extends:>,precedes:<
-set list
+set nolist
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -185,6 +191,7 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
@@ -226,7 +233,7 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Specify the behavior when switching between buffers 
 try
-  set switchbuf=useopen,usetab
+  set switchbuf=usetab
   set stal=2
 catch
 endtry
@@ -339,36 +346,7 @@ endtry
 iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ack searching and cope displaying
-"    requires ack.vim - it's much better than vimgrep/grep
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use the the_silver_searcher if possible (much faster than Ack)
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep --smart-case --hidden'
-endif
-
-" When you press gv you Ack after the selected text
-vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
-
-" Open Ack and put the cursor in the right position
-map <leader>g :Ack!
-
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with Ack, display your results in cope by doing:
-"   <leader>cc
-"
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
-map <leader>cc :botright cope<cr>
+map <leader>cco :botright cope<cr>
 map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>

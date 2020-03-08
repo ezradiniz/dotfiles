@@ -30,39 +30,14 @@ map <leader>o :BufExplorer<cr>
 
 
 """"""""""""""""""""""""""""""
-" => MRU plugin
+" => fzf.vim
 """"""""""""""""""""""""""""""
-let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
+"
+nnoremap <c-b> :Buffers<cr>
+nnoremap <c-f> :Files<cr>
 
 
-""""""""""""""""""""""""""""""
-" => CTRL-P
-""""""""""""""""""""""""""""""
-let g:ctrlp_working_path_mode = 0
 
-let g:ctrlp_map = '<c-f>'
-map <leader>j :CtrlP<cr>
-map <c-b> :CtrlPBuffer<cr>
-
-let g:ctrlp_max_height = 25
-let g:ctrlp_custom_ignore = '__init__.py\|env\|dist\|build\|node_modules\|^\.next\|^\.DS_Store\|^\.vscode\|^\.git\|^\.coffee'
-
-
-""""""""""""""""""""""""""""""
-" => ZenCoding
-""""""""""""""""""""""""""""""
-" Enable all functions in all modes
-let g:user_zen_mode='a'
-
-
-""""""""""""""""""""""""""""""
-" => snipMate (~)
-""""""""""""""""""""""""""""""
-imap « <esc>a<Plug>snipMateNextOrTrigger
-smap « <Plug>snipMateNextOrTrigger
-
-""""""""""""""""""""""""""""""
 " => Vim grep
 """"""""""""""""""""""""""""""
 let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
@@ -215,12 +190,5 @@ let g:vim_markdown_follow_anchor = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:webdevicons_enable_ctrlp = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ack.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ack_use_dispatch = 1
-let g:ackhighlight = 1
