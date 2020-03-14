@@ -27,4 +27,7 @@ done
 echo "Loading i3 configuration"
 cp -r i3 ~/.config/
 
+echo "Loading alacritty"
+cp -r alacritty ~/.config/
+
 echo "Installed dotfiles sucessfully !"
