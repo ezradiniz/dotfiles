@@ -1,4 +1,4 @@
 #!/bin/sh
 wget -qO- https://get.docker.com/ | sh
-***REMOVED***
+sudo usermod -aG docker $USER
 su - $USER
