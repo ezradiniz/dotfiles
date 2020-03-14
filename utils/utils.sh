@@ -1,7 +1,8 @@
 #!/bin/sh
 
 sudo apt install -y \
-  tlp \ # tlp
+  tlp \
   tlp-rdw \
   xclip \
-  silversearcher-ag
+  silversearcher-ag \
+  ripgrep
