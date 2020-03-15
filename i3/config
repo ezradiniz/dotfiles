@@ -4,7 +4,7 @@
 # Original: https://github.com/jessfraz/dotfiles
 
 set $mod Mod4
-set $term i3-sensible-terminal
+set $term alacritty
 set $menu i3-dmenu-desktop
 set $barcmd i3status
 set $lockcmd i3lock
@@ -50,6 +50,7 @@ for_window [class="^Spotify Premium$"] border none
 # skype, steam, wine: float Gimp for_window [class="Code"] floating enable
 #for_window [class="Firefox"] floating enable
 for_window [class="Gimp"] floating enable
+for_window [class="chatterino"] floating enable
 #for_window [class="google-chrome"] floating enable
 #for_window [class="Google-chrome"] floating enable
 for_window [class="Keybase"] floating enable
@@ -154,9 +155,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ #increase sound volume
 bindsym XF86AudioLowerVolume exec amixer set Master 5%- #decrease sound volume
 bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle # mute sound
-bindsym XF86AudioMicMute exec amixer set Capture toggle # mamixer set Master 100ute mic
-
-# screen brightness controls
+bindsym XF86AudioMicMute exec amixer set Capture toggle # mamixer set Master 100ute mic # screen brightness controls
 #bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -176,6 +175,8 @@ bindsym $mod+Print exec "sleep 0.5; scrot -q 100 -s ${HOME}'/Pictures/Screenshot
 bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
 # Screenshot current focused window, sway
 #bindsym Shift+Print exec "swaygrab --focused ${HOME}/Pictures/Screenshots/$(date '+%Y-%m-%d-%H-%M-%S').png"
+#Boomer
+bindsym $mod+z exec boomer
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -212,8 +213,8 @@ bindsym $mod+r mode "resize"
 
 # i3status bar config
 bar {
-        font pango:Hack Nerd Font 10
-        status_command $barcmd --config ~/.config/i3/status.conf
+    font pango:Hack Nerd Font 10
+    status_command $barcmd --config ~/.config/i3/status.conf
 }
 
 # auto run commands

@@ -1,0 +1,29 @@
+{
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "diagnostic.refreshAfterSave": true,
+  "diagnostic.displayByAle": true,
+  "languageserver": {
+      "dockerfile": {
+          "command": "docker-langserver",
+          "filetypes": ["Dockerfile"],
+          "args": ["--stdio"]
+      },
+    "golang": {
+        "command": "gopls",
+        "rootPatterns": ["go.mod"],
+        "filetypes": ["go"],
+        "initializationOptions": {
+            "usePlaceholders": true
+        }
+    },
+    "clangd": {
+      "command": "clangd",
+      "args": ["--background-index"],
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["c", "cpp", "objc", "objcpp"]
+    }
+  },
+  "yaml.schemas": {
+    "http://json.schemastore.org/composer": "/*"
+  }
+}

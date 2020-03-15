@@ -2,10 +2,31 @@
 
 My personal dotfiles
 
-### How to install ?
-1. git clone --depth=1 https://github.com/ezradiniz/dotfiles.git
-2. cd dotfiles
-3. sh install.sh
+### Prerequisites                                                                       
+ - Vim
+ - Tmux
+ - Alacritty
+ - Zsh (Oh My Zsh)
+
+### How to install?
+
+```console
+$ git clone --depth=1 https://github.com/ezradiniz/dotfiles.git
+$ cd dotfiles
+$ make
+```
+
+### Using the Makefile
+
+```console
+$ make vim 				# Update vim
+$ make zsh 				# Update zsh 
+$ make tmux 				# Update tmux
+$ make i3 				# Update i3
+$ make alacritty 			# Update alacritty
+$ make git 				# Update git
+$ make utils 				# Update utils 
+```
 
 ### License
 This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details 

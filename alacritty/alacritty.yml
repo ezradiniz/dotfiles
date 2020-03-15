@@ -38,8 +38,8 @@ colors:
     background: '0xf6f6f6'
 
 # Font configuration (changes require restart)
-#font:
-  #size: 11
-  #normal:
-    #family: Hack Nerd Font Mono
+font:
+  size: 11
+  normal:
+    family: Hack Nerd Font Mono
 

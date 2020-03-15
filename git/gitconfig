@@ -1,6 +1,9 @@
 [user]
 	email = linux.esdras@gmail.com
-	name = ezradiniz
+	name = M. Esdras S. Diniz
+	signingkey = 706A2B426BF37CEA
+[github]
+	user = ezradiniz
 [core]
 	editor = vim
 [color]
@@ -25,6 +28,7 @@
 	prompt = false
 	keepBackup = false
 [merge]
+        log = true
 	tool = vimdiff
 	conflictstyle = diff3
 [rebase]
