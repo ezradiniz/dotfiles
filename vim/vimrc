@@ -3,9 +3,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
-let g:vim_bootstrap_langs = "c,go,javascript"
-let g:vim_bootstrap_editor = "vim"				" nvim or vim
-
 if !filereadable(vimplug_exists)
   if !executable("curl")
     echoerr "You have to install curl or first install vim-plug yourself!"
@@ -103,6 +100,7 @@ set novisualbell
 set t_vb=
 set tm=500
 set relativenumber
+set number
 
 set noesckeys
 set ttimeout
@@ -135,6 +133,11 @@ set noeol
 set listchars=eol:~,tab:␉·,trail:.,extends:>,precedes:<
 set nolist
 
+set expandtab
+set smarttab
+set shiftwidth=4
+set softtabstop=4
+
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
@@ -153,6 +156,7 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
 map <leader>ty :tabnext<cr>
 map <leader>tr :tabprev<cr>
+
 let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
@@ -163,7 +167,6 @@ try
   set stal=2
 catch
 endtry
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
@@ -177,9 +180,6 @@ fun! CleanExtraSpaces()
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfun
-
-autocmd BufWritePre *.ts,*.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 
 map <leader>ss :setlocal spell!<cr>
 map <leader>sn ]s
@@ -203,6 +203,9 @@ map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
+""""""""""""""""""""""""""""""
+" => Core functions
+""""""""""""""""""""""""""""""
 function! HasPaste()
     if &paste
         return 'PASTE MODE  '
@@ -291,6 +294,7 @@ map <leader>o :BufExplorer<cr>
 """"""""""""""""""""""""""""""
 nnoremap <c-b> :Buffers<cr>
 nnoremap <c-f> :Files<cr>
+let g:fzf_buffers_jump = 1
 
 """"""""""""""""""""""""""""""
 " => Nerd Tree
@@ -305,11 +309,6 @@ map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 
-""""""""""""""""""""""""""""""
-" => surround.vim config
-""""""""""""""""""""""""""""""
-vmap Si S(i_<esc>f)
-au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 
 """"""""""""""""""""""""""""""
 " => Vim-go
@@ -435,3 +434,15 @@ let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Autocmd
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+autocmd BufWritePre *.tsx,*.ts,*.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd BufNewFile,BufRead *.ts,*.tsx setlocal expandtab smarttab shiftwidth=4 softtabstop=4
+autocmd BufNewFile,BufRead *.md setlocal wrap
