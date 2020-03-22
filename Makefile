@@ -19,11 +19,11 @@ tmux:
 
 .PHONY: i3
 i3:
-	sudo ln -sn $(CURDIR)/i3 "$(HOME)/.config/i3"
+	sudo ln -sn $(CURDIR)/i3 "$(HOME)/.config/"
 
 .PHONY: alacritty
 alacritty:
-	sudo ln -sfn $(CURDIR)/alacritty "$(HOME)/.config/alacritty"
+	sudo ln -sfn $(CURDIR)/alacritty "$(HOME)/.config/"
 
 .PHONY: git
 git:
