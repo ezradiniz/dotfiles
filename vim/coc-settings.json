@@ -1,6 +1,5 @@
 {
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "diagnostic.refreshAfterSave": true,
   "diagnostic.displayByAle": true,
   "languageserver": {
       "dockerfile": {
