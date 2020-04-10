@@ -414,7 +414,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 """"""""""""""""""""""""""""""
 " => Airline_theme
 """"""""""""""""""""""""""""""
-let g:airline_theme = 'monokai_tasty'
+let g:airline_theme = 'dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#ale#enabled = 1
