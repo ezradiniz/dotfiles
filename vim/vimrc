@@ -88,7 +88,6 @@ set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 set ignorecase
 set smartcase
-set hlsearch
 set grepprg=/bin/grep\ -nH
 set incsearch 
 set lazyredraw 
@@ -102,6 +101,9 @@ set tm=500
 set relativenumber
 set number
 
+" highlighting
+set hlsearch
+nnoremap <leader><Enter> :noh<CR>
 set noesckeys
 set ttimeout
 set ttimeoutlen=0
