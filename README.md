@@ -2,12 +2,6 @@
 
 My personal dotfiles
 
-### Prerequisites                                                                       
- - Vim
- - Tmux
- - Alacritty
- - Zsh (Oh My Zsh)
-
 ### How to install?
 
 ```console
