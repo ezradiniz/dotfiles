@@ -25,7 +25,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
 Plug 'w0rp/ale'
-Plug 'ryanoasis/vim-devicons'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jlanzarotta/bufexplorer'
@@ -34,12 +33,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'ternjs/tern_for_vim'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-abolish'
 Plug 'markonm/traces.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-fugitive'
@@ -104,6 +100,7 @@ set number
 " highlighting
 set hlsearch
 nnoremap <leader><Enter> :noh<CR>
+
 set noesckeys
 set ttimeout
 set ttimeoutlen=0
@@ -414,28 +411,12 @@ call SetupCommandAbbrs('C', 'CocConfig')
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 """"""""""""""""""""""""""""""
-" => Airline_theme
-""""""""""""""""""""""""""""""
-let g:airline_theme = 'dark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-""""""""""""""""""""""""""""""
 " => vim-markdown
 """"""""""""""""""""""""""""""
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_follow_anchor = 1
 
 """"""""""""""""""""""""""""""
-" => vim-devicons
-""""""""""""""""""""""""""""""
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_conceal_nerdtree_brackets = 1
-let g:webdevicons_enable_airline_tabline = 1
-let g:webdevicons_enable_airline_statusline = 1
 
 """"""""""""""""""""""""""""""
 " => vim-visual-multi
