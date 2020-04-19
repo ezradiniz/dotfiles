@@ -11,7 +11,8 @@ sudo apt install -y \
   xclip \
   ranger \
   silversearcher-ag \
-  ripgrep
+  ripgrep \
+  fd-find
 
 # docker
 wget -qO- https://get.docker.com/ | sh
