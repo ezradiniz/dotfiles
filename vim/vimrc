@@ -413,11 +413,6 @@ call SetupCommandAbbrs('C', 'CocConfig')
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-""""""""""""""""""""""""""""""
-" => vim-markdown
-""""""""""""""""""""""""""""""
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_follow_anchor = 1
 
 """"""""""""""""""""""""""""""
 
