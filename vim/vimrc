@@ -188,6 +188,7 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>q :e ~/.vim/buffer<cr>
 map <leader>x :e ~/.vim/buffer.md<cr>
 map <leader>pp :setlocal paste!<cr>
+au InsertLeave * silent! set nopaste
 noremap <leader>e :e! ~/.vimrc<cr>
 
 try
@@ -268,6 +269,7 @@ map <leader>o :BufExplorer<cr>
 """"""""""""""""""""""""""""""
 nnoremap <c-b> :Buffers<cr>
 nnoremap <c-f> :Files<cr>
+nnoremap <leader>` :Marks<cr>
 let g:fzf_buffers_jump = 1
 
 """"""""""""""""""""""""""""""
