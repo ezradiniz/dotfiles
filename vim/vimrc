@@ -96,6 +96,7 @@ set t_vb=
 set tm=500
 set relativenumber
 set number
+set virtualedit=block
 
 " highlighting
 set hlsearch
