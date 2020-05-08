@@ -1,6 +1,9 @@
 {
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "diagnostic.displayByAle": true,
+  "typescript.format.enabled": true,
+  "javascript.format.enabled": true,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "typescript"],
   "languageserver": {
       "dockerfile": {
           "command": "docker-langserver",
