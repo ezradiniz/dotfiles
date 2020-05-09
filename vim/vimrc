@@ -202,6 +202,9 @@ map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
+vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
+
 """"""""""""""""""""""""""""""
 " => Core functions
 """"""""""""""""""""""""""""""
@@ -210,6 +213,17 @@ function! HasPaste()
         return 'PASTE MODE  '
     endif
     return ''
+endfunction
+
+function! VisualSelection() range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
 endfunction
 
 command! Bclose call <SID>BufcloseCloseIt()
