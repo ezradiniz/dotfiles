@@ -168,7 +168,7 @@ bindsym $mod+Print exec "sleep 0.5; scrot -q 100 -s ${HOME}'/Pictures/Screenshot
 bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
 # Screenshot current focused window, sway
 #bindsym Shift+Print exec "swaygrab --focused ${HOME}/Pictures/Screenshots/$(date '+%Y-%m-%d-%H-%M-%S').png"
-#Boomer
+#Boomer - https://github.com/tsoding/boomer
 bindsym $mod+z exec boomer
 
 # reload the configuration file
