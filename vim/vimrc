@@ -297,8 +297,6 @@ let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules', 'build', 'dist']
-let g:NERDTreeShowBookmarks=1
 let g:NERDTreeWinSize=35
 nnoremap <leader>nn :NERDTreeToggle<cr>
 nnoremap <leader>nb :NERDTreeFromBookmark<Space>
