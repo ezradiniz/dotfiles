@@ -70,6 +70,7 @@ bindsym $mod+y exec $lockcmd -c 111111
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
+bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 # move to monitor
