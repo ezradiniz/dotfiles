@@ -430,9 +430,3 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 soft
 autocmd BufNewFile,BufRead *.ts,*.tsx setlocal expandtab smarttab shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.md setlocal wrap
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Highlight command
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi SpellBad term=underline cterm=underline ctermfg=1 gui=underline guifg=#ab4642
-hi SpellCap term=underline cterm=underline ctermfg=1 gui=underline guifg=#ab4642
-hi SpellRare term=underline cterm=underline ctermfg=1 gui=underline guifg=#ab4642
