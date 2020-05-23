@@ -21,29 +21,29 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin(expand('~/.vim/plugged'))
 
-Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-dispatch'
-Plug 'w0rp/ale'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jlanzarotta/bufexplorer'
-Plug 'cohama/lexima.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'terryma/vim-expand-region'
-Plug 'tpope/vim-fugitive'
-Plug 'rbong/vim-flog'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'plasticboy/vim-markdown'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'tpope/vim-surround'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'sheerun/vim-polyglot'
+Plug 'cohama/lexima.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'plasticboy/vim-markdown'
+Plug 'rbong/vim-flog'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
+Plug 'terryma/vim-expand-region'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'w0rp/ale'
 
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
