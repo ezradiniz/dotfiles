@@ -21,7 +21,6 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin(expand('~/.vim/plugged'))
 
-Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-dispatch'
@@ -34,18 +33,12 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'tomtom/tlib_vim'
-Plug 'tpope/vim-abolish'
-Plug 'markonm/traces.vim'
-Plug 'tpope/vim-commentary'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
 Plug 'airblade/vim-gitgutter'
 Plug 'plasticboy/vim-markdown'
-Plug 'xolox/vim-misc'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'sheerun/vim-polyglot'
