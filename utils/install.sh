@@ -12,7 +12,8 @@ sudo apt install -y \
   ranger \
   silversearcher-ag \
   ripgrep \
-  fd-find
+  fd-find \
+  bat
 
 # docker
 wget -qO- https://get.docker.com/ | sh
