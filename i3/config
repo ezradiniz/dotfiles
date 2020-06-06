@@ -1,7 +1,6 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-# Original: https://github.com/jessfraz/dotfiles
 
 set $mod Mod4
 set $term alacritty
@@ -89,12 +88,6 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
-
 # split in horizontal orientation
 bindsym $mod+bar split h
 
@@ -117,9 +110,6 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -150,25 +140,14 @@ bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ #increase sound volume
 bindsym XF86AudioLowerVolume exec amixer set Master 5%- #decrease sound volume
 bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle # mute sound
 bindsym XF86AudioMicMute exec amixer set Capture toggle # mamixer set Master 100ute mic # screen brightness controls
-#bindsym XF86MonBrightnessUp exec sudo light -A 5 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec sudo light -U 5 # decrease screen brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Screenshots
-# Screenshot fullscreen
-#bindsym Print exec "scrot -q 100 ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e ${HOME}'/google-cloud-sdk/bin/gsutil cp -a public-read $f gs://misc.j3ss.co/screenshots/ && echo https://misc.j3ss.co/screenshots/$n | xclip -i -selection clipboard'"
-# Screenshot fullscreen, sway
-#bindsym Shift+Print exec "swaygrab ${HOME}/Pictures/Screenshots/$(date '+%Y-%m-%d-%H-%M-%S').png"
-# Screenshot with selection
 bindsym $mod+Print exec "sleep 0.5; scrot -q 100 -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
-# Screenshot capture, sway
-#bindsym Shift+Print exec "swaygrab -c ${HOME}/Pictures/Screenshots/$(date '+%Y-%m-%d-%H-%M-%S').webm"
-# Screenshot current focused window
 bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
-# Screenshot current focused window, sway
-#bindsym Shift+Print exec "swaygrab --focused ${HOME}/Pictures/Screenshots/$(date '+%Y-%m-%d-%H-%M-%S').png"
-#Boomer - https://github.com/tsoding/boomer
+
+# Boomer - https://github.com/tsoding/boomer
 bindsym $mod+z exec boomer
 
 # reload the configuration file
@@ -206,13 +185,11 @@ bindsym $mod+r mode "resize"
 
 # i3status bar config
 bar {
+    tray_output primary
     font pango:Hack Nerd Font 10
     status_command $barcmd --config ~/.config/i3/status.conf
 }
 
-# auto run commands
-# set background
-# use the same background as slim (login manager)
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wxp.jpg
 
 # Set initial delay 200ms, repeat 80ms
