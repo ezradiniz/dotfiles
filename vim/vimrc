@@ -26,6 +26,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'itchyny/lightline.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -161,7 +162,7 @@ catch
 endtry
 
 set laststatus=2
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+set noshowmode
 
 map 0 ^
 
@@ -202,12 +203,6 @@ vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 """"""""""""""""""""""""""""""
 " => Core functions
 """"""""""""""""""""""""""""""
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    endif
-    return ''
-endfunction
 
 function! VisualSelection() range
     let l:saved_reg = @"
@@ -343,6 +338,7 @@ nmap <silent> ]g <Plug>(ale_next)
 " => Git gutter (Git diff)
 """"""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
+let g:gitgutter_terminal_reports_focus=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 nnoremap <leader>dd : GitGutterLineHighlightsToggle<cr>
 
@@ -350,8 +346,6 @@ function! GitStatus()
     let [a,m,r] = GitGutterGetHunkSummary()
     return printf('+%d ~%d -%d', a, m, r)
 endfunction
-set statusline+=%{GitStatus()}
-
 """"""""""""""""""""""""""""""
 " => Coc-vim
 """"""""""""""""""""""""""""""
@@ -399,11 +393,6 @@ function! SetupCommandAbbrs(from, to)
 endfunction
 call SetupCommandAbbrs('C', 'CocConfig')
 
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-
-""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " => vim-visual-multi
@@ -411,6 +400,21 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 let g:VM_maps = {}
 let g:VM_maps['Add Cursor Up'] = '<F3>'
 let g:VM_maps['Add Cursor Down'] = '<F2>'
+
+""""""""""""""""""""""""""""""
+" => lightline.vim
+""""""""""""""""""""""""""""""
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'gitstatus' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead',
+      \   'gitstatus': 'GitStatus',
+      \ },
+      \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Autocmd
