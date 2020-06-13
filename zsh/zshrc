@@ -106,13 +106,13 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #export TERM=screen-256color
 
 export TERM="xterm-256color"
 
 alias curl='noglob curl'
+alias zshconfig='vim ~/.zshrc'
 
 # Disable to nomatch handling
 unsetopt nomatch
