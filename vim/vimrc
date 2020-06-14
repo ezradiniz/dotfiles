@@ -127,7 +127,7 @@ set fileformats+=dos
 set binary
 set noeol
 set listchars=eol:~,tab:␉·,trail:.,extends:>,precedes:<
-set nolist
+set list
 
 set expandtab
 set smarttab
