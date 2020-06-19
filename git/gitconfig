@@ -1,7 +1,7 @@
 [user]
 	email = linux.esdras@gmail.com
 	name = Mateus Esdras
-	signingkey = 706A2B426BF37CEA
+	signingkey = 377EA54D8DA18BCE
 [github]
 	user = ezradiniz
 [core]
@@ -16,6 +16,8 @@
 	new = green bold
 [push]
 	default = current
+[branch]
+	dautosetuprebase = always
 [status]
 	color = true
 	submodulesummary = true
@@ -28,8 +30,13 @@
 	prompt = false
 	keepBackup = false
 [merge]
-        log = true
+	log = true
 	tool = vimdiff
 	conflictstyle = diff3
+[commit]
+	verbose = true
+	gpgsign = true
 [rebase]
 	autosquash = true
+[help]
+	autocorrect = 1
