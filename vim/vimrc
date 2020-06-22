@@ -174,11 +174,11 @@ fun! CleanExtraSpaces()
     call setreg('/', old_query)
 endfun
 
-map <leader>ss :setlocal spell!<cr>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
+noremap <leader>ss :setlocal spell!<cr>
+noremap <leader>sn ]s
+noremap <leader>sp [s
+noremap <leader>sa zg
+noremap <leader>s? z=
 
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>q :e ~/.vim/buffer<cr>
@@ -392,7 +392,6 @@ function! SetupCommandAbbrs(from, to)
         \ .'? ("'.a:to.'") : ("'.a:from.'"))'
 endfunction
 call SetupCommandAbbrs('C', 'CocConfig')
-
 
 """"""""""""""""""""""""""""""
 " => vim-visual-multi
