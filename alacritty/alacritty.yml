@@ -1,3 +1,7 @@
+scrolling:
+  history: 50000
+  multiplier: 3
+
 # Colors (Jellybeans)
 colors:
   # Default colors
@@ -36,6 +40,11 @@ colors:
   selection:
     text: '0x5963a2'
     background: '0xf6f6f6'
+
+
+cursor:
+  style: Block
+  unfocused_hollow: true
 
 # Font configuration (changes require restart)
 font:
