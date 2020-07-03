@@ -150,11 +150,6 @@ map <leader>tm :tabmove
 map <leader>ty :tabnext<cr>
 map <leader>tr :tabprev<cr>
 
-let g:lasttab = 1
-nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
 try
   set switchbuf=usetab
   set stal=2
