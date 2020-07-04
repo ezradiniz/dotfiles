@@ -46,22 +46,6 @@ bindsym $mod+Shift+q kill
 # spotify: no border
 for_window [class="Gimp"] floating enable
 for_window [class="chatterino"] floating enable
-for_window [class="Keybase"] floating enable
-for_window [class="Logic"] floating enable
-for_window [class="Neoman"] floating enable
-for_window [class="NES"] floating enable
-for_window [class="Pidgin"] floating enable
-for_window [class="Portal"] floating enable
-for_window [class="RStudio"] floating enable
-for_window [class="Skype"] floating enable
-for_window [class="Slack"] floating enable
-for_window [class="Steam"] floating enable
-for_window [class="Tor Browser"] floating enable
-for_window [class="Virt-viewer"] floating enable
-for_window [class="VirtualBox"] floating enable
-for_window [class="vlc"] floating enable
-for_window [class="Wine"] floating enable
-for_window [class="Wireshark"] floating enable
 
 # lock screen
 bindsym $mod+y exec $lockcmd -c 111111
