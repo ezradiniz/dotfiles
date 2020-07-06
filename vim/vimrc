@@ -269,6 +269,7 @@ map <leader>o :BufExplorer<cr>
 """"""""""""""""""""""""""""""
 nnoremap <c-b> :Buffers<cr>
 nnoremap <c-f> :Files<cr>
+nnoremap <c-p> :GFiles<cr>
 nnoremap <leader>` :Marks<cr>
 let g:fzf_buffers_jump = 1
 
