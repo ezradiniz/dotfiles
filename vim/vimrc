@@ -161,8 +161,6 @@ endtry
 set laststatus=2
 set noshowmode
 
-map 0 ^
-
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
@@ -170,12 +168,6 @@ fun! CleanExtraSpaces()
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfun
-
-noremap <leader>ss :setlocal spell!<cr>
-noremap <leader>sn ]s
-noremap <leader>sp [s
-noremap <leader>sa zg
-noremap <leader>s? z=
 
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>q :e ~/.vim/buffer<cr>
@@ -192,8 +184,6 @@ endtry
 map <leader>cco :botright cope<cr>
 map <leader>llo :botright lope<cr>
 map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
 
 vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
@@ -328,10 +318,6 @@ let g:ale_lint_on_enter = 0
 
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
-"
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(ale_previous)
-nmap <silent> ]g <Plug>(ale_next)
 
 """"""""""""""""""""""""""""""
 " => Git gutter (Git diff)
