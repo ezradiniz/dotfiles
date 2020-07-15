@@ -66,7 +66,7 @@ nmap <leader>w :w!<cr>
 command! W w !sudo tee % > /dev/null
 
 set shortmess+=c
-set updatetime=300
+set updatetime=100
 set cursorline
 let $LANG='en' 
 set langmenu=en
@@ -305,10 +305,7 @@ let g:go_highlight_function_calls = 1
 " => ale (syntax checker)
 """"""""""""""""""""""""""""""
 let g:ale_linters = {}
-"let g:ale_dockerfile_hadolint_use_docker = 'yes'
 let g:ale_list_window_size = 15
-
-let g:ale_lint_on_text_changed = 'never'
 " You can disable this option too
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
