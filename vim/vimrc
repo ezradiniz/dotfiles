@@ -131,6 +131,9 @@ set noeol
 set listchars=eol:~,tab:␉·,trail:.,extends:>,precedes:<
 set list
 
+" very useful
+map 0 ^
+
 set expandtab
 set smarttab
 set shiftwidth=4
