@@ -191,6 +191,8 @@ map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 
+nnoremap <leader>cd :lcd %:p:h<cr>
+
 """"""""""""""""""""""""""""""
 " => Core functions
 """"""""""""""""""""""""""""""
