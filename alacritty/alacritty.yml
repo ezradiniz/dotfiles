@@ -1,46 +1,33 @@
+
 scrolling:
   history: 50000
   multiplier: 3
 
-# Colors (Jellybeans)
+# Colors sonokai
 colors:
-  # Default colors
   primary:
-    background: '0x161616'
-    foreground: '0xe4e4e4'
+    background: "0x2c2e34"
+    foreground: "0xe2e2e3"
 
-  # Cursor volors
-  cursor:
-    text: '0xfeffff'
-    cursor: '0xffb472'
-
-  # Normal colors
   normal:
-    black:   '0xa3a3a3'
-    red:     '0xe98885'
-    green:   '0xa3c38b'
-    yellow:  '0xffc68d'
-    blue:    '0xa6cae2'
-    magenta: '0xe7cdfb'
-    cyan:    '0x00a69f'
-    white:   '0xe4e4e4'
+    black: "0x181819"
+    red: "0xfc5d7c"
+    green: "0x9ed072"
+    yellow: "0xe7c664"
+    blue: "0x76cce0"
+    magenta: "0xb39df3"
+    cyan: "0xf39660"
+    white: "0xe2e2e3"
 
-  # Bright colors
   bright:
-    black:   '0xc8c8c8'
-    red:     '0xffb2b0'
-    green:   '0xc8e2b9'
-    yellow:  '0xffe1af'
-    blue:    '0xbddff7'
-    magenta: '0xfce2ff'
-    cyan:    '0x0bbdb6'
-    white:   '0xfeffff'
-
-  # Selection colors
-  selection:
-    text: '0x5963a2'
-    background: '0xf6f6f6'
-
+    black: "0x181819"
+    red: "0xfc5d7c"
+    green: "0x9ed072"
+    yellow: "0xe7c664"
+    blue: "0x76cce0"
+    magenta: "0xb39df3"
+    cyan: "0xf39660"
+    white: "0xe2e2e3"
 
 cursor:
   style: Block
