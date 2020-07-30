@@ -14,13 +14,14 @@ $ make
 
 ```console
 $ make vim 				# Update vim
-$ make zsh 				# Update zsh 
+$ make zsh 				# Update zsh
 $ make tmux 				# Update tmux
 $ make i3 				# Update i3
 $ make alacritty 			# Update alacritty
 $ make git 				# Update git
-$ make utils 				# Update utils 
+$ make utils 				# Update utils
 ```
 
 ### License
-This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details 
+
+This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details
