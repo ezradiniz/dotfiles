@@ -265,11 +265,9 @@ let g:fzf_buffers_jump = 1
 """"""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowHidden=1
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=3
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeChDirMode=2
 let g:NERDTreeWinSize=35
 nnoremap <leader>nn :NERDTreeToggle<cr>
 nnoremap <leader>nb :NERDTreeFromBookmark<Space>
@@ -301,10 +299,6 @@ let g:go_highlight_function_calls = 1
 " => ale (syntax checker)
 """"""""""""""""""""""""""""""
 let g:ale_linters = {}
-let g:ale_list_window_size = 15
-" You can disable this option too
-" if you don't want linters to run on opening a file
-let g:ale_lint_on_enter = 0
 
 :call extend(g:ale_linters, {
     \"go": ['golint', 'go vet'], })
@@ -312,11 +306,19 @@ let g:ale_lint_on_enter = 0
 :call extend(g:ale_linters, {
     \'python': ['flake8'], })
 
+:call extend(g:ale_linters, {
+    \'typescript': ['tslint', 'eslint', 'tsserver'], })
+
+:call extend(g:ale_linters, {
+    \'typescriptreact': ['tslint', 'eslint', 'tsserver'], })
+
+:call extend(g:ale_linters, {
+    \'javascript': ['tslint', 'eslint', 'tsserver'], })
+
 """"""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """"""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
-let g:gitgutter_terminal_reports_focus=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
 nnoremap <leader>dd : GitGutterLineHighlightsToggle<cr>
 
@@ -324,6 +326,7 @@ function! GitStatus()
     let [a,m,r] = GitGutterGetHunkSummary()
     return printf('+%d ~%d -%d', a, m, r)
 endfunction
+
 """"""""""""""""""""""""""""""
 " => Coc-vim
 """"""""""""""""""""""""""""""
@@ -397,3 +400,4 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 soft
 autocmd BufNewFile,BufRead *.ts,*.tsx setlocal expandtab smarttab shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.md setlocal wrap
 
+autocmd FileType make setlocal noexpandtab
