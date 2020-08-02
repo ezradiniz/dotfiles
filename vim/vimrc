@@ -25,9 +25,8 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'itchyny/lightline.vim'
-Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -252,15 +251,6 @@ endfunction
 " => vim-fugitive
 """"""""""""""""""""""""""""""
 let g:fugitive_pty = 0
-
-""""""""""""""""""""""""""""""
-" => bufExplorer plugin
-""""""""""""""""""""""""""""""
-let g:bufExplorerDefaultHelp=1
-let g:bufExplorerShowRelativePath=1
-let g:bufExplorerFindActive=1
-let g:bufExplorerSortBy='name'
-map <leader>o :BufExplorer<cr>
 
 """"""""""""""""""""""""""""""
 " => fzf.vim
