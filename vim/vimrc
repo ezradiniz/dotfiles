@@ -257,6 +257,7 @@ nnoremap <c-b> :Buffers<cr>
 nnoremap <c-f> :Files<cr>
 nnoremap <c-p> :GFiles<cr>
 nnoremap <leader>` :Marks<cr>
+nnoremap q: :History:<cr>
 let g:fzf_buffers_jump = 1
 
 """"""""""""""""""""""""""""""
