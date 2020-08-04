@@ -30,6 +30,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'plasticboy/vim-markdown'
 Plug 'rbong/vim-flog'
@@ -112,8 +113,9 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-let g:sonokai_enable_italic = 1
-silent! colorscheme sonokai
+
+let g:gruvbox_contrast_dark="hard"
+silent! colorscheme gruvbox
 
 set encoding=utf8
 set nobackup
@@ -376,7 +378,7 @@ let g:VM_maps['Add Cursor Down'] = '<F2>'
 " => lightline.vim
 """"""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'sonokai',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'gitstatus' ] ]
