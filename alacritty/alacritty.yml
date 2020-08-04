@@ -2,32 +2,40 @@
 scrolling:
   history: 50000
   multiplier: 3
-
-# Colors sonokai
+ 
+# Colors (Base16 Default Dark)
 colors:
+  # Default colors
   primary:
-    background: "0x2c2e34"
-    foreground: "0xe2e2e3"
+    background: '0x181818'
+    foreground: '0xd8d8d8'
 
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xd8d8d8'
+    cursor: '0xd8d8d8'
+
+  # Normal colors
   normal:
-    black: "0x181819"
-    red: "0xfc5d7c"
-    green: "0x9ed072"
-    yellow: "0xe7c664"
-    blue: "0x76cce0"
-    magenta: "0xb39df3"
-    cyan: "0xf39660"
-    white: "0xe2e2e3"
+    black:   '0x181818'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xd8d8d8'
 
+  # Bright colors
   bright:
-    black: "0x181819"
-    red: "0xfc5d7c"
-    green: "0x9ed072"
-    yellow: "0xe7c664"
-    blue: "0x76cce0"
-    magenta: "0xb39df3"
-    cyan: "0xf39660"
-    white: "0xe2e2e3"
+    black:   '0x585858'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xf8f8f8'
 
 cursor:
   style: Block
