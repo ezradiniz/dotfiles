@@ -275,6 +275,13 @@ nnoremap <leader>nb :NERDTreeFromBookmark<Space>
 nnoremap <leader>nf :NERDTreeFind<cr>
 
 """"""""""""""""""""""""""""""
+" => NERD Commenter
+""""""""""""""""""""""""""""""
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+""""""""""""""""""""""""""""""
 " => Vim-go
 """"""""""""""""""""""""""""""
 let g:go_def_mapping_enabled = 0
