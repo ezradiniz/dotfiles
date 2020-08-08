@@ -43,7 +43,7 @@ cursor:
 
 # Font configuration (changes require restart)
 font:
-  size: 11
+  size: 12
   normal:
     family: Hack Nerd Font Mono
 
