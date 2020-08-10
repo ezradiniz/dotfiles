@@ -307,6 +307,8 @@ let g:go_highlight_function_calls = 1
 " => ale (syntax checker)
 """"""""""""""""""""""""""""""
 let g:ale_linters = {}
+let g:ale_disable_lsp = 1
+let g:ale_lint_on_text_changed = 'never'
 
 :call extend(g:ale_linters, {
     \"go": ['golint', 'go vet'], })
