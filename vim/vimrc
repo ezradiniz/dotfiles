@@ -73,7 +73,7 @@ set wildmenu
 set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,node_modules/**
 set ruler
 set cmdheight=1
-set signcolumn=yes
+set signcolumn=auto
 set hidden
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
