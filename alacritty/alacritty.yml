@@ -2,7 +2,7 @@
 scrolling:
   history: 50000
   multiplier: 3
- 
+
 # Colors (Base16 Default Dark)
 colors:
   # Default colors
