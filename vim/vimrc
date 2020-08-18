@@ -129,7 +129,7 @@ let &showbreak='▷ '
 set fileformats+=dos
 set binary
 set noeol
-set listchars=eol:~,tab:␉·,trail:.,extends:>,precedes:<
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 set list
 
 " very useful
