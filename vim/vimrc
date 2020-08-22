@@ -22,19 +22,18 @@ endif
 call plug#begin(expand('~/.vim/plugged'))
 
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-dirvish'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'plasticboy/vim-markdown'
 Plug 'rbong/vim-flog'
-Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -262,17 +261,12 @@ nnoremap q: :History:<cr>
 let g:fzf_buffers_jump = 1
 
 """"""""""""""""""""""""""""""
-" => Nerd Tree
+" => vim-dirvish
 """"""""""""""""""""""""""""""
-let g:NERDTreeWinPos = "right"
-let g:NERDTreeShowHidden=1
-let g:NERDTreeQuitOnOpen=3
-let g:NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeWinSize=35
-nnoremap <leader>nn :NERDTreeToggle<cr>
-nnoremap <leader>nb :NERDTreeFromBookmark<Space>
-nnoremap <leader>nf :NERDTreeFind<cr>
+augroup dirvish_config
+    autocmd!
+    autocmd FileType dirvish nnoremap <buffer><silent> <c-p> :GFiles<cr>
+augroup end
 
 """"""""""""""""""""""""""""""
 " => Vim-go
