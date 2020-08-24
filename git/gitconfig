@@ -17,7 +17,7 @@
 [push]
 	default = current
 [branch]
-	dautosetuprebase = always
+	autosetuprebase = always
 [status]
 	color = true
 	submodulesummary = true
