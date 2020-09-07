@@ -24,13 +24,13 @@ call plug#begin(expand('~/.vim/plugged'))
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
-Plug 'ezradiniz/vim-colors-off'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'plasticboy/vim-markdown'
 Plug 'rbong/vim-flog'
@@ -115,7 +115,8 @@ if exists('+termguicolors')
 endif
 
 set background=dark
-silent! colorscheme off
+let g:gruvbox_contrast_dark="hard"
+silent! colorscheme gruvbox
 
 set encoding=utf8
 set nobackup
@@ -381,7 +382,7 @@ let g:VM_maps['Add Cursor Down'] = '<F2>'
 " => lightline.vim
 """"""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'gitstatus' ] ]
