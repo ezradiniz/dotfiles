@@ -1,12 +1,17 @@
 
 .PHONY: all
-all: vim zsh tmux i3 alacritty git utils
+all: vim nvim zsh tmux i3 alacritty git utils
 
 .PHONY: vim
 vim:
 	mkdir -p "$(HOME)/.vim/cache"
 	sudo ln -sfn $(CURDIR)/vim/vimrc "$(HOME)/.vimrc"
 	sudo ln -sfn $(CURDIR)/vim/coc-settings.json "$(HOME)/.vim/coc-settings.json"
+
+.PHONY: nvim
+nvim:
+	mkdir -p "$(HOME)/.config/nvim"
+	sudo ln -sfn $(CURDIR)/nvim/init.vim "$(HOME)/.config/nvim/init.vim"
 
 .PHONY: zsh
 zsh:
