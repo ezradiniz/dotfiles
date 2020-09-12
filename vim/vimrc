@@ -116,7 +116,7 @@ endif
 
 set background=dark
 let g:gruvbox_contrast_dark="hard"
-silent! colorscheme gruvbox
+colorscheme gruvbox
 
 set encoding=utf8
 set nobackup
@@ -175,9 +175,9 @@ endfun
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>q :e ~/.vim/buffer<cr>
 map <leader>x :e ~/.vim/buffer.md<cr>
+noremap <leader>e :e! ~/.vimrc<cr>
 map <leader>pp :setlocal paste!<cr>
 au InsertLeave * silent! set nopaste
-noremap <leader>e :e! ~/.vimrc<cr>
 
 try
     set undofile
