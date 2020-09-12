@@ -397,13 +397,15 @@ let g:lightline = {
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Autocmd
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup MyAutoCmd
+  autocmd!
 
-autocmd BufWritePre *.tsx,*.ts,*.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  autocmd BufWritePre *.tsx,*.ts,*.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+  autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 
-autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd BufNewFile,BufRead *.ts,*.tsx setlocal expandtab smarttab shiftwidth=4 softtabstop=4
-autocmd BufNewFile,BufRead *.md setlocal wrap
-
-autocmd FileType make setlocal noexpandtab
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd BufNewFile,BufRead *.ts,*.tsx setlocal expandtab smarttab shiftwidth=4 softtabstop=4
+  autocmd FileType make setlocal noexpandtab
+  autocmd BufNewFile,BufRead *.md setlocal wrap
+augroup END
