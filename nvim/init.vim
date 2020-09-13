@@ -31,9 +31,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'morhetz/gruvbox'
-Plug 'neovim/nvim-lsp'
-Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-lua/diagnostic-nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'plasticboy/vim-markdown'
 Plug 'rbong/vim-flog'
 Plug 'sheerun/vim-polyglot'
@@ -45,6 +43,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -165,18 +164,10 @@ endtry
 set laststatus=2
 set noshowmode
 
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
-
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-map <leader>q :e ~/.vim/buffer<cr>
-map <leader>x :e ~/.vim/buffer.md<cr>
-noremap <leader>e :e! ~/.vimrc<cr>
+map <leader>q :e ~/.config/nvim/buffer<cr>
+map <leader>x :e ~/.config/nvim/buffer.md<cr>
+noremap <leader>e :e! ~/.config/nvim/init.vim<cr>
 map <leader>pp :setlocal paste!<cr>
 au InsertLeave * silent! set nopaste
 
@@ -197,6 +188,13 @@ nnoremap <leader>cd :lcd %:p:h<cr>
 """"""""""""""""""""""""""""""
 " => Core functions
 """"""""""""""""""""""""""""""
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
 
 function! VisualSelection() range
     let l:saved_reg = @"
@@ -247,28 +245,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plug Setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""
-" => completion-vim
-""""""""""""""""""""""""""""""
-lua require'nvim_lsp'.tsserver.setup{on_attach=require'completion'.on_attach}
-lua require'nvim_lsp'.sumneko_lua.setup{on_attach=require'completion'.on_attach}
-
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-set completeopt=menuone,noinsert,noselect
-
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-
+"
 """"""""""""""""""""""""""""""
 " => vim-fugitive
 """"""""""""""""""""""""""""""
@@ -317,6 +294,30 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_function_calls = 1
 
 """"""""""""""""""""""""""""""
+" => ale (syntax checker)
+""""""""""""""""""""""""""""""
+let g:ale_disable_lsp = 1
+
+let g:ale_linters = {}
+:call extend(g:ale_linters, {
+    \"go": ['golint', 'go vet'], })
+
+:call extend(g:ale_linters, {
+    \'python': ['flake8'], })
+
+:call extend(g:ale_linters, {
+    \'typescript': ['tslint', 'eslint'], })
+
+:call extend(g:ale_linters, {
+    \'typescriptreact': ['tslint', 'eslint'], })
+
+:call extend(g:ale_linters, {
+    \'javascript': ['eslint'], })
+
+nnoremap ]r :ALENextWrap<cr>
+nnoremap [r :ALEPreviousWrap<cr>
+
+""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """"""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
@@ -326,6 +327,48 @@ nnoremap <leader>dd : GitGutterLineHighlightsToggle<cr>
 function! GitStatus()
     let [a,m,r] = GitGutterGetHunkSummary()
     return printf('+%d ~%d -%d', a, m, r)
+endfunction
+
+""""""""""""""""""""""""""""""
+" => Coc-vim
+""""""""""""""""""""""""""""""
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> for trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Symbol renaming
+" nmap <leader>rn <Plug>(coc-rename)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
 endfunction
 
 """"""""""""""""""""""""""""""
