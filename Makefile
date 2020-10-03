@@ -11,7 +11,7 @@ vim:
 .PHONY: nvim
 nvim:
 	mkdir -p "$(HOME)/.config/nvim"
-	sudo ln -sfn $(CURDIR)/nvim/init.vim "$(HOME)/.config/nvim/init.vim"
+	sudo ln -sfn $(CURDIR)/vim/vimrc "$(HOME)/.config/nvim/init.vim"
 
 .PHONY: zsh
 zsh:

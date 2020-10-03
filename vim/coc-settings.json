@@ -6,11 +6,6 @@
   "javascript.format.enabled": true,
   "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "typescript"],
   "languageserver": {
-      "dockerfile": {
-          "command": "docker-langserver",
-          "filetypes": ["Dockerfile"],
-          "args": ["--stdio"]
-      },
     "golang": {
         "command": "gopls",
         "rootPatterns": ["go.mod", ".vim/", ".git/"],

@@ -1,7 +1,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim-Plug core (https://github.com/editor-bootstrap/vim-bootstrap)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+if has("nvim")
+  let vimplug_exists=expand('~/.local/share/nvim/site/autoload/plug.vim')
+else
+  let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+endif
 
 if !filereadable(vimplug_exists)
   if !executable("curl")
@@ -165,18 +169,16 @@ endtry
 set laststatus=2
 set noshowmode
 
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
-
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>q :e ~/.vim/buffer<cr>
 map <leader>x :e ~/.vim/buffer.md<cr>
-noremap <leader>e :e! ~/.vimrc<cr>
+
+if has("nvim")
+  noremap <leader>e :e! ~/.config/nvim/init.vim<cr>
+else
+  noremap <leader>e :e! ~/.vimrc<cr>
+endif
+
 map <leader>pp :setlocal paste!<cr>
 au InsertLeave * silent! set nopaste
 
@@ -197,6 +199,13 @@ nnoremap <leader>cd :lcd %:p:h<cr>
 """"""""""""""""""""""""""""""
 " => Core functions
 """"""""""""""""""""""""""""""
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
 
 function! VisualSelection() range
     let l:saved_reg = @"
@@ -361,7 +370,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Symbol renaming
-" nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -410,3 +419,10 @@ augroup MyAutoCmd
   autocmd FileType make setlocal noexpandtab
   autocmd BufNewFile,BufRead *.md setlocal wrap
 augroup END
+
+if has("nvim")
+  augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}
+  augroup END
+endif
