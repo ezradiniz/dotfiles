@@ -119,8 +119,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-set background=dark
-let g:gruvbox_contrast_dark="hard"
+set background=light
 colorscheme gruvbox
 
 set encoding=utf8
