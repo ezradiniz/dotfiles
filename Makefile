@@ -7,11 +7,14 @@ vim:
 	mkdir -p "$(HOME)/.vim/cache"
 	sudo ln -sfn $(CURDIR)/vim/vimrc "$(HOME)/.vimrc"
 	sudo ln -sfn $(CURDIR)/vim/coc-settings.json "$(HOME)/.vim/coc-settings.json"
+	vim +PlugInstall +qall
 
 .PHONY: nvim
 nvim:
 	mkdir -p "$(HOME)/.config/nvim"
 	sudo ln -sfn $(CURDIR)/vim/vimrc "$(HOME)/.config/nvim/init.vim"
+	sudo ln -sfn $(CURDIR)/vim/coc-settings.json "$(HOME)/.config/nvim/coc-settings.json"
+	nvim +PlugInstall +qall
 
 .PHONY: zsh
 zsh:
