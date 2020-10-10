@@ -4,7 +4,7 @@
   "diagnostic.displayByAle": true,
   "typescript.format.enabled": true,
   "javascript.format.enabled": true,
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "typescript"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "typescript", "typescriptreact"],
   "languageserver": {
     "golang": {
         "command": "gopls",
