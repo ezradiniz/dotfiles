@@ -19,7 +19,6 @@ nvim:
 .PHONY: zsh
 zsh:
 	sudo ln -sn $(CURDIR)/zsh/zshrc "$(HOME)/.zshrc" 
-	sudo ln -sn $(CURDIR)/zsh/zshenv "$(HOME)/.zshenv" 
 
 .PHONY: tmux
 tmux:
