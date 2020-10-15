@@ -120,10 +120,11 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # audio controls
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ #increase sound volume
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- #decrease sound volume
-bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle # mute sound
-bindsym XF86AudioMicMute exec amixer set Capture toggle # mamixer set Master 100ute mic # screen brightness controls
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioMute exec pamixer -t
+
+#  brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
@@ -175,15 +176,3 @@ bar {
 }
 
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wxp.jpg
-
-# Set initial delay 200ms, repeat 80ms
-exec --no-startup-id xset r rate 200 80 
-
-# keyboard delay and repeat speed
-exec --no-startup-id setxkbmap -layout us
-
-# Network manager applet icon
-exec --no-startup-id nm-applet
-
-# run the merge for good colors
-exec --no-startup-id xrdb -merge $HOME/.Xresources
