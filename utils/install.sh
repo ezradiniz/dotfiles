@@ -2,18 +2,17 @@
 
 set -e
 
-# utils
-sudo apt install -y \
-  tlp \
-  tlp-rdw \
-  curl \
-  tmux \
-  xclip \
-  ranger \
-  silversearcher-ag \
-  ripgrep \
-  fd-find \
-  bat
+# TODO: install
+#   tlp \
+#   tlp-rdw \
+#   curl \
+#   tmux \
+#   xclip \
+#   ranger \
+#   silversearcher-ag \
+#   ripgrep \
+#   fd-find \
+#   bat
 
 # docker
 wget -qO- https://get.docker.com/ | sh
