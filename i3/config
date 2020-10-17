@@ -175,4 +175,8 @@ bar {
     status_command $barcmd --config ~/.config/i3/status.conf
 }
 
+# Network manager applet icon
+exec --no-startup-id nm-applet
+
+# Wallpaper
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/wxp.jpg
