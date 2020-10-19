@@ -68,7 +68,9 @@ set clipboard=unnamed
 set autoread
 
 nmap <leader>w :w!<cr>
-command! W w !sudo tee % > /dev/null
+if !has("nvim")
+  command! W w !sudo tee % > /dev/null
+endif
 
 set shortmess+=c
 set updatetime=100
