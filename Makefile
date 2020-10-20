@@ -1,6 +1,6 @@
 
 .PHONY: all
-all: vim nvim zsh tmux i3 alacritty git utils
+all: utils vim nvim zsh tmux i3 alacritty git
 
 .PHONY: vim
 vim:
