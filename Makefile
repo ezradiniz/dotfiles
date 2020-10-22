@@ -1,6 +1,6 @@
 
 .PHONY: all
-all: utils vim nvim zsh tmux i3 alacritty git
+all: utils vim nvim zsh tmux i3 alacritty git x11
 
 .PHONY: vim
 vim:
@@ -35,6 +35,10 @@ alacritty:
 .PHONY: git
 git:
 	sudo ln -sfn $(CURDIR)/git/gitconfig "$(HOME)/.gitconfig"
+
+.PHONY: x11
+x11:
+	sudo ln -sn $(CURDIR)/X11/30-touchpad.conf /etc/X11/xorg.conf.d
 
 .PHONY: utils
 utils:
