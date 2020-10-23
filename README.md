@@ -20,6 +20,7 @@ $ make tmux 				# Update tmux
 $ make i3 				# Update i3
 $ make alacritty 			# Update alacritty
 $ make git 				# Update git
+$ make x11 				# Update X11
 $ make utils 				# Update utils
 ```
 
