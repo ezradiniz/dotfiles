@@ -33,7 +33,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rbong/vim-flog'
@@ -274,14 +273,6 @@ let g:fzf_layout = { 'down': '~40%' }
 let g:fzf_buffers_jump = 1
 
 """"""""""""""""""""""""""""""
-" => vim-dirvish
-""""""""""""""""""""""""""""""
-augroup dirvish_config
-    autocmd!
-    autocmd FileType dirvish nnoremap <buffer><silent> <c-p> :GFiles<cr>
-augroup end
-
-""""""""""""""""""""""""""""""
 " => Vim-go
 """"""""""""""""""""""""""""""
 let g:go_def_mapping_enabled = 0
@@ -381,13 +372,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-""""""""""""""""""""""""""""""
-" => vim-visual-multi
-""""""""""""""""""""""""""""""
-let g:VM_maps = {}
-let g:VM_maps['Add Cursor Up'] = '<F3>'
-let g:VM_maps['Add Cursor Down'] = '<F2>'
 
 """"""""""""""""""""""""""""""
 " => lightline.vim
