@@ -260,7 +260,15 @@ endfunction
 " => vim-fugitive
 """"""""""""""""""""""""""""""
 let g:fugitive_pty = 0
-"
+
+""""""""""""""""""""""""""""""
+" => vim-dirvish
+""""""""""""""""""""""""""""""
+augroup dirvish_config
+    autocmd!
+    autocmd FileType dirvish nnoremap <buffer><silent> <c-p> :GFiles<cr>
+augroup end
+
 """"""""""""""""""""""""""""""
 " => fzf.vim
 """"""""""""""""""""""""""""""
