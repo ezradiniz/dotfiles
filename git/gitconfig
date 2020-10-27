@@ -1,48 +1,54 @@
+[alias]
+    llog = log --oneline --decorate --graph
+    st = status
+    a = add .
+    aa = add --all
+    d = diff
 [user]
-	email = linux.esdras@gmail.com
-	name = Mateus Esdras
-	signingkey = 200EA4BC7BC8359A
+    email = linux.esdras@gmail.com
+    name = Mateus Esdras
+    signingkey = 200EA4BC7BC8359A
 [github]
-	user = ezradiniz
+    user = ezradiniz
 [core]
-	editor = nvim
+    editor = nvim
 [color]
-	ui = auto
+    ui = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-	indentHeuristic = true
-	algorithm = histogram
-	meta = yellow bold
-	frag = magenta bold
-	new = green bold
+    indentHeuristic = true
+    algorithm = histogram
+    meta = yellow bold
+    frag = magenta bold
+    new = green bold
 [push]
-	default = current
+    default = current
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 [status]
-	color = true
-	submodulesummary = true
-	showUntrackedFiles = all
+    color = true
+    submodulesummary = true
+    showUntrackedFiles = all
 [apply]
-	whitespace = fix
+    whitespace = fix
 [http]
-	postBuffer = 52428800
+    postBuffer = 52428800
 [mergetool]
-	prompt = false
-	keepBackup = false
+    prompt = false
+    keepBackup = false
 [merge]
-	log = true
-	tool = vimdiff
-	conflictstyle = diff3
+    log = true
+    tool = vimdiff
+    conflictstyle = diff3
 [diff]
-	renames = copies
+    renames = copies
 [commit]
-	verbose = true
-	gpgsign = true
+    verbose = true
+    gpgsign = true
 [rebase]
-	autosquash = true
+    autosquash = true
 [help]
-	autocorrect = 1
+    autocorrect = 1
