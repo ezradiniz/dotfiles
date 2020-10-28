@@ -26,6 +26,8 @@
     new = green bold
 [push]
     default = current
+[pull]
+    rebase = true
 [branch]
     autosetuprebase = always
 [status]
