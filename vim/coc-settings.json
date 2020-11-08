@@ -13,15 +13,6 @@
         "initializationOptions": {
             "usePlaceholders": true
         }
-    },
-    "clangd": {
-      "command": "clangd",
-      "args": ["--background-index"],
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["c", "cpp", "objc", "objcpp"]
     }
   },
-  "yaml.schemas": {
-    "http://json.schemastore.org/composer": "/*"
-  }
 }
