@@ -99,7 +99,6 @@ set tm=500
 set relativenumber
 set number
 set virtualedit=block
-set nrformats+=alpha
 
 " highlighting
 set hlsearch
