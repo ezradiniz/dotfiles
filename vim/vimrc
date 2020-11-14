@@ -29,7 +29,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
@@ -254,7 +253,7 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plug Setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
+
 """"""""""""""""""""""""""""""
 " => vim-fugitive
 """"""""""""""""""""""""""""""
@@ -378,21 +377,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-""""""""""""""""""""""""""""""
-" => lightline.vim
-""""""""""""""""""""""""""""""
-let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'gitstatus' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead',
-      \   'gitstatus': 'GitStatus',
-      \ },
-      \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Autocmd
