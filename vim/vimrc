@@ -33,6 +33,7 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'morhetz/gruvbox'
+Plug 'habamax/vim-polar' " ok
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rbong/vim-flog'
 Plug 'sheerun/vim-polyglot'
@@ -119,6 +120,7 @@ endif
 
 set background=light
 colorscheme gruvbox
+colorscheme polar
 
 set encoding=utf8
 set nobackup
