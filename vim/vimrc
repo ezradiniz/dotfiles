@@ -138,7 +138,7 @@ set listchars=tab:.\ ,trail:-,extends:>,precedes:<,nbsp:+
 set list
 
 " very useful
-map 0 ^
+" map 0 ^
 
 set expandtab
 set smarttab
