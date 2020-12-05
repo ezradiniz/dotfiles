@@ -32,8 +32,7 @@ Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
-Plug 'morhetz/gruvbox'
-Plug 'habamax/vim-polar' " ok
+Plug 'kkga/vim-envy' " ok
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rbong/vim-flog'
 Plug 'sheerun/vim-polyglot'
@@ -49,6 +48,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'w0rp/ale'
 
 call plug#end()
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Core Setup
@@ -119,8 +119,7 @@ if exists('+termguicolors')
 endif
 
 set background=light
-colorscheme gruvbox
-colorscheme polar
+colorscheme envy
 
 set encoding=utf8
 set nobackup
