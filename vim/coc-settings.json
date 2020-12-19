@@ -1,6 +1,5 @@
 {
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "diagnostic.enable": false,
   "diagnostic.displayByAle": true,
   "typescript.format.enabled": true,
   "javascript.format.enabled": true,
