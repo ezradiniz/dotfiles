@@ -188,6 +188,7 @@ map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 
 vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
+vnoremap <silent> R :<C-u>call VisualSelection()<CR>:Rg <C-R>=@/<CR><CR>
 
 nnoremap <leader>cd :lcd %:p:h<cr>
 
@@ -273,6 +274,7 @@ nnoremap <c-f> :Files<cr>
 nnoremap <c-p> :GFiles<cr>
 nnoremap <leader>` :Marks<cr>
 nnoremap q: :History:<cr>
+nnoremap <leader>rg :Rg 
 let g:fzf_layout = { 'down': '~45%' }
 let g:fzf_buffers_jump = 1
 
