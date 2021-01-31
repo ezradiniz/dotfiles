@@ -34,7 +34,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'kkga/vim-envy' " ok
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rbong/vim-flog'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
 Plug 'tmux-plugins/vim-tmux-focus-events'
