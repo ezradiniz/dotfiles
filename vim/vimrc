@@ -69,7 +69,7 @@ if !has("nvim")
 endif
 
 set shortmess+=c
-set updatetime=100
+set updatetime=50
 set cursorline
 let $LANG='en' 
 set langmenu=en
@@ -131,8 +131,10 @@ let &showbreak='▷ '
 set fileformats+=dos
 set binary
 set noeol
-set listchars=tab:.\ ,trail:-,extends:>,precedes:<,nbsp:+
+"set listchars=tab:.\ ,trail:-,extends:>,precedes:<,nbsp:+
+set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
 set list
+set scrolloff=4
 
 set expandtab
 set smarttab
