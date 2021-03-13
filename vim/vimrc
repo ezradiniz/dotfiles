@@ -51,11 +51,10 @@ call plug#end()
 " => Core Setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
-filetype plugin on
-filetype indent on
+filetype off
+filetype plugin indent on
 
 let mapleader = ","
-let g:mapleader = ","
 
 set path+=**
 set history=10000
@@ -70,7 +69,8 @@ endif
 set shortmess+=c
 set updatetime=50
 set cursorline
-let $LANG='en' 
+set nocursorcolumn
+let $LANG='en'
 set langmenu=en
 set wildmenu
 set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store,node_modules/**
@@ -83,10 +83,10 @@ set whichwrap+=<,>,h,l
 set ignorecase
 set smartcase
 set grepprg=/bin/grep\ -nH
-set incsearch 
-set lazyredraw 
+set incsearch
+set lazyredraw
 set magic
-set showmatch 
+set showmatch
 set mat=2
 set noerrorbells
 set novisualbell
@@ -96,6 +96,9 @@ set tm=500
 set relativenumber
 set number
 set virtualedit=block
+set autowrite
+set showcmd
+set maxmempattern=20000
 
 " highlighting
 set hlsearch
@@ -127,10 +130,9 @@ set nowrap
 set tw=80
 set linebreak
 let &showbreak='▷ '
-set fileformats+=dos
+set fileformats=unix,dos
 set binary
 set noeol
-"set listchars=tab:.\ ,trail:-,extends:>,precedes:<,nbsp:+
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
 set list
 set scrolloff=4
@@ -150,7 +152,7 @@ map <leader>ba :bufdo bd<cr>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
+map <leader>tm :tabmove
 map <leader>ty :tabnext<cr>
 map <leader>tr :tabprev<cr>
 
@@ -172,9 +174,6 @@ if has("nvim")
 else
   noremap <leader>e :e! ~/.vimrc<cr>
 endif
-
-map <leader>pp :setlocal paste!<cr>
-au InsertLeave * silent! set nopaste
 
 try
     set undofile
