@@ -331,13 +331,7 @@ nnoremap [r :ALEPreviousWrap<cr>
 " => Git gutter (Git diff)
 """"""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
-nnoremap <silent> <leader>d :GitGutterToggle<cr>
 nnoremap <leader>dd : GitGutterLineHighlightsToggle<cr>
-
-function! GitStatus()
-    let [a,m,r] = GitGutterGetHunkSummary()
-    return printf('+%d ~%d -%d', a, m, r)
-endfunction
 
 """"""""""""""""""""""""""""""
 " => Coc-vim
