@@ -255,18 +255,17 @@ endfunction
 " => vim-fugitive
 """"""""""""""""""""""""""""""
 let g:fugitive_pty = 0
-nnoremap <leader>G :G<space>
-nnoremap <leader>gps :G push<cr>
-nnoremap <leader>gpf :G push --force-with-lease<cr>
+nnoremap <leader>G :Git<space>
 nnoremap <leader>gps :Dispatch git push<cr>
 nnoremap <leader>gpf :Dispatch git push --force-with-lease<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gf :Gfetch
-nnoremap <leader>gbr :G branch<cr>
+nnoremap <leader>gf :Git fetch --prune<cr>
+nnoremap <leader>gm :Git merge<cr>
+nnoremap <leader>gbr :Git branch<cr>
 nnoremap <leader>gbl :Gblame<cr>
-nnoremap <leader>glog :G log --oneline --decorate --graph<cr>
-nnoremap <leader>0glog :G log --oneline --decorate %<cr>
+nnoremap <leader>glog :Git log --oneline --decorate --graph<cr>
+nnoremap <leader>0glog :Git log --oneline --decorate %<cr>
 
 """"""""""""""""""""""""""""""
 " => vim-dirvish
