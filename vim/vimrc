@@ -121,6 +121,11 @@ endif
 set background=light
 colorscheme envy
 
+hi DiffAdd       guifg=NONE   guibg=#bada9f
+hi DiffChange    guifg=NONE   guibg=#e5d5ac
+hi DiffDelete    guifg=NONE   guibg=#ffb0b0
+hi DiffText      guifg=NONE   guibg=#8cbee2
+
 set encoding=utf8
 set nobackup
 set nowb
