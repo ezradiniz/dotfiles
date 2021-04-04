@@ -260,17 +260,24 @@ endfunction
 " => vim-fugitive
 """"""""""""""""""""""""""""""
 let g:fugitive_pty = 0
+
+command! -bang -bar -nargs=* Gpush execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git push' <q-args>
+command! -bang -bar -nargs=* Gfetch execute 'Dispatch<bang> -dir=' .
+      \ fnameescape(FugitiveGitDir()) 'git fetch' <q-args>
+
 nnoremap <leader>G :Git<space>
-nnoremap <leader>gps :Dispatch git push<cr>
-nnoremap <leader>gpf :Dispatch git push --force-with-lease<cr>
+nnoremap <leader>gps :Gpush<cr>
+nnoremap <leader>gpf :Gpush --force-with-lease<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gf :Git fetch --prune<cr>
+nnoremap <leader>gf :Gfetch<cr>
 nnoremap <leader>gm :Git merge<cr>
 nnoremap <leader>gbr :Git branch<cr>
-nnoremap <leader>gbl :Gblame<cr>
-nnoremap <leader>glog :Git log --oneline --decorate --graph<cr>
-nnoremap <leader>0glog :Git log --oneline --decorate %<cr>
+nnoremap <leader>gbl :Git blame<cr>
+nnoremap <leader>gh :Git show<cr>
+nnoremap <leader>gl :Git log --oneline --decorate --graph<cr>
+nnoremap <leader>0gl :Git log --oneline --decorate --graph %<cr>
 
 """"""""""""""""""""""""""""""
 " => vim-dirvish
