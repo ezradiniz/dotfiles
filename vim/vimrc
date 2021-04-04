@@ -32,7 +32,7 @@ Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
-Plug 'kkga/vim-envy' " ok
+Plug 'kkga/vim-envy'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
