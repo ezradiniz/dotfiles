@@ -36,6 +36,7 @@ Plug 'kkga/vim-envy'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
