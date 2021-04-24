@@ -62,7 +62,7 @@ set history=10000
 set clipboard=unnamed
 set autoread
 
-nmap <leader>w :w!<cr>
+nmap <leader>w :w!<CR>
 if !has("nvim")
   command! W w !sudo tee % > /dev/null
 endif
@@ -143,24 +143,24 @@ set listchars=tab:\|\ ,trail:.,extends:>,precedes:<
 set list
 set scrolloff=4
 
-set expandtab
-set smarttab
-set shiftwidth=4
-set softtabstop=4
+" set expandtab
+" set smarttab
+" set shiftwidth=4
+" set softtabstop=4
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
-map <leader>ba :bufdo bd<cr>
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
+map <leader>bd :Bclose<CR>:tabclose<CR>gT
+map <leader>ba :bufdo bd<CR>
+map <leader>tn :tabnew<CR>
+map <leader>to :tabonly<CR>
+map <leader>tc :tabclose<CR>
 map <leader>tm :tabmove
-map <leader>ty :tabnext<cr>
-map <leader>tr :tabprev<cr>
+map <leader>ty :tabnext<CR>
+map <leader>tr :tabprev<CR>
 
 try
   set switchbuf=usetab
@@ -171,14 +171,14 @@ endtry
 set laststatus=2
 set noshowmode
 
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-map <leader>q :e ~/.vim/buffer<cr>
-map <leader>x :e ~/.vim/buffer.md<cr>
+noremap <Leader>m mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm
+map <leader>q :e ~/.vim/buffer<CR>
+map <leader>x :e ~/.vim/buffer.md<CR>
 
 if has("nvim")
-  noremap <leader>e :e! ~/.config/nvim/init.vim<cr>
+  noremap <leader>e :e! ~/.config/nvim/init.vim<CR>
 else
-  noremap <leader>e :e! ~/.vimrc<cr>
+  noremap <leader>e :e! ~/.vimrc<CR>
 endif
 
 try
@@ -186,15 +186,15 @@ try
     set undodir=~/.vim/cache
 catch
 endtry
-map <leader>cco :botright cope<cr>
-map <leader>llo :botright lope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+map <leader>cco :botright cope<CR>
+map <leader>llo :botright lope<CR>
+map <leader>co ggVGy:tabnew<CR>:set syntax=qf<CR>pgg
 
 vnoremap <silent> * :<C-u>call VisualSelection()<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection()<CR>?<C-R>=@/<CR><CR>
 vnoremap <silent> R :<C-u>call VisualSelection()<CR>:Rg <C-R>=@/<CR><CR>
 
-nnoremap <leader>cd :lcd %:p:h<cr>
+nnoremap <leader>cd :lcd %:p:h<CR>
 
 """"""""""""""""""""""""""""""
 " => Core functions
@@ -291,11 +291,11 @@ augroup end
 """"""""""""""""""""""""""""""
 " => fzf.vim
 """"""""""""""""""""""""""""""
-nnoremap <c-b> :Buffers<cr>
-nnoremap <c-f> :Files<cr>
-nnoremap <c-p> :GFiles<cr>
-nnoremap <leader>` :Marks<cr>
-nnoremap q: :History:<cr>
+nnoremap <c-b> :Buffers<CR>
+nnoremap <c-f> :Files<CR>
+nnoremap <c-p> :GFiles<CR>
+nnoremap <leader>` :Marks<CR>
+nnoremap q: :History:<CR>
 nnoremap <leader>rg :Rg<space>
 let g:fzf_layout = { 'down': '~45%' }
 let g:fzf_buffers_jump = 1
@@ -330,14 +330,14 @@ let g:ale_linters = {}
 :call extend(g:ale_linters, {
     \'javascript': ['eslint'], })
 
-nnoremap ]r :ALENextWrap<cr>
-nnoremap [r :ALEPreviousWrap<cr>
+nnoremap ]r :ALENextWrap<CR>
+nnoremap [r :ALEPreviousWrap<CR>
 
 """"""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """"""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
-nnoremap <leader>dd : GitGutterLineHighlightsToggle<cr>
+nnoremap <leader>dd : GitGutterLineHighlightsToggle<CR>
 
 """"""""""""""""""""""""""""""
 " => Coc-vim
@@ -358,9 +358,9 @@ endfunction
 " Use <c-space> for trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Use <CR> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
