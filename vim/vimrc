@@ -268,17 +268,17 @@ command! -bang -bar -nargs=* Gfetch execute 'Dispatch<bang> -dir=' .
       \ fnameescape(FugitiveGitDir()) 'git fetch' <q-args>
 
 nnoremap <leader>G :Git<space>
-nnoremap <leader>gps :Gpush<cr>
-nnoremap <leader>gpf :Gpush --force-with-lease<cr>
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gf :Gfetch<cr>
-nnoremap <leader>gm :Git merge<cr>
-nnoremap <leader>gbr :Git branch<cr>
-nnoremap <leader>gbl :Git blame<cr>
-nnoremap <leader>gh :Git show<cr>
-nnoremap <leader>gl :Git log --oneline --decorate --graph<cr>
-nnoremap <leader>0gl :Git log --oneline --decorate --graph %<cr>
+nnoremap <leader>gps :Gpush<CR>
+nnoremap <leader>gpf :Gpush --force-with-lease<CR>
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gf :Gfetch<CR>
+nnoremap <leader>gm :Git merge<CR>
+nnoremap <leader>gbr :Git branch<CR>
+nnoremap <leader>gbl :Git blame<CR>
+nnoremap <leader>gh :Git show<CR>
+nnoremap <leader>gl :Git log --oneline --decorate --graph<CR>
+nnoremap <leader>0gl :Git log --oneline --decorate --graph %<CR>
 
 """"""""""""""""""""""""""""""
 " => vim-dirvish
