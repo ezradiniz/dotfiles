@@ -19,7 +19,7 @@ yay -S ttf-nerd-fonts-hack-complete-git
 
 # terminal
 yay -S tmux zsh oh-my-zsh-git
-chsh -s $(which zsh)
+chsh -s "$(which zsh)"
 
 # tools
 yay -S fzf fzf-extras ripgrep fd bat ranger
@@ -27,7 +27,7 @@ yay -S fzf fzf-extras ripgrep fd bat ranger
 # docker
 yay -S docker
 sudo systemctl enable docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker "$USER"
 
 curl -L https://github.com/docker/compose/releases/download/1.27.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
