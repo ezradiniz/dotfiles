@@ -25,8 +25,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin(expand('~/.vim/plugged'))
 
+Plug 'mhinz/vim-signify'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'cohama/lexima.vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -321,12 +321,6 @@ let g:ale_linters = {}
 
 nnoremap ]r :ALENextWrap<CR>
 nnoremap [r :ALEPreviousWrap<CR>
-
-""""""""""""""""""""""""""""""
-" => Git gutter (Git diff)
-""""""""""""""""""""""""""""""
-let g:gitgutter_enabled=1
-nnoremap <leader>dd : GitGutterLineHighlightsToggle<CR>
 
 """"""""""""""""""""""""""""""
 " => Coc-vim
