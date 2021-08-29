@@ -11,10 +11,7 @@ vim:
 
 .PHONY: nvim
 nvim:
-	mkdir -p "$(HOME)/.config/nvim"
-	sudo ln -sfn $(CURDIR)/vim/vimrc "$(HOME)/.config/nvim/init.vim"
-	sudo ln -sfn $(CURDIR)/vim/coc-settings.json "$(HOME)/.config/nvim/coc-settings.json"
-	nvim +PlugInstall +qall
+	sudo ln -sfn $(CURDIR)/nvim "$(HOME)/.config/nvim"
 
 .PHONY: zsh
 zsh:
