@@ -27,7 +27,6 @@ local function set_editor_options()
     vim.opt.cursorcolumn = false
     vim.opt.clipboard = "unnamed"
     vim.opt.hidden = true
-    vim.opt.backspace = {eol, start, indent}
     vim.opt.magic = true
     vim.opt.showmatch = true
     vim.opt.autowrite = true
