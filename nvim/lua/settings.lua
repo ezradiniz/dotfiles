@@ -11,10 +11,18 @@ local function set_ui_options()
     vim.opt.background = 'light'
     vim.cmd("colorscheme envy")
     vim.cmd([[
-      hi DiffAdd       guifg=NONE   guibg=#bada9f
-      hi DiffChange    guifg=NONE   guibg=#e5d5ac
-      hi DiffDelete    guifg=NONE   guibg=#ffb0b0
-      hi DiffText      guifg=NONE   guibg=#8cbee2
+      hi! link DiffAdd diffAdded
+      hi! link DiffChange Notice
+      hi! link DiffDelete diffRemoved
+      hi! link DiffText diffLine
+      hi! link diffAdded String
+      hi! link diffFile Keyword
+      hi! link diffLine Number
+      hi! diffRemoved   guifg=#d70000 guibg=NONE gui=NONE cterm=NONE
+      hi! DiffAdd       guifg=NONE   guibg=#bada9f
+      hi! DiffChange    guifg=NONE   guibg=#e5d5ac
+      hi! DiffDelete    guifg=NONE   guibg=#ffb0b0
+      hi! DiffText      guifg=NONE   guibg=#8cbee2
     ]])
 end
 

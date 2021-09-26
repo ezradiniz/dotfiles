@@ -32,8 +32,6 @@ return require('packer').startup(function()
 
     use {
         'kkga/vim-envy',
-        lock = true,
-        commit = '9d0a61d149e5a59cdc61232a3ed594e4f98f3bf9'
     }
 
     use 'mhinz/vim-signify'
