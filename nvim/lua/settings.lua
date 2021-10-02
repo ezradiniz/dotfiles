@@ -33,7 +33,6 @@ local function set_editor_options()
     vim.opt.relativenumber = true
     vim.opt.cursorline = true
     vim.opt.cursorcolumn = false
-    vim.opt.clipboard = "unnamed"
     vim.opt.hidden = true
     vim.opt.magic = true
     vim.opt.showmatch = true
