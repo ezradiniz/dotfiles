@@ -55,6 +55,12 @@ return require('packer').startup(function()
     use 'tpope/vim-unimpaired'
 
     use {
+        'fatih/vim-go',
+        run = ':GoInstallBinaries',
+        config = function() require("configs.vim-go") end,
+    }
+
+    use {
         'mattn/efm-langserver',
         requires = {"neovim/nvim-lspconfig"},
         config = function() require("configs.efm") end
