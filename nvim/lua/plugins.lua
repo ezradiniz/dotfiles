@@ -65,4 +65,6 @@ return require('packer').startup(function()
         requires = {"neovim/nvim-lspconfig"},
         config = function() require("configs.efm") end
     }
+
+    use 'mhinz/vim-startify'
 end)
