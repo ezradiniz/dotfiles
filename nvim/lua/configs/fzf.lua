@@ -7,5 +7,4 @@ vim.api.nvim_set_keymap('n', '<Leader>`', ':Marks<cr>', opts)
 vim.api.nvim_set_keymap('n', 'q:', ':History:<cr>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>rg', ':Rg ', {noremap = true})
 
-vim.g.fzf_layout = {down = '~45%'}
 vim.g.fzf_buffers_jump = true
