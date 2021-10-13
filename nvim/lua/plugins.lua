@@ -22,11 +22,6 @@ return require('packer').startup(function()
 
     use 'AndrewRadev/splitjoin.vim'
     use 'cohama/lexima.vim'
-    use {
-        'hrsh7th/nvim-compe',
-        config = function() require("configs.compe") end,
-        event = "InsertEnter"
-    }
     use {'junegunn/fzf', run = ":call fzf#install()"}
     use {'junegunn/fzf.vim', config = function() require("configs.fzf") end}
 
@@ -67,4 +62,12 @@ return require('packer').startup(function()
     }
 
     use 'mhinz/vim-startify'
+
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function() require("configs.cmp") end,
+    }
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'L3MON4D3/LuaSnip'
 end)
