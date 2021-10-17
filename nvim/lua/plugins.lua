@@ -36,7 +36,6 @@ return require('packer').startup(function()
     }
     use 'sheerun/vim-polyglot'
     use 'terryma/vim-expand-region'
-    use 'tpope/vim-commentary'
     use 'tpope/vim-dispatch'
     use {
         'tpope/vim-fugitive',
@@ -70,4 +69,11 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp'
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip'
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 end)
