@@ -38,13 +38,12 @@
     whitespace = fix
 [http]
     postBuffer = 52428800
+[mergetool "fugitive"]
+    cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [mergetool]
     prompt = false
-    keepBackup = false
 [merge]
-    log = true
-    tool = vimdiff
-    conflictstyle = diff3
+    tool = fugitive
 [diff]
     renames = copies
 [commit]
