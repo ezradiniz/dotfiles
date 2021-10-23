@@ -19,4 +19,4 @@ vim.api.nvim_set_keymap('n', '<Leader>0gl', ':Git log --oneline --decorate --gra
 vim.cmd(
     [[ command! -bang -bar -nargs=* Gpush execute 'Dispatch<bang> -dir=' . fnameescape(FugitiveGitDir()) 'git push' <q-args> ]])
 vim.cmd(
-    [[ command! -bang -bar -nargs=* Gfetch execute 'Dispatch<bang> -dir=' . fnameescape(FugitiveGitDir()) 'git fetch' <q-args> ]])
+    [[ command! -bang -bar -nargs=* Gfetch execute 'Dispatch<bang> -dir=' . fnameescape(FugitiveGitDir()) 'git fetch --prune' <q-args> ]])
