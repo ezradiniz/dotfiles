@@ -109,6 +109,8 @@ source $ZSH/oh-my-zsh.sh
 export TERM="xterm-256color"
 export BAT_THEME=GitHub
 
+export EDITOR=nvim
+
 alias zshconfig='vim ~/.zshrc'
 
 # Disable to nomatch handling
