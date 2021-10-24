@@ -23,6 +23,8 @@ local function set_ui_options()
       hi! DiffChange    guifg=NONE   guibg=#e5d5ac
       hi! DiffDelete    guifg=NONE   guibg=#ffb0b0
       hi! DiffText      guifg=NONE   guibg=#8cbee2
+
+      hi! Search ctermbg=11 guibg=Yellow
     ]])
 end
 
