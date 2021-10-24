@@ -9,21 +9,32 @@ local eslint = {
     formatStdin = true
 }
 
+local isort = {
+    formatCommand = "isort --quiet -",
+    formatStdin = true,
+}
+
+local luaFormat = {
+    formatCommand = 'lua-format -i',
+    formatStdin = true
+}
+
 nvim_lsp.efm.setup {
     init_options = {documentFormatting = true},
     filetypes = {
-        "lua", "javascript", "javascriptreact", "javascript.jsx", "typescript",
-        "typescript.tsx", "typescriptreact"
+        "javascript", "javascriptreact", "javascript.jsx", "typescript",
+        "typescript.tsx", "typescriptreact", "python"
     },
     settings = {
         languages = {
-            lua = {{formatCommand = 'lua-format -i', formatStdin = true}},
+            lua = {luaFormat},
             javascript = {eslint},
             javascriptreact = {eslint},
             ["javascript.jsx"] = {eslint},
             typescript = {eslint},
             ["typescript.tsx"] = {eslint},
-            typescriptreact = {eslint}
+            typescriptreact = {eslint},
+            python = {isort}
         }
     }
 }
