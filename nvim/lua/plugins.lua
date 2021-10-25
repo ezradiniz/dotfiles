@@ -26,7 +26,8 @@ return require('packer').startup(function()
     use {'junegunn/fzf.vim', config = function() require("configs.fzf") end}
 
     use {
-        'kkga/vim-envy',
+        'chriskempson/base16-vim',
+        config = function() require("configs.color") end
     }
 
     use 'mhinz/vim-signify'

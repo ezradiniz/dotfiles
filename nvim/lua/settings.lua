@@ -5,29 +5,6 @@ local function set_globals()
     ]])
 end
 
-local function set_ui_options()
-    vim.cmd("syntax enable")
-    vim.opt.termguicolors = true
-    vim.opt.background = 'light'
-    vim.cmd("colorscheme envy")
-    vim.cmd([[
-      hi! link DiffAdd diffAdded
-      hi! link DiffChange Notice
-      hi! link DiffDelete diffRemoved
-      hi! link DiffText diffLine
-      hi! link diffAdded String
-      hi! link diffFile Keyword
-      hi! link diffLine Number
-      hi! diffRemoved   guifg=#d70000 guibg=NONE gui=NONE cterm=NONE
-      hi! DiffAdd       guifg=NONE   guibg=#bada9f
-      hi! DiffChange    guifg=NONE   guibg=#e5d5ac
-      hi! DiffDelete    guifg=NONE   guibg=#ffb0b0
-      hi! DiffText      guifg=NONE   guibg=#8cbee2
-
-      hi! Search ctermbg=11 guibg=Yellow
-    ]])
-end
-
 local function set_editor_options()
     vim.opt.path = vim.opt.path + ',**'
     vim.opt.compatible = false
@@ -83,6 +60,5 @@ local function set_maps()
 end
 
 set_globals()
-set_ui_options()
 set_editor_options()
 set_maps()
