@@ -13,7 +13,6 @@ $ make
 ### Using the Makefile
 
 ```console
-$ make vim 				# Update vim
 $ make nvim 				# Update nvim
 $ make zsh 				# Update zsh
 $ make tmux 				# Update tmux
@@ -21,7 +20,6 @@ $ make i3 				# Update i3
 $ make alacritty 			# Update alacritty
 $ make git 				# Update git
 $ make x11 				# Update X11
-$ make utils 				# Update utils
 ```
 
 ### License

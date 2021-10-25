@@ -1,6 +1,6 @@
 
 .PHONY: all
-all: utils nvim zsh tmux i3 alacritty git x11
+all: nvim zsh tmux i3 alacritty git x11
 
 .PHONY: nvim
 nvim:
@@ -29,8 +29,4 @@ git:
 .PHONY: x11
 x11:
 	sudo ln -sn $(CURDIR)/X11/30-touchpad.conf /etc/X11/xorg.conf.d
-
-.PHONY: utils
-utils:
-	sudo sh ./utils/install.sh
 
