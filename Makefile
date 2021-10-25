@@ -1,13 +1,6 @@
 
 .PHONY: all
-all: utils vim nvim zsh tmux i3 alacritty git x11
-
-.PHONY: vim
-vim:
-	mkdir -p "$(HOME)/.vim/cache"
-	sudo ln -sfn $(CURDIR)/vim/vimrc "$(HOME)/.vimrc"
-	sudo ln -sfn $(CURDIR)/vim/coc-settings.json "$(HOME)/.vim/coc-settings.json"
-	vim +PlugInstall +qall
+all: utils nvim zsh tmux i3 alacritty git x11
 
 .PHONY: nvim
 nvim:
