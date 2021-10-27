@@ -34,7 +34,12 @@ local function set_editor_options()
     vim.opt.textwidth = 80
     vim.opt.eol = false
     vim.opt.list = true
-    vim.opt.listchars = {tab = '>-', trail = '.', extends = '>', precedes = '<'}
+    vim.opt.listchars = {
+        tab = '▸ ',
+        trail = '•',
+        extends = '»',
+        precedes = '«'
+    }
     vim.opt.scrolloff = 4
     vim.opt.laststatus = 2
     vim.opt.lazyredraw = true
