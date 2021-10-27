@@ -17,7 +17,7 @@ nvim_lsp.efm.setup {
     init_options = {documentFormatting = true},
     filetypes = {
         "javascript", "javascriptreact", "javascript.jsx", "typescript",
-        "typescript.tsx", "typescriptreact", "python"
+        "typescript.tsx", "typescriptreact", "python", "lua"
     },
     settings = {
         languages = {
