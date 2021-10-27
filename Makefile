@@ -8,7 +8,7 @@ nvim:
 
 .PHONY: zsh
 zsh:
-	sudo ln -sn $(CURDIR)/zsh/zshrc "$(HOME)/.zshrc" 
+	sudo ln -sn $(CURDIR)/zsh/zshrc "$(HOME)/.zshrc"
 
 .PHONY: tmux
 tmux:
@@ -18,8 +18,8 @@ tmux:
 i3:
 	sudo ln -sn $(CURDIR)/i3 "$(HOME)/.config/"
 
-.PHONY: alacritty
-alacritty:
+.PHONY: term
+term:
 	sudo ln -sfn $(CURDIR)/alacritty "$(HOME)/.config/"
 
 .PHONY: git
@@ -28,5 +28,4 @@ git:
 
 .PHONY: x11
 x11:
-	sudo ln -sn $(CURDIR)/X11/30-touchpad.conf /etc/X11/xorg.conf.d
-
+	sudo ln -sn $(CURDIR)/X11/30-touchpad.conf /usr/share/X11/xorg.conf.d
