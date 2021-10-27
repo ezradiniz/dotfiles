@@ -9,15 +9,9 @@ local eslint = {
     formatStdin = true
 }
 
-local isort = {
-    formatCommand = "isort --quiet -",
-    formatStdin = true,
-}
+local isort = {formatCommand = "isort --quiet -", formatStdin = true}
 
-local luaFormat = {
-    formatCommand = 'lua-format -i',
-    formatStdin = true
-}
+local luaFormat = {formatCommand = 'lua-format -i', formatStdin = true}
 
 nvim_lsp.efm.setup {
     init_options = {documentFormatting = true},

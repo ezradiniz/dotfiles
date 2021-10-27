@@ -52,7 +52,7 @@ return require('packer').startup(function()
     use {
         'fatih/vim-go',
         run = ':GoInstallBinaries',
-        config = function() require("configs.vim-go") end,
+        config = function() require("configs.vim-go") end
     }
 
     use {
@@ -63,18 +63,13 @@ return require('packer').startup(function()
 
     use 'mhinz/vim-startify'
 
-    use {
-        'hrsh7th/nvim-cmp',
-        config = function() require("configs.cmp") end,
-    }
+    use {'hrsh7th/nvim-cmp', config = function() require("configs.cmp") end}
     use 'hrsh7th/cmp-nvim-lsp'
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip'
 
     use {
         'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
+        config = function() require('Comment').setup() end
     }
 end)
