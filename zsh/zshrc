@@ -106,12 +106,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #export TERM=screen-256color
 
-export TERM="xterm-256color"
-export BAT_THEME=GitHub
+# My private configuration
+[ -f ~/.my.zsh ] && source ~/.my.zsh
 
+export TERM="xterm-256color"
 export EDITOR=nvim
 
-alias zshconfig='vim ~/.zshrc'
-
-# Disable to nomatch handling
-unsetopt nomatch
+# Paths
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH
+export PATH="$GOBIN:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
