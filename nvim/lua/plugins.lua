@@ -21,7 +21,6 @@ return require('packer').startup(function()
     }
 
     use 'AndrewRadev/splitjoin.vim'
-    use 'cohama/lexima.vim'
     use {'junegunn/fzf', run = ":call fzf#install()"}
     use {'junegunn/fzf.vim', config = function() require("configs.fzf") end}
 
@@ -36,14 +35,12 @@ return require('packer').startup(function()
         config = function() require("configs.lsp") end
     }
     use 'sheerun/vim-polyglot'
-    use 'terryma/vim-expand-region'
     use 'tpope/vim-dispatch'
     use {
         'tpope/vim-fugitive',
         config = function() require("configs.fugitive") end,
         requires = {"tpope/vim-rhubarb"}
     }
-    use 'tpope/vim-git'
     use 'tpope/vim-repeat'
     use 'tpope/vim-sleuth'
     use 'tpope/vim-surround'
