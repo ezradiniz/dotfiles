@@ -12,7 +12,7 @@ set $lockcmd i3lock
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Hack Nerd Font 8
+font pango:Hack Nerd Font 10
 
 # HiDPI for sway
 # output eDP-1 scale 1
@@ -132,8 +132,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym $mod+Print exec "sleep 0.5; scrot -q 100 -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
 bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
 
-# Boomer - https://github.com/tsoding/boomer
-bindsym $mod+z exec boomer
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -174,6 +172,3 @@ bar {
     font pango:Hack Nerd Font 10
     status_command $barcmd --config ~/.config/i3/status.conf
 }
-
-# Network manager applet icon
-exec --no-startup-id nm-applet
