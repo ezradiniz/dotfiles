@@ -21,8 +21,13 @@ return require('packer').startup(function()
     }
 
     use 'AndrewRadev/splitjoin.vim'
-    use {'junegunn/fzf', run = ":call fzf#install()"}
-    use {'junegunn/fzf.vim', config = function() require("configs.fzf") end}
+
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {'nvim-lua/plenary.nvim'},
+        config = function() require("configs.telescope") end
+    }
 
     use {
         'chriskempson/base16-vim',
