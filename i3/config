@@ -120,13 +120,14 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # audio controls
-bindsym XF86AudioRaiseVolume exec pamixer -i 5
-bindsym XF86AudioLowerVolume exec pamixer -d 5
-bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+bindsym XF86AudioMute exec amixer set Master 1+ toggle
+bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 #  brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5  && xbacklight > /home/ezra/.config/brightness # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && xbacklight > /home/ezra/.config/brightness # decrease screen brightness
 
 # Screenshots
 bindsym $mod+Print exec "sleep 0.5; scrot -q 100 -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
