@@ -43,9 +43,8 @@ bindsym $mod+d exec $menu
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# spotify: no border
-for_window [class="Gimp"] floating enable
-for_window [class="chatterino"] floating enable
+# border
+default_border pixel 3
 
 # lock screen
 bindsym $mod+y exec $lockcmd -c 111111
