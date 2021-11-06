@@ -50,6 +50,7 @@ local function set_editor_options()
     vim.opt.undodir = vim.fn.stdpath('config') .. '/undodir'
     vim.opt.tm = 500
     vim.opt.maxmempattern = 20000
+    vim.opt.inccommand = 'nosplit'
 end
 
 local function set_maps()
