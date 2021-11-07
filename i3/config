@@ -44,7 +44,8 @@ bindsym $mod+d exec $menu
 bindsym $mod+Shift+q kill
 
 # border
-default_border pixel 3
+for_window [class="^.*"] border pixel 3
+hide_edge_borders smart
 
 # lock screen
 bindsym $mod+y exec $lockcmd -c 111111
