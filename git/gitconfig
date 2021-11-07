@@ -12,6 +12,7 @@
     user = ezradiniz
 [core]
     editor = nvim
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
     ui = auto
 [color "branch"]
@@ -53,3 +54,5 @@
     autosquash = true
 [help]
     autocorrect = 1
+[interactive]
+    diffFilter = diff-so-fancy --patch
