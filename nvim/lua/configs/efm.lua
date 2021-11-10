@@ -32,10 +32,3 @@ nvim_lsp.efm.setup {
         }
     }
 }
-
-vim.cmd([[
-    augroup formatting
-        autocmd!
-        autocmd BufWritePre *.lua :lua vim.lsp.buf.formatting_sync(nil, 100)
-    augroup end
-]])
