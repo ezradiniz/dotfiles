@@ -40,6 +40,9 @@ bindsym $mod+Return exec $term
 # start dmenu
 bindsym $mod+d exec $menu
 
+# start ddg script
+bindsym $mod+p exec ~/.scripts/ddg
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
