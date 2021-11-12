@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+cur=$(xbacklight -get)
+new=$(echo -e "[Cancel]\n5\n10\n20\n50\n70\n80\n100" | rofi -dmenu -p "Current $cur")
+
+if [[ $new == "[Cancel]" ]]; then
+	exit 0
+fi
+
+value=$new || $cur
+
+xbacklight -set $value
+notify-send "New brightness: $value"
