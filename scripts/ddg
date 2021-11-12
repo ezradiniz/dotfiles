@@ -1,0 +1,7 @@
+#!/bin/bash
+
+search=$(rofi -dmenu -p "DuckDuckGo")
+
+if [ -n "$search" ]; then
+	xdg-open "https://duckduckgo.com/?q=${search}&ia=web"
+fi
