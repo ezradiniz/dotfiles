@@ -2,7 +2,7 @@
 
 set -e
 
-option=$(echo -e "[Cancel]\nShutdown\nReboot\nSuspend" | rofi -dmenu)
+option=$(echo -e "[Cancel]\nShutdown\nReboot\nSuspend\nLogout" | rofi -dmenu -i)
 
 if [[ $option = "Shutdown" ]]; then
 	systemctl poweroff
@@ -10,4 +10,6 @@ elif [[ $option = "Reboot" ]]; then
 	systemctl reboot
 elif [[ $option = "Suspend" ]]; then
 	systemctl suspend
+elif [[ $option = "Logout" ]]; then
+	i3-msg exit
 fi
