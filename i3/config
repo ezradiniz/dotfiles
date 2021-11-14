@@ -134,6 +134,7 @@ bindsym XF86AudioMicMute exec amixer set Capture toggle
 #  brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5  && xbacklight > /home/ezra/.config/brightness # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && xbacklight > /home/ezra/.config/brightness # decrease screen brightness
+bindsym $mod+F9 exec ~/.scripts/brightness
 
 # Screenshots
 bindsym $mod+Print exec "sleep 0.5; scrot -q 100 -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
