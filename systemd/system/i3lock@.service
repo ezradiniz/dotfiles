@@ -1,5 +1,5 @@
 [Unit]
-Description=User suspend actions
+Description=Lock the screen on resume from suspend
 Before=sleep.target
 
 [Service]
