@@ -30,8 +30,8 @@ return require('packer').startup(function()
     }
 
     use {
-        'sainnhe/sonokai',
-        config = function() require("configs.color") end
+        'chriskempson/base16-vim',
+        config = function() require("configs.colors") end
     }
 
     use 'mhinz/vim-signify'
