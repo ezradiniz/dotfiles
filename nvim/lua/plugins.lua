@@ -29,8 +29,9 @@ return require('packer').startup(function()
         config = function() require("configs.telescope") end
     }
 
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use {
-        'chriskempson/base16-vim',
+        'RRethy/nvim-base16',
         config = function() require("configs.colors") end
     }
 
