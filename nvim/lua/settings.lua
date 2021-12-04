@@ -10,7 +10,7 @@ local function set_editor_options()
     vim.opt.compatible = false
     vim.opt.number = true
     vim.opt.relativenumber = true
-    vim.opt.cursorline = false
+    vim.opt.cursorline = true
     vim.opt.cursorcolumn = false
     vim.opt.hidden = true
     vim.opt.magic = true
