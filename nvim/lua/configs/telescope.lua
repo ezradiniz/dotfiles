@@ -16,9 +16,10 @@ telescope.setup {
     defaults = {
         mappings = {
             i = {
-                ["<esc>"] = actions.close,
+                ["<ESC>"] = actions.close,
                 ["<C-K>"] = actions.move_selection_previous,
-                ["<C-J>"] = actions.move_selection_next
+                ["<C-J>"] = actions.move_selection_next,
+                ["<C-U>"] = false,
             }
         }
     }
