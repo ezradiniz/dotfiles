@@ -68,10 +68,12 @@ return require('packer').startup(function()
         config = function() require("configs.efm") end
     }
 
-    use 'mhinz/vim-startify'
-
     use {'hrsh7th/nvim-cmp', config = function() require("configs.cmp") end}
     use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip'
 
@@ -79,4 +81,6 @@ return require('packer').startup(function()
         'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end
     }
+
+    use 'mhinz/vim-startify'
 end)

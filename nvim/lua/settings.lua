@@ -44,7 +44,7 @@ local function set_editor_options()
     vim.opt.laststatus = 2
     vim.opt.lazyredraw = true
     vim.opt.showmode = false
-    vim.opt.completeopt = "menuone,noselect"
+    vim.opt.completeopt = "menu,menuone,noselect"
     vim.opt.switchbuf = 'usetab'
     vim.opt.undofile = true
     vim.opt.undodir = vim.fn.stdpath('config') .. '/undodir'
