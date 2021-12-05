@@ -29,7 +29,11 @@ return require('packer').startup(function()
         config = function() require("configs.telescope") end
     }
 
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = function() require("configs.treesitter") end
+    }
     use {
         'RRethy/nvim-base16',
         config = function() require("configs.colors") end
