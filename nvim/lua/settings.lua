@@ -1,7 +1,10 @@
 local function set_globals()
     vim.g.mapleader = ","
+    -- Reference: https://github.com/justinmk/config/blob/39097a1840decd6daccc340ed56e7efbc618702d/.config/nvim/lua/plugins.lua#L15
     vim.cmd([[
         let g:loaded_netrwPlugin = 0
+        nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())<CR>
+        nmap gx <Plug>NetrwBrowseX
     ]])
 end
 
