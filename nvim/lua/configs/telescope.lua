@@ -21,6 +21,10 @@ telescope.setup {
                 ["<C-J>"] = actions.move_selection_next,
                 ["<C-U>"] = false,
             }
+        },
+        layout_strategy = "bottom_pane",
+        layout_config = {
+            prompt_position = "bottom"
         }
     }
 }
