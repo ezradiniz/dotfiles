@@ -3,6 +3,8 @@ local nvim_lsp = require('lspconfig')
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+    if vim.api.nvim_buf_get_name(bufnr):match "^%a+://" then return end
+
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
     end
@@ -48,21 +50,6 @@ local on_attach = function(client, bufnr)
                    opts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = {'tsserver', 'gopls'}
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
-for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {
-        on_attach = on_attach,
-        flags = {debounce_text_changes = 150},
-        capabilities = capabilities
-    }
-end
-
 nvim_lsp.sumneko_lua.setup {
     cmd = {'lua-language-server'},
     on_attach = on_attach,
@@ -89,3 +76,21 @@ nvim_lsp.sumneko_lua.setup {
         }
     }
 }
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = {'tsserver', 'gopls'}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_ok then return end
+capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
+for _, lsp in ipairs(servers) do
+    nvim_lsp[lsp].setup {
+        on_attach = on_attach,
+        flags = {debounce_text_changes = 150},
+        capabilities = capabilities
+    }
+end
