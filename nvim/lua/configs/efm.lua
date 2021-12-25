@@ -1,4 +1,5 @@
 local nvim_lsp = require('lspconfig')
+local util = require('lspconfig/util')
 
 local eslint = {
     lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
@@ -14,12 +15,16 @@ local isort = {formatCommand = "isort --quiet -", formatStdin = true}
 local luaFormat = {formatCommand = 'lua-format -i', formatStdin = true}
 
 nvim_lsp.efm.setup {
+    root_dir = function(fname)
+        return util.find_git_ancestor(fname) or vim.loop.cwd()
+    end,
     init_options = {documentFormatting = true},
     filetypes = {
         "javascript", "javascriptreact", "javascript.jsx", "typescript",
         "typescript.tsx", "typescriptreact", "python", "lua"
     },
     settings = {
+        rootMarkers = {".git/"},
         languages = {
             lua = {luaFormat},
             javascript = {eslint},

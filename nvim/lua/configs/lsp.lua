@@ -1,4 +1,5 @@
 local nvim_lsp = require('lspconfig')
+local util = require('lspconfig/util')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -52,6 +53,9 @@ end
 
 nvim_lsp.sumneko_lua.setup {
     cmd = {'lua-language-server'},
+    root_dir = function(fname)
+        return util.find_git_ancestor(fname) or vim.loop.cwd()
+    end,
     on_attach = on_attach,
     settings = {
         Lua = {
