@@ -4,13 +4,14 @@ local builtin = require('telescope.builtin')
 
 local opts = {noremap = true, silent = true}
 
-vim.api.nvim_set_keymap('n', '<C-b>', ':Telescope buffers<cr>', opts)
-vim.api.nvim_set_keymap('n', '<C-f>', ':Telescope find_files<cr>', opts)
-vim.api.nvim_set_keymap('n', '<C-p>',
+vim.api.nvim_set_keymap('n', '<Leader>fb', ':Telescope buffers<cr>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>ff', ':Telescope find_files<cr>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>fg', ':Telescope live_grep<cr>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>fl', ':Telescope file_browser<cr>', opts)
+vim.api.nvim_set_keymap('n', 'q:', ':Telescope command_history<cr>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>fp',
                         '<CMD>lua require\'configs.telescope\'.project_files()<CR>',
                         opts)
-vim.api.nvim_set_keymap('n', 'q:', ':Telescope command_history<cr>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>rg', ':Telescope live_grep<cr>', opts)
 
 telescope.setup {
     defaults = {
@@ -19,13 +20,11 @@ telescope.setup {
                 ["<ESC>"] = actions.close,
                 ["<C-K>"] = actions.move_selection_previous,
                 ["<C-J>"] = actions.move_selection_next,
-                ["<C-U>"] = false,
+                ["<C-U>"] = false
             }
         },
         layout_strategy = "bottom_pane",
-        layout_config = {
-            prompt_position = "bottom"
-        }
+        layout_config = {prompt_position = "bottom"}
     }
 }
 
