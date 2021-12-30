@@ -55,6 +55,7 @@ return require('packer').startup(function()
     use 'tpope/vim-sleuth'
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
+    use 'tpope/vim-eunuch'
 
     use {
         'fatih/vim-go',
