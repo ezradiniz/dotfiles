@@ -7,7 +7,9 @@ local opts = {noremap = true, silent = true}
 vim.api.nvim_set_keymap('n', '<Leader>fb', ':Telescope buffers<cr>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>ff', ':Telescope find_files<cr>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>fg', ':Telescope live_grep<cr>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>fl', ':Telescope file_browser<cr>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>fl',
+                        "<CMD>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+                        opts)
 vim.api.nvim_set_keymap('n', 'q:', ':Telescope command_history<cr>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>fp',
                         '<CMD>lua require\'configs.telescope\'.project_files()<CR>',
@@ -29,6 +31,7 @@ telescope.setup {
 }
 
 telescope.load_extension('fzf')
+telescope.load_extension("file_browser")
 
 -- TODO: remove module
 local M = {}
