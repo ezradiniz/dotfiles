@@ -47,6 +47,7 @@ return require('packer').startup(function()
     }
     use 'sheerun/vim-polyglot'
     use 'tpope/vim-dispatch'
+    use 'tpope/vim-git'
     use {
         'tpope/vim-fugitive',
         config = function() require("configs.fugitive") end,
