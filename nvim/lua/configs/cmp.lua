@@ -33,7 +33,10 @@ cmp.setup {
             end
         end
     },
-    sources = {{name = 'nvim_lsp'}, {name = 'luasnip'}, {name = 'buffer'}}
+    sources = {
+        {name = 'nvim_lsp'}, {name = 'luasnip'}, {name = 'buffer'},
+        {name = 'path'}
+    }
 }
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
