@@ -40,7 +40,11 @@ return require('packer').startup(function()
         config = function() require("configs.colors") end
     }
 
-    use 'mhinz/vim-signify'
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {'nvim-lua/plenary.nvim'},
+        config = function() require('configs.gitsigns') end
+    }
     use {
         'neovim/nvim-lspconfig',
         config = function() require("configs.lsp") end
