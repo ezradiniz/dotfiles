@@ -18,6 +18,8 @@ vim.api.nvim_set_keymap('n', '<Leader>gl',
                         ':Git log --oneline --decorate --graph<cr>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>0gl',
                         ':Git log --oneline --decorate --graph %<cr>', opts)
+vim.api.nvim_set_keymap('n', '<Leader>0gcl',
+                        ':0Gclog<cr>', opts)
 
 vim.cmd(
     [[ command! -bang -bar -nargs=* Gpush execute 'Dispatch<bang> -dir=' . fnameescape(FugitiveGitDir()) 'git push' <q-args> ]])
