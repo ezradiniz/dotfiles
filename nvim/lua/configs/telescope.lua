@@ -26,8 +26,9 @@ telescope.setup {
                 ["<C-U>"] = false
             }
         },
+        sorting_strategy = "ascending",
         layout_strategy = "bottom_pane",
-        layout_config = {prompt_position = "bottom"}
+        layout_config = {prompt_position = "top"}
     }
 }
 
