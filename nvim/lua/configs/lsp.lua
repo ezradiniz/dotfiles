@@ -3,7 +3,7 @@ local util = require('lspconfig/util')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     if vim.api.nvim_buf_get_name(bufnr):match "^%a+://" then return end
 
     local function buf_set_keymap(...)
@@ -12,8 +12,6 @@ local on_attach = function(client, bufnr)
     local function buf_set_option(...)
         vim.api.nvim_buf_set_option(bufnr, ...)
     end
-
-    client.resolved_capabilities.document_formatting = false
 
     -- Enable completion triggered by <c-x><c-o>
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
