@@ -34,7 +34,7 @@ local function set_editor_options()
     vim.opt.backup = false
     vim.opt.swapfile = false
     vim.opt.wrap = false
-    vim.opt.textwidth = 80
+    vim.opt.textwidth = 0
     vim.opt.eol = false
     vim.opt.list = true
     vim.opt.listchars = {
