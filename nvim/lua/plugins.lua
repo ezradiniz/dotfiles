@@ -70,9 +70,9 @@ return require('packer').startup(function()
     }
 
     use {
-        'mattn/efm-langserver',
-        requires = {"neovim/nvim-lspconfig"},
-        config = function() require("configs.efm") end
+        'jose-elias-alvarez/null-ls.nvim',
+        requires = { "nvim-lua/plenary.nvim" },
+        config = function() require("configs.null-ls") end,
     }
 
     use {'hrsh7th/nvim-cmp', config = function() require("configs.cmp") end}
