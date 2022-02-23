@@ -4,9 +4,8 @@ vim.g.fugitive_pty = false
 
 vim.api.nvim_set_keymap('n', '<Leader>G', ':Git ', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>gs', ':Git<cr>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>gps', ':Gpush<cr>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>gpf', ':Gpush --force-with-lease<cr>',
-                        opts)
+vim.api.nvim_set_keymap('n', '<Leader>gps', ':Gpush', {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>gpf', ':Gpush --force-with-lease', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>gd', ':Gdiff<cr>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>gf', ':Gfetch<cr>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>gmt', ':Git mergetool<cr>', opts)
