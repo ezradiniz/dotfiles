@@ -21,7 +21,3 @@ $ make alacritty 			# Update alacritty
 $ make git 				# Update git
 $ make x11 				# Update X11
 ```
-
-### License
-
-This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details
