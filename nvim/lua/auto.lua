@@ -28,3 +28,11 @@ vim.cmd([[
     autocmd BufWritePre * :call MkNonExDir(expand('<afile>'), +expand('<abuf>'))
   augroup end
 ]])
+
+vim.cmd([[
+  augroup nvim_go
+    autocmd!
+    autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
+  augroup end
+]])
+

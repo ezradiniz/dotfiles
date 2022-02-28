@@ -64,9 +64,9 @@ return require('packer').startup(function()
     use 'tpope/vim-eunuch'
 
     use {
-        'fatih/vim-go',
+        'ray-x/go.nvim',
         run = ':GoInstallBinaries',
-        config = function() require("configs.vim-go") end
+        config = function() require("configs.go-nvim") end
     }
 
     use {
