@@ -32,7 +32,7 @@ vim.cmd([[
 vim.cmd([[
   augroup nvim_go
     autocmd!
-    autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
+    autocmd BufWritePre *.go :silent! lua require('go.format').goimport()
   augroup end
 ]])
 
