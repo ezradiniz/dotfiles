@@ -1,3 +1,3 @@
-require("plugins")
-require("settings")
-require("auto")
+require("user.plugins")
+require("user.settings")
+require("user.auto")
