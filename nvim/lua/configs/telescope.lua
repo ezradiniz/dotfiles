@@ -18,6 +18,16 @@ vim.api.nvim_set_keymap('n', '<space>Q', ':Telescope diagnostics<cr>', opts)
 
 telescope.setup {
     defaults = {
+        vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--hidden',
+        },
         mappings = {
             i = {
                 ["<ESC>"] = actions.close,
