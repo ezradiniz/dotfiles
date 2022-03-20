@@ -34,7 +34,6 @@ telescope.setup({
                 ["<ESC>"] = actions.close,
                 ["<C-K>"] = actions.move_selection_previous,
                 ["<C-J>"] = actions.move_selection_next,
-                ["<C-U>"] = false,
             },
         },
         sorting_strategy = "ascending",
