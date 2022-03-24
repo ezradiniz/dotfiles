@@ -44,7 +44,7 @@ return require("packer").startup(function()
         end,
     })
     use({
-        "RRethy/nvim-base16",
+        "projekt0n/github-nvim-theme",
         config = function()
             require("user.configs.colors")
         end,

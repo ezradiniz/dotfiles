@@ -1,4 +1,8 @@
 vim.cmd("syntax enable")
 vim.opt.termguicolors = true
-vim.opt.background = "dark"
-vim.cmd("colorscheme base16-default-dark")
+
+-- Example config in Lua
+require("github-theme").setup({
+    theme_style = "light",
+    hide_inactive_statusline = false,
+})
