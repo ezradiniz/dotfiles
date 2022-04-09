@@ -115,4 +115,6 @@ return require("packer").startup(function()
             require("Comment").setup()
         end,
     })
+
+    use({ "ellisonleao/glow.nvim" })
 end)
