@@ -3,11 +3,7 @@ local luasnip = require("luasnip")
 local compare = require("cmp.config.compare")
 
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
+    snippet = {expand = function(args) luasnip.lsp_expand(args.body) end},
     mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
@@ -17,7 +13,7 @@ cmp.setup({
         ["<C-e>"] = cmp.mapping.close(),
         ["<C-y>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
+            select = true
         }),
         ["<Tab>"] = function(fallback)
             if cmp.visible() then
@@ -36,28 +32,21 @@ cmp.setup({
             else
                 fallback()
             end
-        end,
+        end
     }),
     sources = {
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "path" },
-        { name = "buffer" },
+        {name = "nvim_lsp"}, {name = "luasnip"}, {name = "path"},
+        {name = "buffer"}
     },
     sorting = {
         comparators = {
-            compare.kind,
-            compare.offset,
-            compare.exact,
-            compare.score,
-            compare.sort_text,
-            compare.length,
-            compare.order,
-        },
-    },
+            compare.kind, compare.offset, compare.exact, compare.score,
+            compare.sort_text, compare.length, compare.order
+        }
+    }
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
-    sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
+    sources = cmp.config.sources({{name = "path"}}, {{name = "cmdline"}})
 })
