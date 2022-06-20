@@ -7,7 +7,7 @@
 [user]
     email = linux.esdras@gmail.com
     name = Mateus Esdras
-    signingkey = 200EA4BC7BC8359A
+    signingkey = 37BA8F0646DEC32B
 [github]
     user = ezradiniz
 [core]
