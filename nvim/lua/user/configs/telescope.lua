@@ -1,5 +1,6 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
+local actions_layout = require("telescope.actions.layout")
 local builtin = require("telescope.builtin")
 
 local opts = { noremap = true, silent = true }
@@ -34,6 +35,7 @@ telescope.setup({
                 ["<ESC>"] = actions.close,
                 ["<C-K>"] = actions.move_selection_previous,
                 ["<C-J>"] = actions.move_selection_next,
+                ["?"] = actions_layout.toggle_preview,
             },
         },
         sorting_strategy = "ascending",
