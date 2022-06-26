@@ -41,7 +41,7 @@ local function set_editor_options()
         tab = "▸ ",
         trail = "•",
         extends = "»",
-        precedes = "«"
+        precedes = "«",
     }
     vim.opt.scrolloff = 4
     vim.opt.laststatus = 2
@@ -64,17 +64,13 @@ local function set_editor_options()
 end
 
 local function set_maps()
-    local opts = {noremap = true, silent = true}
+    local opts = { noremap = true, silent = true }
 
     vim.api.nvim_set_keymap("n", "<Leader><Enter>", ":noh<cr>", opts)
-    vim.api.nvim_set_keymap("n", "<Leader>co",
-                            "ggVGy:tabnew<cr>:set syntax=qf<cr>pgg", opts)
+    vim.api.nvim_set_keymap("n", "<Leader>co", "ggVGy:tabnew<cr>:set syntax=qf<cr>pgg", opts)
     vim.api.nvim_set_keymap("n", "<Leader>cd", ":lcd %:p:h<cr>", opts)
-    vim.api.nvim_set_keymap("n", "<Leader>m",
-                            "mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm", opts)
-    vim.api.nvim_set_keymap("n", "<Leader>e",
-                            ":silent tabnew ~/.config/nvim/init.lua<cr>:tcd %:p:h<cr>",
-                            opts)
+    vim.api.nvim_set_keymap("n", "<Leader>m", "mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm", opts)
+    vim.api.nvim_set_keymap("n", "<Leader>e", ":silent tabnew ~/.config/nvim/init.lua<cr>:tcd %:p:h<cr>", opts)
 end
 
 set_globals()
