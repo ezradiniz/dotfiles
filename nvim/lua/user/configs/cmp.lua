@@ -1,6 +1,5 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
-local compare = require("cmp.config.compare")
 
 cmp.setup({
     snippet = {
@@ -43,17 +42,6 @@ cmp.setup({
         { name = "luasnip" },
         { name = "path" },
         { name = "buffer" },
-    },
-    sorting = {
-        comparators = {
-            compare.kind,
-            compare.offset,
-            compare.exact,
-            compare.score,
-            compare.sort_text,
-            compare.length,
-            compare.order,
-        },
     },
 })
 
