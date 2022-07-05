@@ -62,6 +62,11 @@ nvim_lsp["gopls"].setup({
 })
 
 nvim_lsp.sumneko_lua.setup({
+    cmd = {
+        "/usr/lib/lua-language-server/bin/lua-language-server",
+        "-E",
+        "/usr/lib/lua-language-server/main.lua",
+    },
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
