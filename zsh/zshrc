@@ -102,7 +102,6 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#export TERM=screen-256color
 
 # My private configuration
 [ -f ~/.my.zsh ] && source ~/.my.zsh
