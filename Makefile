@@ -25,6 +25,7 @@ term:
 .PHONY: git
 git:
 	sudo ln -sfn $(CURDIR)/git/gitconfig "$(HOME)/.gitconfig"
+	sudo ln -sfn $(CURDIR)/git/gitignore "$(HOME)/.gitignore"
 
 .PHONY: x11
 x11:
