@@ -51,6 +51,8 @@
 [commit]
     verbose = true
     gpgsign = true
+[tag]
+    gpgsign = true
 [rebase]
     autosquash = true
 [help]
