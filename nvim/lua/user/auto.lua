@@ -1,16 +1,22 @@
-vim.cmd([[
-  augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}
-  augroup end
-]])
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback=function ()
+      vim.highlight.on_yank {higroup="IncSearch", timeout=150}
+    end,
+    pattern="*",
+    group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
+})
 
-vim.cmd([[
-  augroup editor
-    autocmd!
-    autocmd BufWritePre * :%s/\s\+$//e
-  augroup end
-]])
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function ()
+      vim.cmd([[
+            let save = winsaveview()
+            keeppatterns %s/\s\+$//e
+            call winrestview(save)
+      ]])
+    end,
+    pattern = "*",
+    group = vim.api.nvim_create_augroup("trim_whitespace", { clear = true }),
+})
 
 -- TODO: refactor to lua api
 vim.cmd([[
