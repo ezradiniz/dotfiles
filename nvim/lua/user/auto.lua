@@ -18,26 +18,22 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     group = vim.api.nvim_create_augroup("trim_whitespace", { clear = true }),
 })
 
--- TODO: refactor to lua api
-vim.cmd([[
-  function! MkNonExDir(file, buf)
-    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
-      let dir=fnamemodify(a:file, ':h')
-        if !isdirectory(dir)
-          call mkdir(dir, 'p')
-        endif
-      endif
-  endfunction
+vim.api.nvim_create_autocmd("BufNewFile", {
+  pattern = "*",
+  callback = function()
+    local dir = vim.fn.expand("<afile>:p:h")
+    if vim.fn.isdirectory(dir) == 0 then
+      vim.fn.mkdir(dir, "p")
+      vim.cmd([[ :e % ]])
+    end
+  end,
+  group = vim.api.nvim_create_augroup("mk_non_ex_dir", { clear = true }),
+})
 
-  augroup custom
-    autocmd!
-    autocmd BufWritePre * :call MkNonExDir(expand('<afile>'), +expand('<abuf>'))
-  augroup end
-]])
-
-vim.cmd([[
-  augroup nvim_go
-    autocmd!
-    autocmd BufWritePre *.go :silent! lua require('go.format').goimport()
-  augroup end
-]])
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.go",
+    callback = function ()
+      require('go.format').goimport()
+    end,
+  group = vim.api.nvim_create_augroup("nvim_go", { clear = true }),
+})
