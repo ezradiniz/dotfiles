@@ -117,4 +117,11 @@ return require("packer").startup(function()
     })
 
     use({ "ellisonleao/glow.nvim" })
+
+    use({
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("user.configs.indent-blankline")
+        end
+    })
 end)
