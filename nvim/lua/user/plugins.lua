@@ -122,6 +122,6 @@ return require("packer").startup(function()
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("user.configs.indent-blankline")
-        end
+        end,
     })
 end)
