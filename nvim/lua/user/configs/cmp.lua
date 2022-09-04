@@ -7,6 +7,14 @@ cmp.setup({
             luasnip.lsp_expand(args.body)
         end,
     },
+    window = {
+        documentation = cmp.config.window.bordered(),
+        completion = {
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+            col_offset = -3,
+            side_padding = 0,
+        },
+    },
     mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
