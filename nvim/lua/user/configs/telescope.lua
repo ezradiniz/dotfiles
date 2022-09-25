@@ -17,6 +17,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap("n", "q:", ":Telescope command_history<cr>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>fp", "<CMD>lua require'user.configs.telescope'.project_files()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<space>Q", ":Telescope diagnostics<cr>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>fr", ":Telescope resume<cr>", opts)
 
 telescope.setup({
     defaults = {
