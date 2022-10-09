@@ -15,7 +15,7 @@ vim.api.nvim_set_keymap(
     opts
 )
 vim.api.nvim_set_keymap("n", "q:", ":Telescope command_history<cr>", opts)
-vim.api.nvim_set_keymap("n", "<Leader>fp", "<CMD>lua require'user.configs.telescope'.project_files()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>fp", ":Telescope git_files<cr>", opts)
 vim.api.nvim_set_keymap("n", "<space>Q", ":Telescope diagnostics<cr>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>fr", ":Telescope resume<cr>", opts)
 
@@ -48,15 +48,3 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 telescope.load_extension("file_browser")
-
--- TODO: remove module
-local M = {}
-
-M.project_files = function()
-    local ok = pcall(builtin.git_files, opts)
-    if not ok then
-        builtin.find_files(opts)
-    end
-end
-
-return M
