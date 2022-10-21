@@ -1,7 +1,6 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local actions_layout = require("telescope.actions.layout")
-local builtin = require("telescope.builtin")
 
 local opts = { noremap = true, silent = true }
 
@@ -18,6 +17,7 @@ vim.api.nvim_set_keymap("n", "q:", ":Telescope command_history<cr>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>fp", ":Telescope git_files<cr>", opts)
 vim.api.nvim_set_keymap("n", "<space>Q", ":Telescope diagnostics<cr>", opts)
 vim.api.nvim_set_keymap("n", "<Leader>fr", ":Telescope resume<cr>", opts)
+vim.api.nvim_set_keymap("n", "<Leader>fh", ":Telescope help_tags<cr>", opts)
 
 telescope.setup({
     defaults = {
