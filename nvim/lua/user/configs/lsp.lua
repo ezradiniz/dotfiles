@@ -75,23 +75,12 @@ nvim_lsp["gopls"].setup({
 })
 
 nvim_lsp.sumneko_lua.setup({
-    cmd = {
-        "/usr/lib/lua-language-server/bin/lua-language-server",
-        "-E",
-        "/usr/lib/lua-language-server/main.lua",
-    },
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
         Lua = {
-            runtime = { version = "LuaJIT", path = vim.split(package.path, ";") },
-            diagnostics = { globals = { "vim", "use" } },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-                },
+            diagnostics = {
+                globals = { "vim", "require", "pcall", "pairs" },
             },
         },
     },
