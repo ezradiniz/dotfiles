@@ -77,10 +77,17 @@ nvim_lsp["gopls"].setup({
 nvim_lsp.sumneko_lua.setup({
     capabilities = capabilities,
     on_attach = on_attach,
+    single_file_support = true,
     settings = {
         Lua = {
             diagnostics = {
                 globals = { "vim", "require", "pcall", "pairs" },
+            },
+            workspace = {
+                checkThirdParty = false,
+            },
+            completion = {
+                workspaceWord = true,
             },
         },
     },
