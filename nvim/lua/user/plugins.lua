@@ -59,6 +59,7 @@ return require("packer").startup(function()
     })
     use({
         "neovim/nvim-lspconfig",
+        requires = { "folke/neodev.nvim" },
         config = function()
             require("user.configs.lsp")
         end,
