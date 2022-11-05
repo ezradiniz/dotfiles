@@ -61,6 +61,7 @@ local function set_editor_options()
     vim.opt.softtabstop = 4
     vim.opt.expandtab = true
     vim.opt.wildmode = "longest:full"
+    vim.opt.diffopt:append("linematch:60")
 end
 
 local function set_maps()
