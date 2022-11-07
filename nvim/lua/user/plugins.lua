@@ -79,6 +79,7 @@ return require("packer").startup(function()
     use("tpope/vim-surround")
     use("tpope/vim-unimpaired")
     use("tpope/vim-eunuch")
+    use("tpope/vim-commentary")
 
     use({
         "ray-x/go.nvim",
@@ -109,13 +110,6 @@ return require("packer").startup(function()
 
     use("saadparwaiz1/cmp_luasnip")
     use("L3MON4D3/LuaSnip")
-
-    use({
-        "numToStr/Comment.nvim",
-        config = function()
-            require("Comment").setup()
-        end,
-    })
 
     use({ "ellisonleao/glow.nvim" })
 
