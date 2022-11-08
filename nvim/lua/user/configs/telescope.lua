@@ -1,38 +1,37 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local actions_layout = require("telescope.actions.layout")
+local builtin = require("telescope.builtin")
 
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<Leader>fb", ":Telescope buffers<cr>", opts)
-vim.keymap.set("n", "<Leader>ff", ":Telescope find_files<cr>", opts)
-vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep<cr>", opts)
+vim.keymap.set("n", "<Leader>fb", builtin.buffers, opts)
+vim.keymap.set("n", "<Leader>fg", builtin.live_grep, opts)
+vim.keymap.set("n", "<Leader>fp", builtin.git_files, opts)
+vim.keymap.set("n", "<space>Q", builtin.diagnostics, opts)
+vim.keymap.set("n", "<Leader>fr", builtin.resume, opts)
+vim.keymap.set("n", "<Leader>fh", builtin.help_tags, opts)
+vim.keymap.set("n", "<Leader>/", builtin.current_buffer_fuzzy_find, opts)
+vim.keymap.set("n", "q:", builtin.command_history, opts)
+vim.keymap.set(
+    "n",
+    "<Leader>ff",
+    function ()
+        builtin.find_files({ hidden = true })
+    end,
+    opts
+)
 vim.keymap.set(
     "n",
     "<Leader>fl",
-    "<CMD>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+    function ()
+        telescope.extensions.file_browser.file_browser()
+    end,
     opts
 )
-vim.keymap.set("n", "q:", ":Telescope command_history<cr>", opts)
-vim.keymap.set("n", "<Leader>fp", ":Telescope git_files<cr>", opts)
-vim.keymap.set("n", "<space>Q", ":Telescope diagnostics<cr>", opts)
-vim.keymap.set("n", "<Leader>fr", ":Telescope resume<cr>", opts)
-vim.keymap.set("n", "<Leader>fh", ":Telescope help_tags<cr>", opts)
-vim.keymap.set("n", "<Leader>/", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 
 telescope.setup({
     defaults = {
-        vimgrep_arguments = {
-            "rg",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
-            "--hidden",
-            "--glob=!.git",
-        },
         mappings = {
             i = {
                 ["<ESC>"] = actions.close,
