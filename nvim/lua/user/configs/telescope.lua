@@ -18,6 +18,7 @@ vim.keymap.set("n", "<Leader>fp", ":Telescope git_files<cr>", opts)
 vim.keymap.set("n", "<space>Q", ":Telescope diagnostics<cr>", opts)
 vim.keymap.set("n", "<Leader>fr", ":Telescope resume<cr>", opts)
 vim.keymap.set("n", "<Leader>fh", ":Telescope help_tags<cr>", opts)
+vim.keymap.set("n", "<Leader>/", ":Telescope current_buffer_fuzzy_find<cr>", opts)
 
 telescope.setup({
     defaults = {
