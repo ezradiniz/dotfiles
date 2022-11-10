@@ -44,7 +44,7 @@ return require("packer").startup(function()
         end,
     })
     use({
-        "RRethy/nvim-base16",
+        "https://gitlab.com/madyanov/gruber.vim",
         config = function()
             require("user.configs.colors")
         end,
