@@ -13,22 +13,12 @@ vim.keymap.set("n", "<Leader>fr", builtin.resume, opts)
 vim.keymap.set("n", "<Leader>fh", builtin.help_tags, opts)
 vim.keymap.set("n", "<Leader>/", builtin.current_buffer_fuzzy_find, opts)
 vim.keymap.set("n", "q:", builtin.command_history, opts)
-vim.keymap.set(
-    "n",
-    "<Leader>ff",
-    function ()
-        builtin.find_files({ hidden = true })
-    end,
-    opts
-)
-vim.keymap.set(
-    "n",
-    "<Leader>fl",
-    function ()
-        telescope.extensions.file_browser.file_browser()
-    end,
-    opts
-)
+vim.keymap.set("n", "<Leader>ff", function()
+    builtin.find_files({ hidden = true })
+end, opts)
+vim.keymap.set("n", "<Leader>fl", function()
+    telescope.extensions.file_browser.file_browser()
+end, opts)
 
 telescope.setup({
     defaults = {
