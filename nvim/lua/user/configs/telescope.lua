@@ -16,9 +16,6 @@ vim.keymap.set("n", "q:", builtin.command_history, opts)
 vim.keymap.set("n", "<Leader>ff", function()
     builtin.find_files({ find_command = { "rg", "--files", "--hidden", "--smart-case", "--glob=!.git" } })
 end, opts)
-vim.keymap.set("n", "<Leader>fl", function()
-    telescope.extensions.file_browser.file_browser()
-end, opts)
 
 telescope.setup({
     defaults = {
