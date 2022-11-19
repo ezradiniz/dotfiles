@@ -1,7 +1,7 @@
 vim.cmd("syntax enable")
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
-vim.cmd("colorscheme gruber")
+vim.cmd("colorscheme base16-default-dark")
 
 -- Diff highlights
 vim.cmd([[
