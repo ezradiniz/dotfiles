@@ -30,9 +30,6 @@ telescope.setup({
                 ["?"] = actions_layout.toggle_preview,
             },
         },
-        sorting_strategy = "ascending",
-        layout_strategy = "bottom_pane",
-        layout_config = { prompt_position = "top" },
     },
 })
 
