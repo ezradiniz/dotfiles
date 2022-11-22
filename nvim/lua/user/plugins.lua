@@ -118,4 +118,11 @@ return require("packer").startup(function()
             require("user.configs.indent-blankline")
         end,
     })
+
+    use({
+        "feline-nvim/feline.nvim",
+        config = function()
+            require("user.configs.feline");
+        end,
+    })
 end)
