@@ -23,6 +23,7 @@ local function set_editor_options()
     vim.opt.ignorecase = true
     vim.opt.smartcase = true
     vim.opt.colorcolumn = "80"
+    vim.opt.termguicolors = true
     vim.opt.updatetime = 50
     vim.opt.history = 10000
     vim.opt.autoread = true
