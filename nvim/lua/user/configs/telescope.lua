@@ -13,7 +13,7 @@ vim.keymap.set("n", "<Leader>fr", builtin.resume, opts)
 vim.keymap.set("n", "<Leader>fh", builtin.help_tags, opts)
 vim.keymap.set("n", "<Leader>/", builtin.current_buffer_fuzzy_find, opts)
 vim.keymap.set("n", "q:", builtin.command_history, opts)
-vim.keymap.set("n", "<Leader>ff", function()
+vim.keymap.set("n", "<Leader>fl", function()
     builtin.find_files({ find_command = { "rg", "--files", "--hidden", "--smart-case", "--glob=!.git" } })
 end, opts)
 
