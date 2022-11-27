@@ -1,6 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-vim.g.fugitive_pty = false
 
 vim.keymap.set("n", "<Leader>G", ":Git ", { noremap = true })
 vim.keymap.set("n", "<Leader>gs", ":Git<cr>", opts)
