@@ -72,6 +72,9 @@ local function set_maps()
     vim.keymap.set("n", "<Leader>cd", ":lcd %:p:h<cr>", opts)
     vim.keymap.set("n", "<Leader>m", "mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm", opts)
     vim.keymap.set("n", "<Leader>e", ":silent tabnew ~/.config/nvim/init.lua<cr>:tcd %:p:h<cr>", opts)
+
+    vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
+    vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 end
 
 set_globals()
