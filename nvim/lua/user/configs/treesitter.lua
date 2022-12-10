@@ -3,6 +3,7 @@ require("nvim-treesitter.configs").setup({
         "dockerfile",
         "javascript",
         "typescript",
+        "gitcommit",
         "tsx",
         "python",
         "c",
