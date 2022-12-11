@@ -2,34 +2,30 @@ scrolling:
   history: 50000
   multiplier: 3
 
-# XTerm's
 colors:
-  # Default colors
   primary:
     background: '0x000000'
     foreground: '0xffffff'
 
-  # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xcd0000'
+    black:   '0x181818'
+    red:     '#CC6674'
     green:   '0x00cd00'
-    yellow:  '0xcdcd00'
-    blue:    '0x7cafc2'
-    magenta: '0xcd00cd'
-    cyan:    '0x00cdcd'
-    white:   '0xe5e5e5'
+    yellow:  '#D7B66F'
+    blue:    '#8BADCD'
+    magenta: '#B799C8'
+    cyan:    '#89BEB7'
+    white:   '#CACBD4'
 
-  # Bright colors
   bright:
-    black:   '0x7f7f7f'
-    red:     '0xff0000'
+    black:   '0x585858'
+    red:     '#d95555'
     green:   '0x00ff00'
-    yellow:  '0xffff00'
-    blue:    '0x5c5cff'
-    magenta: '0xff00ff'
-    cyan:    '0x00ffff'
-    white:   '0xffffff'
+    yellow:  '#D7B66F'
+    blue:    '#81A2BF'
+    magenta: '#B799C8'
+    cyan:    '#89BEB7'
+    white:   '#CACBD4'
 
   # Cursor colors
   cursor:
