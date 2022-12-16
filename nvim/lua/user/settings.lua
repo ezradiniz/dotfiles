@@ -75,6 +75,7 @@ local function set_maps()
 
     vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
     vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
+    vim.keymap.set("x", "<leader>p", '"_dP')
 end
 
 set_globals()
