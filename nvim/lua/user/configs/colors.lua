@@ -1,6 +1,6 @@
 vim.cmd("syntax enable")
 vim.opt.background = "dark"
-vim.cmd("colorscheme minimal-base16")
+vim.cmd("colorscheme base16-default-dark")
 
 -- Diff highlights
 vim.cmd([[

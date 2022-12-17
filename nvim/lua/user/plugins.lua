@@ -43,7 +43,7 @@ return require("packer").startup(function()
         end,
     })
     use({
-        "Yazeed1s/minimal.nvim",
+        "RRethy/nvim-base16",
         config = function()
             require("user.configs.colors")
         end,
