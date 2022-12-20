@@ -116,4 +116,11 @@ return require("packer").startup(function()
             require("user.configs.indent-blankline")
         end,
     })
+
+    use({
+        "mbbill/undotree",
+        config = function()
+            require("user.configs.undotree")
+        end,
+    })
 end)
