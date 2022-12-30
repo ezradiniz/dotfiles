@@ -111,13 +111,6 @@ return require("packer").startup(function()
     use("L3MON4D3/LuaSnip")
 
     use({
-        "lukas-reineke/indent-blankline.nvim",
-        config = function()
-            require("user.configs.indent-blankline")
-        end,
-    })
-
-    use({
         "mbbill/undotree",
         config = function()
             require("user.configs.undotree")
