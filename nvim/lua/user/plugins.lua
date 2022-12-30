@@ -63,7 +63,7 @@ return require("packer").startup(function()
             require("user.configs.lsp")
         end,
     })
-    use("sheerun/vim-polyglot")
+
     use("tpope/vim-dispatch")
     use("tpope/vim-git")
     use({
