@@ -26,6 +26,7 @@ return require("packer").startup(function()
 
     use("AndrewRadev/splitjoin.vim")
 
+    use({ "nvim-telescope/telescope-ui-select.nvim" })
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use({
         "nvim-telescope/telescope.nvim",
