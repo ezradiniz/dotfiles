@@ -4,28 +4,28 @@ scrolling:
 
 colors:
   primary:
-    background: '0x000000'
-    foreground: '0xffffff'
+    background: '#2D2A2E'
+    foreground: '#FCFCFA'
 
   normal:
-    black:   '0x181818'
-    red:     '#CC6674'
-    green:   '0x00cd00'
-    yellow:  '#D7B66F'
-    blue:    '#8BADCD'
-    magenta: '#B799C8'
-    cyan:    '#89BEB7'
-    white:   '#CACBD4'
+    black:   '#403E41'
+    red:     '#FF6188'
+    green:   '#A9DC76'
+    yellow:  '#FFD866'
+    blue:    '#FC9867'
+    magenta: '#AB9DF2'
+    cyan:    '#78DCE8'
+    white:   '#FCFCFA'
 
   bright:
-    black:   '0x585858'
-    red:     '#d95555'
-    green:   '0x00ff00'
-    yellow:  '#D7B66F'
-    blue:    '#81A2BF'
-    magenta: '#B799C8'
-    cyan:    '#89BEB7'
-    white:   '#CACBD4'
+    black:   '#727072'
+    red:     '#FF6188'
+    green:   '#A9DC76'
+    yellow:  '#FFD866'
+    blue:    '#FC9867'
+    magenta: '#AB9DF2'
+    cyan:    '#78DCE8'
+    white:   '#FCFCFA'
 
   # Cursor colors
   cursor:
