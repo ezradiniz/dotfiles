@@ -1,12 +1,3 @@
-local nvim_lsp = require("lspconfig")
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-    return
-end
-
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
 local on_attach = function(_, bufnr)
     if vim.api.nvim_buf_get_name(bufnr):match("^%a+://") then
         return
@@ -44,52 +35,64 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 end
 
-vim.diagnostic.config({
-    severity_sort = true,
-    virtual_text = true,
-    float = {
+return {
+  "neovim/nvim-lspconfig",
+  event = "BufReadPre",
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    "folke/neodev.nvim",
+  },
+  config = function()
+    local nvim_lsp = require("lspconfig")
+    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+    vim.diagnostic.config({
+      severity_sort = true,
+      virtual_text = true,
+      float = {
         focusable = false,
         style = "minimal",
         border = "rounded",
         source = "always",
         header = "",
         prefix = "",
-    },
-})
+      },
+    })
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", focusable = false })
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", focusable = false })
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+    local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-nvim_lsp["tsserver"].setup({
-    on_attach = on_attach,
-    flags = { debounce_text_changes = 150 },
-    capabilities = capabilities,
-})
 
-nvim_lsp["gopls"].setup({
-    on_attach = on_attach,
-    flags = { debounce_text_changes = 150 },
-    capabilities = capabilities,
-})
+    nvim_lsp["tsserver"].setup({
+      on_attach = on_attach,
+      flags = { debounce_text_changes = 150 },
+      capabilities = capabilities,
+    })
 
-nvim_lsp.sumneko_lua.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    single_file_support = true,
-    settings = {
+    nvim_lsp["gopls"].setup({
+      on_attach = on_attach,
+      flags = { debounce_text_changes = 150 },
+      capabilities = capabilities,
+    })
+
+    nvim_lsp["sumneko_lua"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      single_file_support = true,
+      settings = {
         Lua = {
-            diagnostics = {
-                globals = { "vim", "require", "pcall", "pairs" },
-            },
-            workspace = {
-                checkThirdParty = false,
-            },
-            completion = {
-                workspaceWord = true,
-            },
+          diagnostics = {
+            globals = { "vim", "require", "pcall", "pairs" },
+          },
+          workspace = {
+            checkThirdParty = false,
+          },
+          completion = {
+            workspaceWord = true,
+          },
         },
-    },
-})
+      },
+    })
+  end,
+}

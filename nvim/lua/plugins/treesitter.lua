@@ -1,4 +1,9 @@
-require("nvim-treesitter.configs").setup({
+return {
+  "nvim-treesitter/nvim-treesitter",
+  version = false, -- last release is way too old and doesn't work on Windows
+  build = ":TSUpdate",
+  event = "BufReadPost",
+  opts = {
     ensure_installed = {
         "dockerfile",
         "javascript",
@@ -35,4 +40,11 @@ require("nvim-treesitter.configs").setup({
     incremental_selection = { enable = true },
     textobjects = { enable = true },
     indent = { enable = true },
-})
+  },
+  config = function(plugin, opts)
+    if plugin.ensure_installed then
+      require("lazyvim.util").deprecate("treesitter.ensure_installed", "treesitter.opts.ensure_installed")
+    end
+    require("nvim-treesitter.configs").setup(opts)
+  end,
+}
