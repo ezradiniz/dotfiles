@@ -5,36 +5,36 @@ return {
   event = "BufReadPost",
   opts = {
     ensure_installed = {
-        "dockerfile",
-        "javascript",
-        "typescript",
-        "gitcommit",
-        "tsx",
-        "python",
-        "c",
-        "go",
-        "gomod",
-        "bash",
-        "make",
-        "markdown",
-        "sql",
-        "vim",
-        "yaml",
-        "html",
-        "hcl",
-        "lua",
+      "dockerfile",
+      "javascript",
+      "typescript",
+      "gitcommit",
+      "tsx",
+      "python",
+      "c",
+      "go",
+      "gomod",
+      "bash",
+      "make",
+      "markdown",
+      "sql",
+      "vim",
+      "yaml",
+      "html",
+      "hcl",
+      "lua",
     },
     auto_install = true,
     highlight = {
-        enable = true,
-        disable = function(_, buf)
-            local max_filesize = 100 * 1024 -- 100 KB
-            local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then
-                return true
-            end
-        end,
-        additional_vim_regex_highlighting = false,
+      enable = true,
+      disable = function(_, buf)
+        local max_filesize = 100 * 1024 -- 100 KB
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+          return true
+        end
+      end,
+      additional_vim_regex_highlighting = false,
     },
     autopairs = { enable = true },
     incremental_selection = { enable = true },
