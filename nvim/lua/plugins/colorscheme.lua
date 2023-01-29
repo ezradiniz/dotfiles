@@ -1,23 +1,43 @@
 return {
-  "RRethy/nvim-base16",
+  "catppuccin/nvim",
+  name = "catppuccin",
   lazy = false,
   priority = 1000,
   config = function()
-    vim.cmd("syntax enable")
-    vim.opt.background = "dark"
-    vim.cmd.colorscheme("base16-classic-dark")
-
-    vim.cmd([[
-        hi DiffAdd guifg=#a1b56c guibg=#181818 gui=inverse
-        hi DiffChange guifg=#689d6a guibg=#181818 gui=inverse
-        hi DiffDelete guifg=#ab4642 guibg=#181818 gui=inverse
-        hi DiffText guifg=#458588 guibg=#181818 gui=inverse
-
-        hi diffAdded guifg=#a1b56c
-        hi diffRemoved guifg=#ab4642
-        hi diffChanged guifg=#689d6a
-        hi diffNewFile guifg=#fabd2f
-        hi diffLine guifg=#458588
-    ]])
+    require("catppuccin").setup({
+      flavour = "mocha",
+      term_colors = true,
+      transparent_background = false,
+      no_italic = false,
+      no_bold = false,
+      color_overrides = {
+        mocha = {
+          base = "#181818",
+        },
+      },
+      highlight_overrides = {
+        all = function(colors)
+          return {
+            Comment = { fg = colors.overlay1 },
+            LineNr = { fg = colors.overlay1 },
+            Search = { fg = "#181818", bg = "#f9e2af"},
+            DiffAdd = { fg = "#a1b56c", bg = "#181818", reverse =  true },
+            DiffChange = { fg = "#689d6a", bg = "#181818", reverse =  true },
+            DiffDelete = { fg = "#ab4642", bg = "#181818", reverse =  true },
+            DiffText = { fg = "#458588", bg = "#181818", reverse =  true },
+          }
+        end,
+      },
+      integrations = {
+        cmp = true,
+        treesitter = true,
+        gitsigns = true,
+        telescope = true,
+        native_lsp = {
+          enabled = true,
+        },
+      },
+    })
+    vim.cmd.colorscheme("catppuccin")
   end,
 }
