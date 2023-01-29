@@ -7,9 +7,10 @@ return {
     { "nvim-lua/plenary.nvim" },
   },
   keys = function()
-    local function find_files()
+    local function find_files(cwd)
       require("telescope.builtin").find_files({
         find_command = { "rg", "--files", "--hidden", "--smart-case", "--glob=!.git" },
+        cwd = cwd,
       })
     end
 
@@ -73,6 +74,13 @@ return {
           if not ok then
             find_files()
           end
+        end,
+      },
+      {
+        "<Leader>fd",
+        function()
+          local utils = require("telescope.utils")
+          find_files(utils.buffer_dir())
         end,
       },
     }
