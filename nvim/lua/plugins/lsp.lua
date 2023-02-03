@@ -76,6 +76,12 @@ return {
       capabilities = capabilities,
     })
 
+    nvim_lsp["clangd"].setup({
+      on_attach = on_attach,
+      flags = { debounce_text_changes = 150 },
+      capabilities = capabilities,
+    })
+
     nvim_lsp["sumneko_lua"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
