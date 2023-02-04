@@ -37,7 +37,6 @@ return {
       additional_vim_regex_highlighting = false,
     },
     autopairs = { enable = true },
-    incremental_selection = { enable = true },
     textobjects = { enable = true },
     indent = { enable = true },
   },
