@@ -7,6 +7,7 @@ return {
     { "nvim-lua/plenary.nvim" },
   },
   keys = function()
+    local utils = require("telescope.utils")
     local function find_files(cwd)
       require("telescope.builtin").find_files({
         find_command = { "rg", "--files", "--hidden", "--smart-case", "--glob=!.git" },
@@ -25,6 +26,12 @@ return {
         "<Leader>fg",
         function()
           require("telescope.builtin").live_grep()
+        end,
+      },
+      {
+        "<Leader>fG",
+        function()
+          require("telescope.builtin").live_grep({ cwd = utils.buffer_dir() })
         end,
       },
       {
@@ -77,9 +84,8 @@ return {
         end,
       },
       {
-        "<Leader>fd",
+        "<Leader>fP",
         function()
-          local utils = require("telescope.utils")
           find_files(utils.buffer_dir())
         end,
       },
