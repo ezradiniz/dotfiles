@@ -82,7 +82,7 @@ return {
       capabilities = capabilities,
     })
 
-    nvim_lsp["sumneko_lua"].setup({
+    nvim_lsp["lua_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       single_file_support = true,
