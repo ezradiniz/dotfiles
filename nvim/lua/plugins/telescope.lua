@@ -5,16 +5,9 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     { "nvim-telescope/telescope-ui-select.nvim" },
     { "nvim-lua/plenary.nvim" },
+    { "molecule-man/telescope-menufacture" },
   },
   keys = function()
-    local utils = require("telescope.utils")
-    local function find_files(cwd)
-      require("telescope.builtin").find_files({
-        find_command = { "rg", "--files", "--hidden", "--smart-case", "--glob=!.git" },
-        cwd = cwd,
-      })
-    end
-
     return {
       {
         "<Leader>fb",
@@ -25,13 +18,7 @@ return {
       {
         "<Leader>fg",
         function()
-          require("telescope.builtin").live_grep()
-        end,
-      },
-      {
-        "<Leader>fG",
-        function()
-          require("telescope.builtin").live_grep({ cwd = utils.buffer_dir() })
+          require("telescope").extensions.menufacture.live_grep()
         end,
       },
       {
@@ -72,21 +59,17 @@ return {
       },
       {
         "<Leader>fl",
-        find_files,
+        function()
+          require("telescope").extensions.menufacture.find_files()
+        end,
       },
       {
         "<Leader>fp",
         function()
           local ok, _ = pcall(require("telescope.builtin").git_files)
           if not ok then
-            find_files()
+            require("telescope").extensions.menufacture.find_files()
           end
-        end,
-      },
-      {
-        "<Leader>fP",
-        function()
-          find_files(utils.buffer_dir())
         end,
       },
     }
@@ -115,5 +98,6 @@ return {
     telescope.setup(opts)
     telescope.load_extension("fzf")
     telescope.load_extension("ui-select")
+    telescope.load_extension("menufacture")
   end,
 }
