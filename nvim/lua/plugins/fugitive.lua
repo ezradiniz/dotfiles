@@ -1,6 +1,6 @@
 return {
   "tpope/vim-fugitive",
-  cmd = "Git",
+  event = "BufEnter",
   dependencies = {
     { "tpope/vim-rhubarb" },
   },
