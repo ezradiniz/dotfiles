@@ -66,7 +66,7 @@ return {
       {
         "<Leader>fp",
         function()
-          local ok, _ = pcall(require("telescope.builtin").git_files)
+          local ok, _ = pcall(require('telescope').extensions.menufacture.git_files)
           if not ok then
             require("telescope").extensions.menufacture.find_files()
           end
