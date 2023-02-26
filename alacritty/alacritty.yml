@@ -41,6 +41,6 @@ cursor:
 
 # Font configuration (changes require restart)
 font:
-  size: 14
+  size: 16
   normal:
     family: InconsolataGo Nerd Font
