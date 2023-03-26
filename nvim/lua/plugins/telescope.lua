@@ -58,18 +58,9 @@ return {
         },
       },
       {
-        "<Leader>fl",
-        function()
-          require("telescope").extensions.menufacture.find_files()
-        end,
-      },
-      {
         "<Leader>fp",
         function()
-          local ok, _ = pcall(require('telescope').extensions.menufacture.git_files)
-          if not ok then
-            require("telescope").extensions.menufacture.find_files()
-          end
+          require("telescope").extensions.menufacture.find_files()
         end,
       },
     }
