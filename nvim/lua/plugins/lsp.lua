@@ -36,69 +36,91 @@ local on_attach = function(_, bufnr)
 end
 
 return {
-  "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    "folke/neodev.nvim",
-  },
-  config = function()
-    local nvim_lsp = require("lspconfig")
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+  {
+    "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "folke/neodev.nvim",
+    },
+    config = function()
+      local nvim_lsp = require("lspconfig")
+      local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-    vim.diagnostic.config({
-      severity_sort = true,
-      virtual_text = true,
-      float = {
-        focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
-      },
-    })
+      vim.diagnostic.config({
+        severity_sort = true,
+        virtual_text = true,
+        float = {
+          focusable = false,
+          style = "minimal",
+          border = "rounded",
+          source = "always",
+          header = "",
+          prefix = "",
+        },
+      })
 
-    vim.lsp.handlers["textDocument/hover"] =
-    vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", focusable = false })
+      vim.lsp.handlers["textDocument/hover"] =
+        vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", focusable = false })
 
-    local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+      local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-    nvim_lsp["tsserver"].setup({
-      on_attach = on_attach,
-      flags = { debounce_text_changes = 150 },
-      capabilities = capabilities,
-    })
+      nvim_lsp["tsserver"].setup({
+        on_attach = on_attach,
+        flags = { debounce_text_changes = 150 },
+        capabilities = capabilities,
+      })
 
-    nvim_lsp["gopls"].setup({
-      on_attach = on_attach,
-      flags = { debounce_text_changes = 150 },
-      capabilities = capabilities,
-    })
+      nvim_lsp["gopls"].setup({
+        on_attach = on_attach,
+        flags = { debounce_text_changes = 150 },
+        capabilities = capabilities,
+      })
 
-    nvim_lsp["clangd"].setup({
-      on_attach = on_attach,
-      flags = { debounce_text_changes = 150 },
-      capabilities = capabilities,
-    })
+      nvim_lsp["clangd"].setup({
+        on_attach = on_attach,
+        flags = { debounce_text_changes = 150 },
+        capabilities = capabilities,
+      })
 
-    nvim_lsp["lua_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      single_file_support = true,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { "vim", "require", "pcall", "pairs" },
-          },
-          workspace = {
-            checkThirdParty = false,
-          },
-          completion = {
-            workspaceWord = true,
+      nvim_lsp["lua_ls"].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        single_file_support = true,
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim", "require", "pcall", "pairs" },
+            },
+            workspace = {
+              checkThirdParty = false,
+            },
+            completion = {
+              workspaceWord = true,
+            },
           },
         },
-      },
-    })
-  end,
+      })
+    end,
+  },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    opts = function()
+      local null_ls = require("null-ls")
+      return {
+        root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
+        on_attach = on_attach,
+        sources = {
+          null_ls.builtins.formatting.prettier,
+          null_ls.builtins.formatting.eslint_d,
+          null_ls.builtins.diagnostics.eslint_d,
+          null_ls.builtins.formatting.stylua,
+        },
+        should_attach = function(bufnr)
+          return not vim.api.nvim_buf_get_name(bufnr):match("^git://")
+        end,
+      }
+    end,
+  },
 }
