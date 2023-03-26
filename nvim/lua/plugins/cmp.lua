@@ -9,10 +9,13 @@ return {
     "hrsh7th/cmp-cmdline",
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
+    "rafamadriz/friendly-snippets",
   },
   opts = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+    require("luasnip.loaders.from_vscode").lazy_load()
+
     return {
       window = {
         documentation = cmp.config.window.bordered(),
@@ -61,8 +64,8 @@ return {
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "luasnip" },
-        { name = "path" },
         { name = "buffer" },
+        { name = "path" },
       }),
       confirm_opts = {
         behavior = cmp.ConfirmBehavior.Select,
