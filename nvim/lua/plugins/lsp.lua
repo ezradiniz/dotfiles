@@ -75,6 +75,8 @@ return {
         capabilities = capabilities,
       })
 
+      nvim_lsp["rust_analyzer"].setup({
+        on_attach = on_attach,
         capabilities = capabilities,
       })
 
@@ -118,6 +120,7 @@ return {
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.terraform_fmt,
           null_ls.builtins.diagnostics.terraform_validate,
+          null_ls.builtins.formatting.rustfmt,
         },
         should_attach = function(bufnr)
           return not vim.api.nvim_buf_get_name(bufnr):match("^git://")
