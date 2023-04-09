@@ -78,7 +78,14 @@ return {
             ["<ESC>"] = actions.close,
             ["<C-K>"] = actions.move_selection_previous,
             ["<C-J>"] = actions.move_selection_next,
-            ["?"] = actions_layout.toggle_preview,
+            ["<C-P>"] = actions_layout.toggle_preview,
+          },
+        },
+      },
+      extensions = {
+        menufacture = {
+          mappings = {
+            main_menu = { [{ "i", "n" }] = "?" },
           },
         },
       },
