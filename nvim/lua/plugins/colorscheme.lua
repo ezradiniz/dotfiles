@@ -13,6 +13,8 @@ return {
       color_overrides = {
         mocha = {
           base = "#181818",
+          -- NOTE(temporarily): This fixes background colors for other plugins
+          mantle = "#181818",
         },
       },
       highlight_overrides = {
@@ -20,11 +22,11 @@ return {
           return {
             Comment = { fg = colors.overlay1 },
             LineNr = { fg = colors.overlay1 },
-            Search = { fg = "#181818", bg = "#f9e2af"},
-            DiffAdd = { fg = "#a1b56c", bg = "#181818", reverse =  true },
-            DiffChange = { fg = "#689d6a", bg = "#181818", reverse =  true },
-            DiffDelete = { fg = "#ab4642", bg = "#181818", reverse =  true },
-            DiffText = { fg = "#458588", bg = "#181818", reverse =  true },
+            Search = { fg = "#181818", bg = "#f9e2af" },
+            DiffAdd = { fg = "#a1b56c", bg = "#181818", reverse = true },
+            DiffChange = { fg = "#689d6a", bg = "#181818", reverse = true },
+            DiffDelete = { fg = "#ab4642", bg = "#181818", reverse = true },
+            DiffText = { fg = "#458588", bg = "#181818", reverse = true },
           }
         end,
       },
