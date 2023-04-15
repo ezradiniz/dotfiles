@@ -63,6 +63,12 @@ return {
           require("telescope").extensions.menufacture.find_files()
         end,
       },
+      {
+        "<Leader>fo",
+        function()
+          require("telescope.builtin").oldfiles()
+        end,
+      },
     }
   end,
   opts = function()
