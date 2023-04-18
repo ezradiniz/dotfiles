@@ -3,10 +3,18 @@ return {
   opts = {
     options = {
       theme = "catppuccin",
+      component_separators = "",
+      section_separators = "",
+    },
+    sections = {
+      lualine_c = {
+        "%=",
+        {
+          "filename",
+          file_status = true,
+          path = 1,
+        },
+      },
     },
   },
-  config = function(_, opts)
-    local lualine = require("lualine")
-    lualine.setup(opts)
-  end,
 }
