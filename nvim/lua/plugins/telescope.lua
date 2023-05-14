@@ -76,6 +76,10 @@ return {
     local actions_layout = require("telescope.actions.layout")
     return {
       defaults = {
+        layout_strategy = "bottom_pane",
+        layout_config = {
+          prompt_position = "bottom",
+        },
         preview = {
           hide_on_startup = true,
         },
