@@ -28,10 +28,10 @@ vim.opt.textwidth = 0
 vim.opt.eol = false
 vim.opt.list = true
 vim.opt.listchars = {
-  tab = "▸ ",
-  trail = "•",
-  extends = "»",
-  precedes = "«",
+    tab = "▸ ",
+    trail = "•",
+    extends = "»",
+    precedes = "«",
 }
 vim.opt.scrolloff = 4
 vim.opt.laststatus = 2
@@ -52,3 +52,4 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.wildmode = "longest:full"
 vim.opt.diffopt:append("linematch:60")
+vim.opt.signcolumn = "auto:1-2"
