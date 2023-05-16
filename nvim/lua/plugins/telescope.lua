@@ -38,24 +38,24 @@ return {
         function()
           require("telescope.builtin").help_tags()
         end,
-        {
-          "<Leader>/",
-          function()
-            require("telescope.builtin").current_buffer_fuzzy_find()
-          end,
-        },
-        {
-          "q:",
-          function()
-            require("telescope.builtin").command_history()
-          end,
-        },
-        {
-          "<Leader>fm",
-          function()
-            require("telescope.builtin").marks()
-          end,
-        },
+      },
+      {
+        "<Leader>/",
+        function()
+          require("telescope.builtin").current_buffer_fuzzy_find()
+        end,
+      },
+      {
+        "q:",
+        function()
+          require("telescope.builtin").command_history()
+        end,
+      },
+      {
+        "<Leader>fm",
+        function()
+          require("telescope.builtin").marks()
+        end,
       },
       {
         "<Leader>fp",
