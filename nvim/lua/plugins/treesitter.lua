@@ -23,6 +23,7 @@ return {
       "html",
       "hcl",
       "lua",
+      "zig",
     },
     auto_install = true,
     highlight = {
