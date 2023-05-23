@@ -20,10 +20,6 @@ return {
     event = "BufEnter",
   },
   {
-    "tpope/vim-eunuch",
-    event = "BufEnter",
-  },
-  {
     "tpope/vim-commentary",
     event = "BufEnter",
   },
