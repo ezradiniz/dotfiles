@@ -2,7 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = {
     options = {
-      theme = "catppuccin",
+      theme = "monokai-pro",
       component_separators = "",
       section_separators = "",
     },
