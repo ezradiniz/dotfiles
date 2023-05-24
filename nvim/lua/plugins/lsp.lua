@@ -61,7 +61,7 @@ return {
       })
 
       vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", focusable = false })
+          vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", focusable = false })
 
       local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -100,10 +100,12 @@ return {
               globals = { "vim", "require", "pcall", "pairs" },
             },
             workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
               checkThirdParty = false,
             },
             completion = {
               workspaceWord = true,
+              callSnippet = "Replace",
             },
           },
         },
