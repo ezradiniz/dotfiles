@@ -20,6 +20,12 @@ return {
       window = {
         documentation = cmp.config.window.bordered(),
       },
+      view = {
+        entries = {
+          name = "custom",
+          selection_order = "top_down",
+        },
+      },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
