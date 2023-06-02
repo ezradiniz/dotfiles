@@ -27,11 +27,6 @@ colors:
     cyan:    '#78DCE8'
     white:   '#FCFCFA'
 
-  # Cursor colors
-  cursor:
-   text: '#000000'
-   cursor: '0x7cafc2'
-
 # Cursor configuration
 cursor:
   style:
