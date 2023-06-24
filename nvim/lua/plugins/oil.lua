@@ -1,10 +1,6 @@
 return {
   "stevearc/oil.nvim",
   opts = {
-    columns = {
-      "permissions",
-      "size",
-    },
     default_file_explorer = false,
   },
   keys = function()

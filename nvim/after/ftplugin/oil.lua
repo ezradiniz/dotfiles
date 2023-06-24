@@ -1,7 +1,8 @@
-vim.keymap.set("n", "dax", function()
-    require("oil").discard_all_changes()
+vim.keymap.set("n", "gK", function()
+    local path = vim.fn.expand("%:p"):gsub("oil://", "")
+    vim.cmd("!ls -lh " .. path)
 end, {
     noremap = true,
     silent = true,
-    desc = "Discard all changes made to oil buffers",
+    desc = "List files",
 })
