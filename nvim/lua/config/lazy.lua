@@ -20,5 +20,4 @@ require("lazy").setup({
   defaults = {
     version = false,
   },
-  checker = { enabled = true },
 })
