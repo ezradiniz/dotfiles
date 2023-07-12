@@ -30,14 +30,6 @@ vim.api.nvim_create_autocmd("BufNewFile", {
   group = vim.api.nvim_create_augroup("mk_non_ex_dir", { clear = true }),
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-    require("go.format").goimport()
-  end,
-  group = vim.api.nvim_create_augroup("nvim_go", { clear = true }),
-})
-
 -- jump to the last place you've visited in a file before exiting
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
