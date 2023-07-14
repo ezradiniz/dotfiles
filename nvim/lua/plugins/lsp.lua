@@ -113,6 +113,8 @@ return {
     end,
   },
   {
+    -- TODO: null-ls is being archived
+    -- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1621
     "jose-elias-alvarez/null-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = function()
