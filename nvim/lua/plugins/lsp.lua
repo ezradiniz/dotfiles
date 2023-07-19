@@ -42,10 +42,12 @@ return {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "folke/neodev.nvim",
+      "mattn/efm-langserver",
     },
     config = function()
       local nvim_lsp = require("lspconfig")
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
+      local efm = require("config.efm")
 
       vim.diagnostic.config({
         severity_sort = true,
@@ -61,7 +63,7 @@ return {
       })
 
       vim.lsp.handlers["textDocument/hover"] =
-          vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", focusable = false })
+        vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", focusable = false })
 
       local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -110,31 +112,21 @@ return {
           },
         },
       })
-    end,
-  },
-  {
-    -- TODO: null-ls is being archived
-    -- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/1621
-    "jose-elias-alvarez/null-ls.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    opts = function()
-      local null_ls = require("null-ls")
-      return {
-        root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
+
+      nvim_lsp["efm"].setup({
         on_attach = on_attach,
-        sources = {
-          null_ls.builtins.formatting.prettier,
-          null_ls.builtins.formatting.eslint_d,
-          null_ls.builtins.diagnostics.eslint_d,
-          null_ls.builtins.formatting.stylua,
-          null_ls.builtins.formatting.terraform_fmt,
-          null_ls.builtins.diagnostics.terraform_validate,
-          null_ls.builtins.formatting.rustfmt,
+        init_options = { documentFormatting = true },
+        settings = {
+          rootMarkers = { ".git/" },
+          languages = {
+            lua = { efm.formatting.stylua },
+            javascript = { efm.diagnostics.eslint_d, efm.formatting.prettier_d },
+            typescript = { efm.diagnostics.eslint_d, efm.formatting.prettier_d },
+            typescriptreact = { efm.diagnostics.eslint_d, efm.formatting.prettier_d },
+            terraform = { efm.formatting.terraform },
+          },
         },
-        should_attach = function(bufnr)
-          return not vim.api.nvim_buf_get_name(bufnr):match("^git://")
-        end,
-      }
+      })
     end,
   },
 }
