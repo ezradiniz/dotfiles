@@ -72,6 +72,11 @@ return {
         capabilities = capabilities,
       })
 
+      nvim_lsp["astro"].setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
       nvim_lsp["gopls"].setup({
         on_attach = on_attach,
         capabilities = capabilities,
