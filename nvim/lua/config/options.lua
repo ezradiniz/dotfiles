@@ -52,4 +52,4 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.wildmode = "longest:full"
 vim.opt.diffopt:append("linematch:60")
-vim.opt.signcolumn = "auto:1-2"
+vim.opt.signcolumn = "auto"
