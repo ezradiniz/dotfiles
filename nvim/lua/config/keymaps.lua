@@ -9,6 +9,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
 vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 vim.keymap.set("x", "<leader>p", '"_dP', opts)
 
+vim.keymap.set("n", "<Leader>bd", ":%bd!<cr>", opts)
+
 -- -- Reference: https://github.com/justinmk/config/blob/39097a1840decd6daccc340ed56e7efbc618702d/.config/nvim/lua/plugins.lua#L15
 vim.cmd([[
   let g:loaded_netrwPlugin = 0
