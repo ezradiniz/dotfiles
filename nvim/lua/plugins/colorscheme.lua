@@ -3,6 +3,7 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
+    -- TODO: Create new theme based on gruvbox and acme
     require("gruvbox").setup({
       contrast = "soft",
       palette_overrides = {
@@ -18,8 +19,22 @@ return {
         diffRemoved = { fg = "#ab4642", bg = "#181818", reverse = true },
         DiagnosticVirtualTextWarn = { fg = "#7c6f64" },
         DiagnosticVirtualTextError = { fg = "#ab4642" },
+
+        Normal = { fg = "#000000", bg = "#ffffea" },
+        Constant = { fg = "", bg = "" },
+        Statement = { fg = "", bg = "" },
+        Identifier = { fg = "", bg = "" },
+        Ignore = { fg = "", bg = "" },
+        Delimiter = { fg = "", bg = "" },
+        String = { fg = "#005500", bg = "" },
         Visual = { bg = "#ffffaf" },
+        Type = { fg = "#004488", bg = "" },
+        StatusLine = { fg = "", bg = "#eaeaea" },
+        StatusLineNC = { fg = "", bg = "#F9F5D7" },
+        CursorLineNr = { fg = "", bg = "", bold = true },
         CursorLine = { fg = "", bg = "" },
+        ColorColumn = { fg = "", bg = "#F9F5D7" },
+        SignColumn = { fg = "", bg = "#F9F5D7" },
       },
     })
     vim.opt.background = "light"
