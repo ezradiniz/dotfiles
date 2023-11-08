@@ -13,4 +13,33 @@ return {
     { "<leader>fr", "<cmd>FzfLua resume<cr>" },
     { "<leader>/", "<cmd>FzfLua lgrep_curbuf<cr>" },
   },
+  opts = function()
+    local actions = require("fzf-lua.actions")
+
+    return {
+      winopts = {
+        height = 0.7,
+        width = 0.55,
+        preview = {
+          scrollbar = false,
+          layout = "vertical",
+          vertical = "up:30%",
+        },
+      },
+      files = {
+        winopts = {
+          preview = { hidden = "hidden" },
+        },
+        actions = {
+          ["ctrl-g"] = actions.toggle_ignore,
+        },
+      },
+      oldfiles = {
+        include_current_session = true,
+        winopts = {
+          preview = { hidden = "hidden" },
+        },
+      },
+    }
+  end,
 }
