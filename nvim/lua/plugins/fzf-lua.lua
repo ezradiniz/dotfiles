@@ -25,6 +25,10 @@ return {
           layout = "vertical",
           vertical = "up:30%",
         },
+        on_create = function()
+          -- Reference: https://github.com/ibhagwan/fzf-lua/issues/808#issuecomment-1620961060
+          vim.keymap.set("t", "<C-r>", [['<C-\><C-N>"'.nr2char(getchar()).'pi']], { expr = true, buffer = true })
+        end
       },
       files = {
         winopts = {
