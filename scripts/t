@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -e
+
+new_tsession=$(pwd | sed 's/.*\///g')
+
+if [ -n "$TMUX" ]; then
+    cur_tsession=$(tmux ls -F '#{session_name}')
+    if [[ $cur_tsession != *"$new_tsession"* ]]; then
+        TMUX= tmux new-session -d -s "$new_tsession"
+        tmux move-window -t "$new_tsession":0
+        tmux kill-window -t "$new_tsession":1
+    fi
+    tmux switch-client -t "$new_tsession"
+else
+    tmux new-session -As "$new_tsession"
+fi
