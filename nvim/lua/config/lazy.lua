@@ -21,4 +21,13 @@ require("lazy").setup({
   defaults = {
     version = false,
   },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "netrwPlugin",
+        "tohtml",
+        "tutor",
+      },
+    },
+  },
 })
