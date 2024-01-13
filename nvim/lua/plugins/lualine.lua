@@ -5,6 +5,7 @@ return {
       theme = "auto",
       component_separators = "",
       section_separators = "",
+      icons_enabled = false
     },
     sections = {
       lualine_c = {
