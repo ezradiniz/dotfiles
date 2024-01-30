@@ -126,7 +126,8 @@ return {
           languages = {
             lua = { efm.formatting.stylua },
             javascript = { efm.diagnostics.eslint_d, efm.formatting.prettier_d },
-            typescript = { efm.diagnostics.eslint_d, efm.formatting.prettier_d },
+            css = { efm.formatting.prettier_d },
+            astro = { efm.diagnostics.eslint_d, efm.formatting.prettier_d },
             typescriptreact = { efm.diagnostics.eslint_d, efm.formatting.prettier_d },
             terraform = { efm.formatting.terraform },
           },
