@@ -7,7 +7,7 @@
 [user]
     email = linux.esdras@gmail.com
     name = Mateus Esdras
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGmzzHJLELhlk+X4No81/G1iwtogF8KKoHRFv9oy/7vS
+    signingkey = 65C1A73841B9EA88
 [github]
     user = ezradiniz
 [core]
@@ -48,11 +48,6 @@
     tool = fugitive
 [diff]
     renames = copies
-[gpg]
-    format = ssh
-[gpg "ssh"]
-    program = "/opt/1Password/op-ssh-sign"
-    allowedSignersFile = ~/.ssh/allowed_signers
 [commit]
     verbose = true
     gpgsign = true
