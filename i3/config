@@ -137,8 +137,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && xbacklight > /home/ezra/
 bindsym $mod+F9 exec ~/.scripts/brightness
 
 # Screenshots
-bindsym $mod+Print exec "sleep 0.5; scrot -q 100 -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
-bindsym Shift+Print exec "scrot -q 100 -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
+bindsym $mod+Print exec "sleep 0.5; scrot -q 100 -f -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
+bindsym Shift+Print exec "scrot -q 100 -f -u ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i < $f'"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
