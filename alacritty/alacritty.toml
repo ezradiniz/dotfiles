@@ -1,26 +1,32 @@
-[colors.bright]
-black = "#555555"
-blue = "#1E6FCC"
-cyan = "#158C86"
-green = "#216609"
-magenta = "#5C21A5"
-red = "#CC3E28"
-white = "#AAAAAA"
-yellow = "#B58900"
-
-[colors.normal]
-black = "#000000"
-blue = "#1E6FCC"
-cyan = "#158C86"
-green = "#216609"
-magenta = "#5C21A5"
-red = "#CC3E28"
-white = "#AAAAAA"
-yellow = "#B58900"
+# Colors (Alabaster Dark)
 
 [colors.primary]
-background = "0xf9f5d7"
-foreground = "0x3c3836"
+background = '#0E1415'
+foreground = '#CECECE'
+
+[colors.cursor]
+text = '#0E1415'
+cursor = '#CECECE'
+
+[colors.normal]
+black = '#0E1415'
+red = '#e25d56'
+green = '#73ca50'
+yellow = '#e9bf57'
+blue = '#4a88e4'
+magenta = '#915caf'
+cyan = '#23acdd'
+white = '#f0f0f0'
+
+[colors.bright]
+black = '#777777'
+red = '#f36868'
+green = '#88db3f'
+yellow = '#f0bf7a'
+blue = '#6f8fdb'
+magenta = '#e987e9'
+cyan = '#4ac9e2'
+white = '#FFFFFF'
 
 [cursor]
 vi_mode_style = "Block"
