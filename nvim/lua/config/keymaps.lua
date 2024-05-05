@@ -5,10 +5,8 @@ vim.keymap.set("n", "<Leader>cd", ":lcd %:p:h<cr>", opts)
 vim.keymap.set("n", "<Leader>m", "mmHmt:%s/<C-V><CR>//ge<CR>'tzt'm", opts)
 vim.keymap.set("n", "<Leader>e", ":silent tabnew ~/.config/nvim/init.lua<cr>:tcd %:p:h<cr>", opts)
 
--- TODO: Add zz mappings when this issue is fixed
--- Issue: https://github.com/neovim/neovim/issues/28106
--- vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
--- vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
+vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
+vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 vim.keymap.set("x", "<leader>p", '"_dP', opts)
 
 vim.keymap.set("n", "<Leader>bd", ":%bd!<cr>", opts)
