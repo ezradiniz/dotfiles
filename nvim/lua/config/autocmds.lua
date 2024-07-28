@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 vim.api.nvim_create_autocmd("FileType", {
   callback = function()
-    vim.opt.foldlevelstart = 99
+    vim.opt.foldlevel = 99
     if require("nvim-treesitter.parsers").has_parser() then
       vim.opt.foldmethod = "expr"
       vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
