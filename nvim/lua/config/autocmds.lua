@@ -40,3 +40,18 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function()
+    vim.opt.foldlevelstart = 99
+    if require("nvim-treesitter.parsers").has_parser() then
+      vim.opt.foldmethod = "expr"
+      vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+      vim.wo.foldtext = "v:lua.vim.treesitter.foldtext()"
+      vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    else
+      vim.opt.foldmethod = "manual"
+    end
+  end,
+  group = vim.api.nvim_create_augroup("foldmethod", { clear = true }),
+})

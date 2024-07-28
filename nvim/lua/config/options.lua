@@ -53,8 +53,3 @@ vim.opt.expandtab = true
 vim.opt.wildmode = "longest:full"
 vim.opt.diffopt:append("linematch:60")
 vim.opt.signcolumn = "auto"
-
-vim.opt.foldlevelstart = 99
-vim.opt.foldmethod = "expr"
-vim.wo.foldtext = "v:lua.vim.treesitter.foldtext()"
-vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
