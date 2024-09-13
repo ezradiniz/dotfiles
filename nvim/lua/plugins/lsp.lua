@@ -67,7 +67,7 @@ return {
 
       local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-      nvim_lsp["tsserver"].setup({
+      nvim_lsp["ts_ls"].setup({
         on_attach = on_attach,
         capabilities = capabilities,
       })
