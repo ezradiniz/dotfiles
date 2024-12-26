@@ -2,7 +2,6 @@ return {
   "nvim-treesitter/nvim-treesitter",
   version = false, -- last release is way too old and doesn't work on Windows
   build = ":TSUpdate",
-  event = "BufReadPost",
   opts = {
     ensure_installed = {
       "dockerfile",
@@ -37,14 +36,9 @@ return {
       end,
       additional_vim_regex_highlighting = false,
     },
-    autopairs = { enable = true },
-    textobjects = { enable = true },
     indent = { enable = true },
   },
-  config = function(plugin, opts)
-    if plugin.ensure_installed then
-      require("lazyvim.util").deprecate("treesitter.ensure_installed", "treesitter.opts.ensure_installed")
-    end
+  config = function(_, opts)
     require("nvim-treesitter.configs").setup(opts)
   end,
 }
