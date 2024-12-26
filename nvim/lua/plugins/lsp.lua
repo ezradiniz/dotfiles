@@ -30,8 +30,12 @@ local on_attach = function(_, bufnr)
 
   local opts = { noremap = true, silent = true }
   vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+  vim.keymap.set("n", "[d", function()
+    vim.diagnostic.jump({ count = -1 })
+  end, opts)
+  vim.keymap.set("n", "]d", function()
+    vim.diagnostic.jump({ count = 1 })
+  end, opts)
   vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 end
 
@@ -52,18 +56,9 @@ return {
       vim.diagnostic.config({
         severity_sort = true,
         virtual_text = true,
-        float = {
-          focusable = false,
-          style = "minimal",
-          border = "rounded",
-          source = "if_many",
-          header = "",
-          prefix = "",
-        },
+        float = { source = "if_many" },
+        signs = false,
       })
-
-      vim.lsp.handlers["textDocument/hover"] =
-        vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", focusable = false })
 
       local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
