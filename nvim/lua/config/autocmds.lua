@@ -41,3 +41,15 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "Disable features in large files",
+  pattern = "bigfile",
+  callback = function(args)
+    vim.cmd("syntax off")
+    vim.cmd("Gitsigns detach")
+    vim.schedule(function()
+      vim.bo[args.buf].syntax = vim.filetype.match({ buf = args.buf }) or ""
+    end)
+  end,
+  group = vim.api.nvim_create_augroup("bigfile", { clear = true }),
+})
