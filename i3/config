@@ -3,7 +3,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $term alacritty
+set $term ~/.local/bin/ghostty
 set $menu rofi -show combi
 set $barcmd i3status
 set $lockcmd i3lock-fancy
