@@ -1,6 +1,6 @@
 
 .PHONY: all
-all: nvim zsh tmux i3 alacritty git x11
+all: nvim zsh tmux i3 term git x11
 
 .PHONY: nvim
 nvim:
@@ -20,7 +20,7 @@ i3:
 
 .PHONY: term
 term:
-	sudo ln -sfn $(CURDIR)/alacritty "$(HOME)/.config/"
+	sudo ln -sfn $(CURDIR)/ghostty "$(HOME)/.config/"
 
 .PHONY: git
 git:
