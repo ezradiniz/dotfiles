@@ -45,10 +45,9 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "Disable features in large files",
   pattern = "bigfile",
   callback = function(args)
-    vim.cmd("syntax off")
-    vim.cmd("Gitsigns detach")
     vim.schedule(function()
-      vim.bo[args.buf].syntax = vim.filetype.match({ buf = args.buf }) or ""
+      vim.cmd("Gitsigns detach")
+      vim.bo[args.buf].syntax = "off"
     end)
   end,
   group = vim.api.nvim_create_augroup("bigfile", { clear = true }),
