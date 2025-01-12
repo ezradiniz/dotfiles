@@ -1,3 +1,15 @@
+# font
 font-family = "CommitMono"
 font-feature = -calt
+
+# window
 window-decoration = false
+
+# mouse
+mouse-hide-while-typing = true
+
+# force GTK single instance mode on
+gtk-single-instance = true
+
+# ignore toggle_fullscreen
+keybind = ctrl+enter=ignore
