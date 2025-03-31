@@ -44,13 +44,12 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
       "folke/neodev.nvim",
       "mattn/efm-langserver",
     },
     config = function()
       local nvim_lsp = require("lspconfig")
-      local cmp_nvim_lsp = require("cmp_nvim_lsp")
+      local blink_cmp = require('blink.cmp');
       local efm = require("config.efm")
 
       vim.diagnostic.config({
@@ -60,7 +59,7 @@ return {
         signs = false,
       })
 
-      local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+      local capabilities = blink_cmp.get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
 
       nvim_lsp["ts_ls"].setup({
         on_attach = on_attach,
