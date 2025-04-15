@@ -18,7 +18,7 @@ return {
     completion = {
       accept = { auto_brackets = { enabled = false } },
       documentation = { auto_show = true },
-      ghost_text = { enabled = true },
+      ghost_text = { enabled = false },
     },
     sources = {
       default = { "lsp", "buffer", "path" },
