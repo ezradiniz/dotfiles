@@ -91,6 +91,11 @@ return {
         capabilities = capabilities,
       })
 
+      nvim_lsp["pyright"].setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+
       nvim_lsp["lua_ls"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
@@ -124,6 +129,7 @@ return {
             astro = { efm.diagnostics.eslint_d, efm.formatting.prettier_d },
             typescriptreact = { efm.diagnostics.eslint_d, efm.formatting.prettier_d },
             terraform = { efm.formatting.terraform },
+            python = { efm.formatting.isort, efm.formatting.black },
           },
         },
       })

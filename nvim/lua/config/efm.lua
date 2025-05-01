@@ -30,5 +30,13 @@ return {
       formatCommand = "terraform fmt -",
       formatStdin = true,
     },
+    isort = {
+      formatCommand = "isort --quiet -",
+      formatStdin = true,
+    },
+    black = {
+      formatCommand = "black --quiet -",
+      formatStdin = true,
+    }
   },
 }
