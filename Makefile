@@ -4,7 +4,7 @@ all: nvim zsh tmux i3 term git x11
 
 .PHONY: nvim
 nvim:
-	sudo ln -sfn $(CURDIR)/nvim "$(HOME)/.config/nvim"
+	sudo ln -sn $(CURDIR)/nvim "$(HOME)/.config/nvim"
 
 .PHONY: zsh
 zsh:
@@ -12,7 +12,7 @@ zsh:
 
 .PHONY: tmux
 tmux:
-	sudo ln -sfn $(CURDIR)/tmux/tmux.conf "$(HOME)/.tmux.conf"
+	sudo ln -sn $(CURDIR)/tmux/tmux.conf "$(HOME)/.tmux.conf"
 
 .PHONY: i3
 i3:
@@ -20,11 +20,11 @@ i3:
 
 .PHONY: term
 term:
-	sudo ln -sfn $(CURDIR)/ghostty "$(HOME)/.config/"
+	sudo ln -sn $(CURDIR)/ghostty "$(HOME)/.config/"
 
 .PHONY: git
 git:
-	sudo ln -sfn $(CURDIR)/git/gitconfig "$(HOME)/.gitconfig"
+	sudo ln -sn $(CURDIR)/git/gitconfig "$(HOME)/.gitconfig"
 
 .PHONY: x11
 x11:
