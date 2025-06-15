@@ -13,11 +13,11 @@ $ make
 ### Using the Makefile
 
 ```console
-$ make nvim 				# Update nvim
+$ make nvim 			# Update nvim
 $ make zsh 				# Update zsh
-$ make tmux 				# Update tmux
+$ make tmux 			# Update tmux
 $ make i3 				# Update i3
-$ make alacritty 			# Update alacritty
+$ make alacritty 	    # Update alacritty
 $ make git 				# Update git
 $ make x11 				# Update X11
 ```
