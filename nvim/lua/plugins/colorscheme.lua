@@ -4,7 +4,7 @@ return {
   priority = 1000,
   config = function()
     vim.opt.background = "dark"
-    vim.cmd.colorscheme("base16-default-dark")
+    vim.cmd.colorscheme("base16-da-one-gray")
     vim.api.nvim_set_hl(0, "DiffAdd", { fg = "#a1b56c", bg = "#181818", reverse = true })
     vim.api.nvim_set_hl(0, "DiffChange", { fg = "#689d6a", bg = "#181818", reverse = true })
     vim.api.nvim_set_hl(0, "DiffDelete", { fg = "#ab4642", bg = "#181818", reverse = true })
