@@ -65,7 +65,6 @@ vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
         return vim.fn.fnamemodify(file, ":t:r")
       end)
       :totable()
-    vim.print(server_configs)
     vim.lsp.enable(server_configs)
   end,
 })
