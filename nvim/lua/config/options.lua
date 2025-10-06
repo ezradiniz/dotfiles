@@ -28,10 +28,10 @@ vim.opt.textwidth = 0
 vim.opt.eol = false
 vim.opt.list = true
 vim.opt.listchars = {
-    tab = "▸ ",
-    trail = "•",
-    extends = "»",
-    precedes = "«",
+  tab = "▸ ",
+  trail = "•",
+  extends = "»",
+  precedes = "«",
 }
 vim.opt.scrolloff = 4
 vim.opt.laststatus = 2

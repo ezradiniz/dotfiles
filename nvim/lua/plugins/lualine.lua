@@ -5,7 +5,7 @@ return {
       theme = "auto",
       component_separators = "",
       section_separators = "",
-      icons_enabled = false
+      icons_enabled = false,
     },
     sections = {
       lualine_c = {
@@ -26,7 +26,7 @@ return {
           path = 1,
         },
       },
-      lualine_x = { "location" }
+      lualine_x = { "location" },
     },
   },
 }
