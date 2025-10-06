@@ -26,4 +26,12 @@ return {
     fuzzy = { implementation = "prefer_rust_with_warning" },
     cmdline = { enabled = true },
   },
+  config = function(_, opts)
+    require("blink.cmp").setup(opts)
+    -- Extend neovim's client capabilities with the completion ones.
+    vim.lsp.config("*", {
+      root_markers = { ".git" },
+      capabilities = require("blink.cmp").get_lsp_capabilities(nil, true),
+    })
+  end,
 }

@@ -1,4 +1,4 @@
-return {
+local config = {
   diagnostics = {
     eslint_d = {
       prefix = "eslint_d",
@@ -37,6 +37,35 @@ return {
     black = {
       formatCommand = "black --quiet -",
       formatStdin = true,
-    }
+    },
+  },
+}
+
+---@type vim.lsp.Config
+return {
+  cmd = { "efm-langserver" },
+  filetypes = {
+    "terraform",
+    "python",
+    "css",
+    "lua",
+    "astro",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+  },
+  root_markers = { ".git" },
+  init_options = { documentFormatting = true },
+  settings = {
+    languages = {
+      lua = { config.formatting.stylua },
+      javascript = { config.diagnostics.eslint_d, config.formatting.prettier_d },
+      css = { config.formatting.prettier_d },
+      astro = { config.diagnostics.eslint_d, config.formatting.prettier_d },
+      typescriptreact = { config.diagnostics.eslint_d, config.formatting.prettier_d },
+      terraform = { config.formatting.terraform },
+      python = { config.formatting.isort, config.formatting.black },
+    },
   },
 }
