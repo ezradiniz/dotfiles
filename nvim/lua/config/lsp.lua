@@ -34,11 +34,6 @@ local on_attach = function(client, bufnr)
     vim.diagnostic.jump({ count = 1 })
   end, opts)
   vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
-
-  -- inlay hints
-  if client:supports_method("textDocument/inlayHint") then
-    vim.lsp.inlay_hint.enable(true)
-  end
 end
 
 vim.diagnostic.config({
